@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Óptica Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #productos {
+            margin-top: 20px;
+        }
+        .producto {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>👓 Óptica Online</h1>
+        <p>Bienvenido a la óptica. Aquí puedes ver nuestros productos.</p>
+        
+        <button onclick="cargarProductos()">Ver productos</button>
+        
+        <div id="productos">
+            <p>Haz clic en el botón para cargar los productos.</p>
+        </div>
+    </div>
+
+    <script>
+        async function cargarProductos() {
+            const div = document.getElementById('productos');
+            div.innerHTML = 'Cargando productos...';
+            
+            try {
+                const respuesta = await fetch('/api/productos');
+                const productos = await respuesta.json();
+                
+                if (respuesta.ok) {
+                    if (productos.length === 0) {
+                        div.innerHTML = '<p>No hay productos disponibles.</p>';
+                    } else {
+                        let html = '<h2>Lista de productos:</h2>';
+                        productos.forEach(p => {
+                            html += `<div class="producto">`;
+                            html += `<strong>${p.nombre || 'Sin nombre'}</strong>`;
+                            if (p.precio) html += ` - $${p.precio}`;
+                            if (p.descripcion) html += `<br><small>${p.descripcion}</small>`;
+                            html += `</div>`;
+                        });
+                        div.innerHTML = html;
+                    }
+                } else {
+                    div.innerHTML = `<p>❌ Error: ${productos.error || 'No se pudieron cargar los productos'}</p>`;
+                }
+            } catch (error) {
+                div.innerHTML = `<p>❌ Error de conexión: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
