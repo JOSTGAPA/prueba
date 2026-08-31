@@ -1,15 +1,15 @@
 <!-- written by jorge campos -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lentes de sol para Mujer - Óptica G&A</title>
-    <!-- Ruta al CSS global -->
+    <title>Lentes de sol para mujer Óptica G&A</title>
+    <!-- enlace a la ruta css global -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <!-- HEADER GLOBAL -->
+    <!-- header global con rutaS-->
     <header class="header">
         <h1 class="logo">G&A</h1>
         <nav class="nav-bar">
@@ -17,7 +17,7 @@
                 <li><a href="../inicio/index.html">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
                 <li class="dropdown">
-                    <a href="#">Lentes Oftálmicos ▾</a>
+                    <a href="#" class="active">Lentes Oftálmicos ▾</a>
                     <ul class="dropdown-menu">
                         <li><a href="../oftalmicos mujer/of-mujer.html">Mujer</a></li>
                         <li><a href="../oftalmicos hombre/of-hombre.html">Hombre</a></li>
@@ -25,173 +25,176 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="active">Lentes de Sol ▾</a>
+                    <a href="#">Lentes de Sol ▾</a>
                     <ul class="dropdown-menu">
                         <li><a href="../sol mujer/sol-mujer.html">Mujer</a></li>
                         <li><a href="../sol hombre/sol-hombre.html">Hombre</a></li>
                         <li><a href="../sol nino/sol-niño.html">Niños</a></li>
                     </ul>
                 </li>
-                <li><a href="../lentes de contacto/len-contacto.html">Lentes de Contacto</a></li>
+                <li class="dropdown">
+                <a href="#">Lentes de Contacto ▾</a>
+                <ul class="dropdown-menu">
+                        <li><a href="../contacto Miopía e Hipermetropía/cont-miopia.html">Miopía e Hipermetropía</a></li>
+                        <li><a href="../contacto Astigmatismo/cont-astigmatismo.html">Astigmatismo</a></li>
+                        <li><a href="../contacto Presbicia/cont-presbicia.html">Presbicia</a></li>
+                    </ul>
+                </li>
                 <li><a href="../reservas/examen-visual.html" class="btn-agenda">Agenda tu Examen Visual</a></li>
             </ul>
         </nav>
     </header>
-
-    <div class="promo-bar">
+    <dive class="promo-bar">
         <p>Suscríbete y obtén 15% DCTO en tu primera compra. Aplican T&C</p>
-    </div>
-
+    </dive>
     <!-- CONTENIDO DE PRODUCTOS -->
-    <main class="store-content">
+     <main CLASS="store-content">
         <div class="breadcrumbs">
-            <a href="../inicio/index.html">Inicio</a> / <span>Lentes de sol para mujer</span>
+            <a href="../inicio/index.html">Inicio</a>/ <span>Lentes de sol para mujer</span>
         </div>
-        
-        <h2 class="category-title">LENTES DE SOL PARA MUJER</h2>
-        
-        <div class="store-toolbar">
+        <h2 class="store-title">Lentes de sol para mujer</h2>
+        <div class="store-tolbar">
             <span class="product-count">405 productos</span>
             <div class="store-filters">
-                <select class="sort-select">
-                    <option>Ordenar por: Más vendidos</option>
-                    <option>Precio: Menor a Mayor</option>
-                    <option>Precio: Mayor a Menor</option>
-                </select>
-                <button class="btn-filter">Filtros</button>
+                <!-- Filtros de producto -->
+                 <select class="sort-select">
+                    <option>Ordenar por: Mas vendidos</option>
+                    <option>precio: Mayor a Menor</option>
+                    <option>precio: Menor a Mayor</option>
+                 </select>
+                 <button class="btn-filter">Filtros</button>
             </div>
         </div>
-
-        <section class="products-grid">
-            <!-- Producto 1 -->
+        <selection class="products-grid">
+            <!-- primer producto -->
             <article class="product-card">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/sol_mujer_1.png" alt="Lentes de sol para mujer 1">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
+                    <span class="badge">Nuevo</span>
+                    <img src="../../img/sol_mujer_1.png" alt="Lentes de sol para mujer 1" class="product-image">
+                    <button class="btn-quick-add">Recoge al dia siguiente</button>
+            </div>
+            <div class="product-info">
                     <p class="brand">MICHAEL KORS</p>
                     <h3 class="product-name">Urban pink</h3>
                     <p class="price">S/220</p>
                 </div>
             </article>
-
-            <!-- Producto 2 -->
-            <article class="product-card">
+        <article class="products-grid">
+            <!-- segundo producto -->
+            <div class="product-card">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/sol_mujer_2.png" alt="Lentes de sol para mujer 2">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
+                    <span class="badge">Nuevo</span>
+                    <img src="../../img/sol_mujer_2.png" alt="Lentes de sol para mujer 2" class="product-image">
+                    <button class="btn-quick-add">Recoge al dia siguiente</button>
+            </div>
+            <div class="product-info">
                     <p class="brand">VOGUE EYEWEAR</p>
                     <h3 class="product-name">Cafe/havana</h3>
                     <p class="price">S/350</p>
                 </div>
-            </article>
-
-            <!-- Producto 3 -->
-            <article class="product-card">
+        </article>
+        <article class="products-grid">
+            <!-- tercer producto -->
+            <div class="product-card">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/sol_mujer_3.png" alt="Lentes de sol para mujer 3">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
+                    <span class="badge">Nuevo</span>
+                    <img src="../../img/sol_mujer_3.png" alt="Lentes de sol para mujer 3" class="product-image">
+                    <button class="btn-quick-add">Recoge al dia siguiente</button>
+            </div>
+            <div class="product-info">
                     <p class="brand">VOGUE EYEWEAR</p>
                     <h3 class="product-name">Little Black</h3>
                     <p class="price">S/150</p>
                 </div>
-            </article>
-
-            <!-- Producto 4 -->
-            <article class="product-card">
+        </article>
+        <article class="products-grid">
+            <!-- cuarto producto -->
+            <div class="product-card">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/sol_mujer_4.png" alt="Lentes de sol para mujer 4">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
+                    <span class="badge">Nuevo</span>
+                    <img src="../../img/sol_mujer_4.png" alt="Lentes de sol para mujer 4" class="product-image">
+                    <button class="btn-quick-add">Recoge al dia siguiente</button>
+            </div>
+            <div class="product-info">
                     <p class="brand">RAY-BAN</p>
                     <h3 class="product-name">purple girl</h3>
                     <p class="price">S/550</p>
                 </div>
-            </article>
-
-            <!-- Producto 5 -->
-            <article class="product-card">
+        </article>
+        <article class="products-grid">
+            <!-- quinto producto -->
+            <div class="product-card">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/sol_mujer_5.png" alt="Lentes de sol para mujer 5">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
+                    <span class="badge">Nuevo</span>
+                    <img src="../../img/sol_mujer_5.png" alt="Lentes de sol para mujer 5" class="product-image">
+                    <button class="btn-quick-add">Recoge al dia siguiente</button>
+            </div>
+            <div class="product-info">
                     <p class="brand">RALPH</p>
                     <h3 class="product-name">Cafee girl</h3>
                     <p class="price">S/450</p>
                 </div>
-            </article>
-
-            <!-- Producto 6 -->
-            <article class="product-card">
+        </article>
+        <article class="products-grid">
+            <!-- sexto producto -->
+            <div class="product-card">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/sol_mujer_6.png" alt="Lentes de sol para mujer 6">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
+                    <span class="badge">Nuevo</span>
+                    <img src="../../img/sol_mujer_6.png" alt="Lentes de sol para mujer 6" class="product-image">
+                    <button class="btn-quick-add">Recoge al dia siguiente</button>
+            </div>
+            <div class="product-info">
                     <p class="brand">RAY-BAN</p>
                     <h3 class="product-name">Black girl</h3>
                     <p class="price">S/850</p>
                 </div>
-            </article>
-
-            <!-- Producto 7 -->
-            <article class="product-card">
+        </article>
+        <article class="products-grid">
+            <!-- séptimo producto -->
+            <div class="product-card">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/sol_mujer_7.png" alt="Lentes de sol para mujer 7">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
+                    <span class="badge">Nuevo</span>
+                    <img src="../../img/sol_mujer_7.png" alt="Lentes de sol para mujer 7" class="product-image">
+                    <button class="btn-quick-add">Recoge al dia siguiente</button>
+            </div>
+            <div class="product-info">
                     <p class="brand">JEAN MONNIER</p>
                     <h3 class="product-name">Grey</h3>
                     <p class="price">S/550</p>
                 </div>
-            </article>
-
-            <!-- Producto 8 -->
-            <article class="product-card">
+        </article>
+        <article class="products-grid">
+            <!-- octavo producto -->
+            <div class="product-card">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/sol_mujer_8.png" alt="Lentes de sol para mujer 8">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
+                    <span class="badge">Nuevo</span>
+                    <img src="../../img/sol_mujer_8.png" alt="Lentes de sol para mujer 8" class="product-image">
+                    <button class="btn-quick-add">Recoge al dia siguiente</button>
+            </div>
+            <div class="product-info">
                     <p class="brand">VERSACE</p>
                     <h3 class="product-name">Café/havana</h3>
                     <p class="price">S/350</p>
                 </div>
-            </article>
-
-            <!-- Producto 9 -->
-            <article class="product-card">
+        </article>
+        <article class="products-grid">
+            <!-- noveno producto -->
+            <div class="product-card">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/sol_mujer_9.png" alt="Lentes de sol para mujer 9">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
+                    <span class="badge">Nuevo</span>
+                    <img src="../../img/sol_mujer_9.png" alt="Lentes de sol para mujer 9" class="product-image">
+                    <button class="btn-quick-add">Recoge al dia siguiente</button>
+            </div>
+            <div class="product-info">
                     <p class="brand">RALPH</p>
                     <h3 class="product-name">Beige girl</h3>
                     <p class="price">S/350</p>
                 </div>
-            </article>
-        </section> 
-    </main>
-
-    <!-- FOOTER GRANDE Y ELEGANTE -->
+        </article>
+        </selection>  
+            <!-- Agrega más productos según sea necesario -->
+     </main>
+     <!-- FOOTER GRANDE Y ELEGANTE -->
     <footer class="mega-footer">
         <div class="footer-container">
             <div class="footer-col brand-col">

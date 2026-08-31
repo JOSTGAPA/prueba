@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Óptica G&A</title>
-    <!-- Los ../../ le indican que salga de 'inicio' y de 'pages' para encontrar la carpeta css -->
+    <title>Lentes de Contacto Presbicia - Óptica G&A</title>
+    <!-- Ruta al CSS global -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+    <!-- HEADER GLOBAL CON RUTAS CORREGIDAS -->
     <header class="header">
         <h1 class="logo">G&A</h1>
         <nav class="nav-bar">
             <ul class="nav-menu">
-                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="../inicio/index.html">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
                 <li class="dropdown">
-                    <a href="#">Lentes Oftálmicos ▾</a>
+                    <a href="#" class="active">Lentes Oftálmicos ▾</a>
                     <ul class="dropdown-menu">
                         <li><a href="../oftalmicos mujer/of-mujer.html">Mujer</a></li>
                         <li><a href="../oftalmicos hombre/of-hombre.html">Hombre</a></li>
@@ -43,45 +44,48 @@
         </nav>
     </header>
 
-    <div class="hero-container">
-        <!-- ../../ aplicados a todas las imágenes -->
-        <img class="hero-img" src="../../img/optica.jpg" alt="Imagen principal de la Óptica">
+    <div class="promo-bar">
+        <p>Suscríbete y obtén 15% DCTO en tu primera compra. Aplican T&C</p>
     </div>
 
-    <main class="main-content">
-        <h2>Bienvenidos a nuestra Óptica</h2>
-        <p>Cuida tu salud visual con nuestros productos de alta calidad.</p>
+    <!-- CONTENIDO DE PRODUCTOS -->
+    <main class="store-content">
+        <div class="breadcrumbs">
+            <a href="../inicio/index.html">Inicio</a> / <span>Lentes de Contacto Presbicia</span>
+        </div>
         
-        <h3>Abre los Ojos</h3>
-        <p>Somos una marca que ve las cosas diferente. Sabemos que el mundo necesita lentes de buena calidad a un precio justo y nosotros estamos comprometidos a ofrecer siempre lo mejor.</p>
+        <h2 class="category-title">Lentes de Contacto Presbicia</h2>
         
-        <section class="categorias-grid">
-            <a href="#" class="card">
-                <img src="../../img/pri_oft.png" alt="Lentes Oftálmicos">
-                <div class="card-footer">
-                    <h4>LENTES OFTÁLMICOS</h4>
-                </div>
-            </a>
+        <div class="store-toolbar">
+            <span class="product-count">1 producto</span>
+            <div class="store-filters">
+                <select class="sort-select">
+                    <option>Ordenar por: Más vendidos</option>
+                    <option>Precio: Menor a Mayor</option>
+                    <option>Precio: Mayor a Menor</option>
+                </select>
+                <button class="btn-filter">Filtros</button>
+            </div>
+        </div>
 
-            <a href="#" class="card">
-                <img src="../../img/pri_len.png" alt="Lentes de Sol">
-                <div class="card-footer">
-                    <h4>LENTES DE SOL</h4>
+        <section class="products-grid">
+            <!-- Producto 1 -->
+            <article class="product-card">
+                <div class="product-image-container">
+                    <span class="badge">NUEVO</span>
+                    <img src="../../img/cont_presbicia_1.png" alt="Contacto Presbicia">
+                    <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
-            </a>
-
-            <a href="#" class="card">
-                <img src="../../img/pri_con.png" alt="Lentes de Contacto">
-                <div class="card-footer">
-                    <h4>LENTES DE CONTACTO</h4>
+                <div class="product-info">
+                    <p class="brand">ALCON</p>
+                    <h3 class="product-name">Air Optix Hydraglyde Multifocal</h3>
+                    <p class="price">S/440</p>
                 </div>
-            </a>
+            </article>
         </section>
     </main>
 
-    <footer class="footer">
-        <p><strong>Derechos Reservados 2026 &copy; Óptica G&A</strong></p>
-    </footer>
+    <!-- FOOTER GRANDE Y ELEGANTE -->
     <footer class="mega-footer">
         <div class="footer-container">
             <div class="footer-col brand-col">
@@ -125,4 +129,4 @@
         </div>
     </footer>
 </body>
-</html>
+</html>>
