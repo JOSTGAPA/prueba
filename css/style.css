@@ -416,3 +416,22 @@ body {
     font-size: 0.8rem;
     color: #666;
 }
+.sedes-centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px; 
+}
+.sedes-centrado .card {
+    max-width: 650px;
+    width: 100%;
+}
+.sedes-centrado .card img {
+    height: auto;
+    object-fit: contain; 
+}
+.titulo-sedes {
+    font-size: 3.5rem; 
+    margin-bottom: 1.5rem; 
+}
