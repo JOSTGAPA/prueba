@@ -10,7 +10,7 @@
 <body>
     <!-- HEADER GLOBAL CON RUTAS CORREGIDAS -->
     <header class="header">
-        <h1 class="logo">G&A</h1>
+       <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
         <nav class="nav-bar">
             <ul class="nav-menu">
                 <li><a href="../inicio/index.html">Inicio</a></li>
@@ -59,19 +59,54 @@
         <div class="store-toolbar">
             <span class="product-count">342 productos</span>
             <div class="store-filters">
-                <select class="sort-select">
-                    <option>Ordenar por: Más vendidos</option>
-                    <option>Precio: Menor a Mayor</option>
-                    <option>Precio: Mayor a Menor</option>
+                <select class="sort-select" id="ordenarProductos" onchange="ordenarProductos()">
+                    <option value="mas-vendidos">Ordenar por: Mas vendidos</option>
+                    <option value="mayor">precio: Mayor a Menor</option>
+                    <option value="menor">precio: Menor a Mayor</option>
                 </select>
-                <button class="btn-filter">Filtros</button>
+                <button class="btn-filter" onclick="mostrarFiltros()">Filtros</button>
+            </div>
+        </div>
+
+        <div class="filter-panel" id="filterPanel">
+            <h3>FILTRAR PRODUCTOS</h3>
+            <div class="filter-group">
+                <label for="marca">Marca</label>
+                <select id="marca">
+                    <option value="todas">Todas las marcas</option>
+                    <option value="RAY-BAN">RAY-BAN</option>
+                    <option value="OAKLEY">OAKLEY</option>
+                    <option value="EMPORIO ARMANI">EMPORIO ARMANI</option>
+                    <option value="LACOSTE">LACOSTE</option>
+                    <option value="TOMMY HILFIGER">TOMMY HILFIGER</option>
+                    <option value="HUGO BOSS">HUGO BOSS</option>
+                    <option value="CARRERA">CARRERA</option>
+                    <option value="PRADA LINEA ROSSA">PRADA LINEA ROSSA</option>
+                    <option value="POLAROID">POLAROID</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Rango de precio</label>
+                <div class="price-inputs">
+                    <input type="number" id="precioMin" placeholder="Precio mínimo">
+                    <input type="number" id="precioMax" placeholder="Precio máximo">
+                </div>
+            </div>
+            <div class="filter-buttons">
+                <button class="btn-apply-filter" onclick="aplicarFiltros()">
+                    Aplicar filtros
+                </button>
+                <button class="btn-clear-filter" onclick="limpiarFiltros()">
+                    Limpiar filtros
+                </button>
             </div>
         </div>
 
         <section class="products-grid">
             <!-- Producto 1 -->
-            <article class="product-card">
+            <article class="product-card" data-marca="RAY-BAN" data-precio="450">
                 <div class="product-image-container">
+                    <span class="badge">NUEVO</span>
                     <img src="../../img/image_11.webp" alt="Lente Hombre 1">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
@@ -83,9 +118,9 @@
             </article>
 
             <!-- Producto 2 -->
-            <article class="product-card">
+            <article class="product-card" data-marca="OAKLEY" data-precio="520">
                 <div class="product-image-container">
-                    <span class="badge">OBTÉN 50% 2DO PAR</span>
+                    <span class="badge">15% DCTO</span>
                     <img src="../../img/image_22.webp" alt="Lente Hombre 2">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
@@ -97,9 +132,9 @@
             </article>
 
             <!-- Producto 3 -->
-            <article class="product-card">
+            <article class="product-card" data-marca="EMPORIO ARMANI" data-precio="610">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
+                    <span class="badge">20% DCTO</span>
                     <img src="../../img/image_33.webp" alt="Lente Hombre 3">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
@@ -111,7 +146,7 @@
             </article>
 
             <!-- Producto 4 -->
-            <article class="product-card">
+            <article class="product-card" data-marca="LACOSTE" data-precio="390">
                 <div class="product-image-container">
                     <img src="../../img/image_44.webp" alt="Lente Hombre 4">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
@@ -124,8 +159,9 @@
             </article>
 
             <!-- Producto 5 -->
-            <article class="product-card">
+            <article class="product-card" data-marca="TOMMY HILFIGER" data-precio="420">
                 <div class="product-image-container">
+                    <span class="badge">15% DCTO</span>
                     <img src="../../img/image_55.webp" alt="Lente Hombre 5">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
@@ -137,9 +173,9 @@
             </article>
 
             <!-- Producto 6 -->
-            <article class="product-card">
+            <article class="product-card" data-marca="HUGO BOSS" data-precio="890">
                 <div class="product-image-container">
-                    <span class="badge">OBTÉN 50% 2DO PAR</span>
+                    <span class="badge">20% DCTO</span>
                     <img src="../../img/image_66.webp" alt="Lente Hombre 6">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
@@ -151,7 +187,7 @@
             </article>
 
             <!-- Producto 7 -->
-            <article class="product-card">
+            <article class="product-card" data-marca="CARRERA" data-precio="350">
                 <div class="product-image-container">
                     <img src="../../img/image_77.webp" alt="Lente Hombre 7">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
@@ -164,9 +200,9 @@
             </article>
 
             <!-- Producto 8 -->
-            <article class="product-card">
+            <article class="product-card" data-marca="PRADA LINEA ROSSA" data-precio="950">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
+                    <span class="badge">15% DCTO</span>
                     <img src="../../img/image_88.webp" alt="Lente Hombre 8">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
@@ -178,7 +214,7 @@
             </article>
 
             <!-- Producto 9 -->
-            <article class="product-card">
+            <article class="product-card" data-marca="POLAROID" data-precio="180">
                 <div class="product-image-container">
                     <img src="../../img/image_99.webp" alt="Lente Hombre 9">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
@@ -196,7 +232,7 @@
     <footer class="mega-footer">
         <div class="footer-container">
             <div class="footer-col brand-col">
-                <h2>G&A</h2>
+                <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A"> 
                 <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
                 <button class="btn-subscribe">SUSCRIBIRSE</button>
             </div>
@@ -235,5 +271,67 @@
             <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
         </div>
     </footer>
+    <script>
+    function mostrarFiltros() {
+        const panel = document.getElementById("filterPanel");
+        panel.classList.toggle("active");
+    }
+    function aplicarFiltros() {
+        const marcaSeleccionada = document.getElementById("marca").value;
+        const precioMin = document.getElementById("precioMin").value;
+        const precioMax = document.getElementById("precioMax").value;
+        const productos = document.querySelectorAll(".product-card");
+        productos.forEach(function(producto) {
+            const marca = producto.getAttribute("data-marca");
+            const precio = Number(producto.getAttribute("data-precio"));
+            let mostrar = true;
+            if (marcaSeleccionada !== "todas" && marca !== marcaSeleccionada) {
+                mostrar = false;
+            }
+            if (precioMin !== "" && precio < Number(precioMin)) {
+                mostrar = false;
+            }
+            if (precioMax !== "" && precio > Number(precioMax)) {
+                mostrar = false;
+            }
+            if (mostrar) {
+                producto.style.display = "flex";
+            } else {
+                producto.style.display = "none";
+            }
+        });
+    }
+    function limpiarFiltros() {
+        document.getElementById("marca").value = "todas";
+        document.getElementById("precioMin").value = "";
+        document.getElementById("precioMax").value = "";
+        const productos = document.querySelectorAll(".product-card");
+        productos.forEach(function(producto) {
+            producto.style.display = "flex";
+        });
+    }
+    function ordenarProductos() {
+        const orden = document.getElementById("ordenarProductos").value;
+        const contenedor = document.querySelector(".products-grid");
+        const productos = Array.from(document.querySelectorAll(".product-card"));
+        if (orden === "mayor") {
+            productos.sort(function(a, b) {
+                const precioA = Number(a.getAttribute("data-precio"));
+                const precioB = Number(b.getAttribute("data-precio"));
+                return precioB - precioA;
+            });
+        }
+        if (orden === "menor") {
+            productos.sort(function(a, b) {
+                const precioA = Number(a.getAttribute("data-precio"));
+                const precioB = Number(b.getAttribute("data-precio"));
+                return precioA - precioB;
+            });
+        }
+        productos.forEach(function(producto) {
+            contenedor.appendChild(producto);
+        });
+    }
+    </script>
 </body>
 </html>

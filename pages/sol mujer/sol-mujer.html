@@ -1,6 +1,6 @@
 <!-- written by jorge campos -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
 <body>
     <!-- header global con rutaS-->
     <header class="header">
-        <h1 class="logo">G&A</h1>
+        <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
         <nav class="nav-bar">
             <ul class="nav-menu">
                 <li><a href="../inicio/index.html">Inicio</a></li>
@@ -44,30 +44,64 @@
             </ul>
         </nav>
     </header>
-    <dive class="promo-bar">
+    <div class="promo-bar">
         <p>Suscríbete y obtén 15% DCTO en tu primera compra. Aplican T&C</p>
-    </dive>
+    </div>
     <!-- CONTENIDO DE PRODUCTOS -->
-     <main CLASS="store-content">
+     <main class="store-content">
         <div class="breadcrumbs">
             <a href="../inicio/index.html">Inicio</a>/ <span>Lentes de sol para mujer</span>
         </div>
-        <h2 class="store-title">Lentes de sol para mujer</h2>
-        <div class="store-tolbar">
+        <h2 class="category-title">Lentes de sol para mujer</h2>
+        <div class="store-toolbar">
             <span class="product-count">405 productos</span>
             <div class="store-filters">
                 <!-- Filtros de producto -->
-                 <select class="sort-select">
-                    <option>Ordenar por: Mas vendidos</option>
-                    <option>precio: Mayor a Menor</option>
-                    <option>precio: Menor a Mayor</option>
+                 <select class="sort-select" id="ordenarProductos" onchange="ordenarProductos()">
+                    <option value="mas-vendidos">Ordenar por: Mas vendidos</option>
+                    <option value="mayor">precio: Mayor a Menor</option>
+                    <option value="menor">precio: Menor a Mayor</option>
                  </select>
-                 <button class="btn-filter">Filtros</button>
+                 <button class="btn-filter" onclick="mostrarFiltros()">Filtros</button>
             </div>
         </div>
-        <selection class="products-grid">
+
+    <div class="filter-panel" id="filterPanel">
+            <h3>FILTRAR PRODUCTOS</h3>
+            <div class="filter-group">
+                <label for="marca">Marca</label>
+                <select id="marca">
+                    <option value="todas">Todas las marcas</option>
+                    <option value="MICHAEL KORS">MICHAEL KORS</option>
+                    <option value="VOGUE EYEWEAR">VOGUE EYEWEAR</option>
+                    <option value="RAY-BAN">RAY-BAN</option>
+                    <option value="RALPH">RALPH</option>
+                    <option value="JEAN MONNIER">JEAN MONNIER</option>
+                    <option value="VERSACE">VERSACE</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Rango de precio</label>
+                <div class="price-inputs">
+                    <input type="number" id="precioMin" placeholder="Precio mínimo">
+                    <input  type="number" id="precioMax" placeholder="Precio máximo">
+                </div>
+            </div>
+            <div class="filter-buttons">
+                <button class="btn-apply-filter"
+                onclick="aplicarFiltros()">
+                Aplicar filtros
+                </button>
+                <button class="btn-clear-filter"
+                onclick="limpiarFiltros()">
+                Limpiar filtros
+                </button>
+            </div>
+        </div>
+        
+        <section class="products-grid">
             <!-- primer producto -->
-            <article class="product-card">
+            <article class="product-card" data-marca="MICHAEL KORS" data-precio="220">
                 <div class="product-image-container">
                     <span class="badge">Nuevo</span>
                     <img src="../../img/sol_mujer_1.png" alt="Lentes de sol para mujer 1" class="product-image">
@@ -79,11 +113,10 @@
                     <p class="price">S/220</p>
                 </div>
             </article>
-        <article class="products-grid">
             <!-- segundo producto -->
-            <div class="product-card">
+            <article class="product-card"data-marca="VOGUE EYEWEAR" data-precio="350">
                 <div class="product-image-container">
-                    <span class="badge">Nuevo</span>
+                    <span class="badge">15% DCTO</span>
                     <img src="../../img/sol_mujer_2.png" alt="Lentes de sol para mujer 2" class="product-image">
                     <button class="btn-quick-add">Recoge al dia siguiente</button>
             </div>
@@ -92,12 +125,11 @@
                     <h3 class="product-name">Cafe/havana</h3>
                     <p class="price">S/350</p>
                 </div>
-        </article>
-        <article class="products-grid">
+            </article>
             <!-- tercer producto -->
-            <div class="product-card">
+            <article class="product-card" data-marca="VOGUE EYEWEAR" data-precio="150">
                 <div class="product-image-container">
-                    <span class="badge">Nuevo</span>
+                    <span class="badge">20% DCTO</span>
                     <img src="../../img/sol_mujer_3.png" alt="Lentes de sol para mujer 3" class="product-image">
                     <button class="btn-quick-add">Recoge al dia siguiente</button>
             </div>
@@ -106,12 +138,11 @@
                     <h3 class="product-name">Little Black</h3>
                     <p class="price">S/150</p>
                 </div>
-        </article>
-        <article class="products-grid">
+            </article>
             <!-- cuarto producto -->
-            <div class="product-card">
+            <article class="product-card" data-marca="RAY-BAN" data-precio="550">
                 <div class="product-image-container">
-                    <span class="badge">Nuevo</span>
+                    <span class="badge">NUEVO</span>
                     <img src="../../img/sol_mujer_4.png" alt="Lentes de sol para mujer 4" class="product-image">
                     <button class="btn-quick-add">Recoge al dia siguiente</button>
             </div>
@@ -120,12 +151,11 @@
                     <h3 class="product-name">purple girl</h3>
                     <p class="price">S/550</p>
                 </div>
-        </article>
-        <article class="products-grid">
+            </article>
             <!-- quinto producto -->
-            <div class="product-card">
+            <article class="product-card" data-marca="RALPH" data-precio="450">
                 <div class="product-image-container">
-                    <span class="badge">Nuevo</span>
+                    <span class="badge">15% DCTO</span>
                     <img src="../../img/sol_mujer_5.png" alt="Lentes de sol para mujer 5" class="product-image">
                     <button class="btn-quick-add">Recoge al dia siguiente</button>
             </div>
@@ -134,12 +164,11 @@
                     <h3 class="product-name">Cafee girl</h3>
                     <p class="price">S/450</p>
                 </div>
-        </article>
-        <article class="products-grid">
+            </article>
             <!-- sexto producto -->
-            <div class="product-card">
+            <article class="product-card" data-marca="RAY-BAN" data-precio="850">
                 <div class="product-image-container">
-                    <span class="badge">Nuevo</span>
+                    <span class="badge">OBTÉN 50% 2DO PAR</span>
                     <img src="../../img/sol_mujer_6.png" alt="Lentes de sol para mujer 6" class="product-image">
                     <button class="btn-quick-add">Recoge al dia siguiente</button>
             </div>
@@ -148,12 +177,11 @@
                     <h3 class="product-name">Black girl</h3>
                     <p class="price">S/850</p>
                 </div>
-        </article>
-        <article class="products-grid">
+            </article>
             <!-- séptimo producto -->
-            <div class="product-card">
+            <article class="product-card" data-marca="JEAN MONNIER" data-precio="550">
                 <div class="product-image-container">
-                    <span class="badge">Nuevo</span>
+                    <span class="badge">20% DCTO</span>
                     <img src="../../img/sol_mujer_7.png" alt="Lentes de sol para mujer 7" class="product-image">
                     <button class="btn-quick-add">Recoge al dia siguiente</button>
             </div>
@@ -162,12 +190,11 @@
                     <h3 class="product-name">Grey</h3>
                     <p class="price">S/550</p>
                 </div>
-        </article>
-        <article class="products-grid">
+            </article>
             <!-- octavo producto -->
-            <div class="product-card">
+            <article class="product-card" data-marca="VERSACE" data-precio="350">
                 <div class="product-image-container">
-                    <span class="badge">Nuevo</span>
+                    <span class="badge">15% DCTO</span>
                     <img src="../../img/sol_mujer_8.png" alt="Lentes de sol para mujer 8" class="product-image">
                     <button class="btn-quick-add">Recoge al dia siguiente</button>
             </div>
@@ -176,10 +203,9 @@
                     <h3 class="product-name">Café/havana</h3>
                     <p class="price">S/350</p>
                 </div>
-        </article>
-        <article class="products-grid">
+            </article>
             <!-- noveno producto -->
-            <div class="product-card">
+            <article class="product-card" data-marca="RALPH" data-precio="350">
                 <div class="product-image-container">
                     <span class="badge">Nuevo</span>
                     <img src="../../img/sol_mujer_9.png" alt="Lentes de sol para mujer 9" class="product-image">
@@ -191,14 +217,14 @@
                     <p class="price">S/350</p>
                 </div>
         </article>
-        </selection>  
+        </section>  
             <!-- Agrega más productos según sea necesario -->
      </main>
      <!-- FOOTER GRANDE Y ELEGANTE -->
     <footer class="mega-footer">
         <div class="footer-container">
             <div class="footer-col brand-col">
-                <h2>G&A</h2>
+                <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A">
                 <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
                 <button class="btn-subscribe">SUSCRIBIRSE</button>
             </div>
@@ -237,5 +263,71 @@
             <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
         </div>
     </footer>
+    <script>
+    function mostrarFiltros() {
+        const panel = document.getElementById("filterPanel");
+        panel.classList.toggle("active");
+    }
+    function aplicarFiltros() {
+        const marcaSeleccionada = document.getElementById("marca").value;
+        const precioMin = document.getElementById("precioMin").value;
+        const precioMax = document.getElementById("precioMax").value;
+        const productos = document.querySelectorAll(".product-card");
+        productos.forEach(function(producto) {
+            const marca = producto.getAttribute("data-marca");
+            const precio = Number(producto.getAttribute("data-precio"));
+            let mostrar = true;
+            // Filtrar por marca
+            if (marcaSeleccionada !== "todas" && marca !== marcaSeleccionada) {
+                mostrar = false;
+            }
+            // Filtrar por precio mínimo
+            if (precioMin !== "" && precio < Number(precioMin)) {
+                mostrar = false;
+            }
+            // Filtrar por precio máximo
+            if (precioMax !== "" && precio > Number(precioMax)) {
+                mostrar = false;
+            }
+            // Mostrar u ocultar producto
+            if (mostrar) {
+                producto.style.display = "flex";
+            } else {
+                producto.style.display = "none";
+            }
+        });
+    }
+    function limpiarFiltros() {
+        document.getElementById("marca").value = "todas";
+        document.getElementById("precioMin").value = "";
+        document.getElementById("precioMax").value = "";
+        const productos = document.querySelectorAll(".product-card");
+        productos.forEach(function(producto) {
+            producto.style.display = "flex";
+        });
+    }
+    function ordenarProductos() {
+        const orden = document.getElementById("ordenarProductos").value;
+        const contenedor = document.querySelector(".products-grid");
+        const productos = Array.from(document.querySelectorAll(".product-card"));
+        if (orden === "mayor") {
+            productos.sort(function(a, b) {
+                const precioA = Number(a.getAttribute("data-precio"));
+                const precioB = Number(b.getAttribute("data-precio"));
+                return precioB - precioA;
+            });
+        }
+        if (orden === "menor") {
+            productos.sort(function(a, b) {
+                const precioA = Number(a.getAttribute("data-precio"));
+                const precioB = Number(b.getAttribute("data-precio"));
+                return precioA - precioB;
+            });
+        }
+        productos.forEach(function(producto) {
+            contenedor.appendChild(producto);
+        });
+    }
+    </script>
 </body>
 </html>

@@ -11,7 +11,7 @@
 <body>
     <!-- HEADER GLOBAL -->
     <header class="header">
-        <h1 class="logo">G&A</h1>
+       <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
         <nav class="nav-bar">
             <ul class="nav-menu">
                 <li><a href="../inicio/index.html">Inicio</a></li>
@@ -60,18 +60,47 @@
         <div class="store-toolbar">
             <span class="product-count">405 productos</span>
             <div class="store-filters">
-                <select class="sort-select">
-                    <option>Ordenar por: Más vendidos</option>
-                    <option>Precio: Menor a Mayor</option>
-                    <option>Precio: Mayor a Menor</option>
+                <select class="sort-select" id="ordenarProductos" onchange="ordenarProductos()">
+                    <option value="mas-vendidos">Ordenar por: Mas vendidos</option>
+                    <option value="mayor">precio: Mayor a Menor</option>
+                    <option value="menor">precio: Menor a Mayor</option>
                 </select>
-                <button class="btn-filter">Filtros</button>
+                <button class="btn-filter" onclick="mostrarFiltros()">Filtros</button>
+            </div>
+        </div>
+
+        <div class="filter-panel" id="filterPanel">
+            <h3>FILTRAR PRODUCTOS</h3>
+            <div class="filter-group">
+                <label for="marca">Marca</label>
+                <select id="marca">
+                    <option value="todas">Todas las marcas</option>
+                    <option value="VOGUE EYEWEAR">VOGUE EYEWEAR</option>
+                    <option value="RAY-BAN">RAY-BAN</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Rango de precio</label>
+                <div class="price-inputs">
+                    <input type="number" id="precioMin" placeholder="Precio mínimo">
+                    <input  type="number" id="precioMax" placeholder="Precio máximo">
+                </div>
+            </div>
+            <div class="filter-buttons">
+                <button class="btn-apply-filter"
+                onclick="aplicarFiltros()">
+                Aplicar filtros
+                </button>
+                <button class="btn-clear-filter"
+                onclick="limpiarFiltros()">
+                Limpiar filtros
+                </button>
             </div>
         </div>
 
         <section class="products-grid">
             <!-- Producto 1 -->
-            <article class="product-card">
+            <article class="product-card" data-marca="VOGUE EYEWEAR" data-precio="120">
                 <div class="product-image-container">
                     <span class="badge">NUEVO</span>
                     <img src="../../img/sol_niño_1.png" alt="Lentes de sol para niños 1">
@@ -85,9 +114,9 @@
             </article>
 
             <!-- Producto 2 -->
-            <article class="product-card">
+            <article class="product-card" data-marca="RAY-BAN" data-precio="100">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
+                    <span class="badge">50% 2DO PAR</span>
                     <img src="../../img/sol_niño_2.png" alt="Lentes de sol para niños 2">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
@@ -99,9 +128,9 @@
             </article>
 
             <!-- Producto 3 -->
-            <article class="product-card">
+            <article class="product-card" data-marca="RAY-BAN" data-precio="120">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
+                    <span class="badge">15% DCTO</span>
                     <img src="../../img/sol_niño_3.png" alt="Lentes de sol para niños 3">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
@@ -113,7 +142,7 @@
             </article>
 
             <!-- Producto 4 -->
-            <article class="product-card">
+            <article class="product-card" data-marca="RAY-BAN" data-precio="520">
                 <div class="product-image-container">
                     <span class="badge">NUEVO</span>
                     <img src="../../img/sol_niño_4.png" alt="Lentes de sol para niños 4">
@@ -127,9 +156,9 @@
             </article>
 
             <!-- Producto 5 -->
-            <article class="product-card">
+            <article class="product-card" data-marca="RAY-BAN" data-precio="320">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
+                    <span class="badge">20% DCTO</span>
                     <img src="../../img/sol_niño_5.png" alt="Lentes de sol para niños 5">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
@@ -141,9 +170,9 @@
             </article>
 
             <!-- Producto 6 -->
-            <article class="product-card">
+            <article class="product-card" data-marca="RAY-BAN" data-precio="350">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
+                    <span class="badge">OBTÉN 50% 2DO PAR</span>
                     <img src="../../img/sol_niño_6.png" alt="Lentes de sol para niños 6">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
@@ -160,7 +189,7 @@
     <footer class="mega-footer">
         <div class="footer-container">
             <div class="footer-col brand-col">
-                <h2>G&A</h2>
+                <img class="logo" src="../../img/logo.png." alt="Óptica G&A">
                 <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
                 <button class="btn-subscribe">SUSCRIBIRSE</button>
             </div>
@@ -199,5 +228,71 @@
             <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
         </div>
     </footer>
+    <script>
+    function mostrarFiltros() {
+        const panel = document.getElementById("filterPanel");
+        panel.classList.toggle("active");
+    }
+    function aplicarFiltros() {
+        const marcaSeleccionada = document.getElementById("marca").value;
+        const precioMin = document.getElementById("precioMin").value;
+        const precioMax = document.getElementById("precioMax").value;
+        const productos = document.querySelectorAll(".product-card");
+        productos.forEach(function(producto) {
+            const marca = producto.getAttribute("data-marca");
+            const precio = Number(producto.getAttribute("data-precio"));
+            let mostrar = true;
+            // Filtrar por marca
+            if (marcaSeleccionada !== "todas" && marca !== marcaSeleccionada) {
+                mostrar = false;
+            }
+            // Filtrar por precio mínimo
+            if (precioMin !== "" && precio < Number(precioMin)) {
+                mostrar = false;
+            }
+            // Filtrar por precio máximo
+            if (precioMax !== "" && precio > Number(precioMax)) {
+                mostrar = false;
+            }
+            // Mostrar u ocultar producto
+            if (mostrar) {
+                producto.style.display = "flex";
+            } else {
+                producto.style.display = "none";
+            }
+        });
+    }
+    function limpiarFiltros() {
+        document.getElementById("marca").value = "todas";
+        document.getElementById("precioMin").value = "";
+        document.getElementById("precioMax").value = "";
+        const productos = document.querySelectorAll(".product-card");
+        productos.forEach(function(producto) {
+            producto.style.display = "flex";
+        });
+    }
+    function ordenarProductos() {
+        const orden = document.getElementById("ordenarProductos").value;
+        const contenedor = document.querySelector(".products-grid");
+        const productos = Array.from(document.querySelectorAll(".product-card"));
+        if (orden === "mayor") {
+            productos.sort(function(a, b) {
+                const precioA = Number(a.getAttribute("data-precio"));
+                const precioB = Number(b.getAttribute("data-precio"));
+                return precioB - precioA;
+            });
+        }
+        if (orden === "menor") {
+            productos.sort(function(a, b) {
+                const precioA = Number(a.getAttribute("data-precio"));
+                const precioB = Number(b.getAttribute("data-precio"));
+                return precioA - precioB;
+            });
+        }
+        productos.forEach(function(producto) {
+            contenedor.appendChild(producto);
+        });
+    }
+    </script>
 </body>
 </html>
