@@ -130,7 +130,7 @@
             <article class="product-card" data-marca="Alcon" data-precio="370">
                 <div class="product-image-container">
                     <span class="badge">NUEVO</span>
-                    <img src="../../img/cont_astig_1.png.jpeg" alt="cont astig 1">
+                    <img src="../../img/cont_astig_1.png" alt="cont astig 1">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
@@ -252,67 +252,5 @@
             <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
         </div>
     </footer>
-    <script>
-    function mostrarFiltros() {
-        const panel = document.getElementById("filterPanel");
-        panel.classList.toggle("active");
-    }
-    function aplicarFiltros() {
-        const marcaSeleccionada = document.getElementById("marca").value;
-        const precioMin = document.getElementById("precioMin").value;
-        const precioMax = document.getElementById("precioMax").value;
-        const productos = document.querySelectorAll(".product-card");
-        productos.forEach(function(producto) {
-            const marca = producto.getAttribute("data-marca");
-            const precio = Number(producto.getAttribute("data-precio"));
-            let mostrar = true;
-            if (marcaSeleccionada !== "todas" && marca !== marcaSeleccionada) {
-                mostrar = false;
-            }
-            if (precioMin !== "" && precio < Number(precioMin)) {
-                mostrar = false;
-            }
-            if (precioMax !== "" && precio > Number(precioMax)) {
-                mostrar = false;
-            }
-            if (mostrar) {
-                producto.style.display = "flex";
-            } else {
-                producto.style.display = "none";
-            }
-        });
-    }
-    function limpiarFiltros() {
-        document.getElementById("marca").value = "todas";
-        document.getElementById("precioMin").value = "";
-        document.getElementById("precioMax").value = "";
-        const productos = document.querySelectorAll(".product-card");
-        productos.forEach(function(producto) {
-            producto.style.display = "flex";
-        });
-    }
-    function ordenarProductos() {
-        const orden = document.getElementById("ordenarProductos").value;
-        const contenedor = document.querySelector(".products-grid");
-        const productos = Array.from(document.querySelectorAll(".product-card"));
-        if (orden === "mayor") {
-            productos.sort(function(a, b) {
-                const precioA = Number(a.getAttribute("data-precio"));
-                const precioB = Number(b.getAttribute("data-precio"));
-                return precioB - precioA;
-            });
-        }
-        if (orden === "menor") {
-            productos.sort(function(a, b) {
-                const precioA = Number(a.getAttribute("data-precio"));
-                const precioB = Number(b.getAttribute("data-precio"));
-                return precioA - precioB;
-            });
-        }
-        productos.forEach(function(producto) {
-            contenedor.appendChild(producto);
-        });
-    }
-    </script>
 </body>
 </html>
