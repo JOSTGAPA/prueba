@@ -661,3 +661,305 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* =========================================
+   VISTA DE DETALLE DE PRODUCTO
+   ========================================= */
+
+.product-detail-page {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* --- SECCIÓN SUPERIOR --- */
+.product-top-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+/* Galería */
+.gallery-section {
+    position: relative;
+}
+
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding: 1rem;
+}
+
+.gallery-brand {
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 4px;
+    font-size: 1.5rem;
+}
+
+.btn-try-model {
+    background-color: #666;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.gallery-main {
+    display: flex;
+    align-items: center;
+    height: 500px;
+    background-color: #fcfcfc;
+    border: 1px solid #f0f0f0;
+}
+
+.gallery-thumbnails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.thumb-nav {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #999;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #333;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+.main-image {
+    width: 80%;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* Información de Compra */
+.purchase-section {
+    padding-top: 1rem;
+}
+
+.product-brand {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.product-sku {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.promos-container p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.promo-tag {
+    display: inline-block;
+    background-color: #f4f4f4;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 1.5rem 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1.5rem;
+}
+
+.benefits-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 1.2rem;
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.benefits-list li:last-child {
+    margin-bottom: 0;
+}
+
+.benefits-list a {
+    color: #333;
+    text-decoration: underline;
+}
+
+.price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.price-label {
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.price-value {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.installments {
+    text-align: right;
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.payment-methods {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.pay-icon {
+    display: inline-block;
+    background: #f4f4f4;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+.btn-select-lenses {
+    width: 100%;
+    background-color: #334155;
+    color: white;
+    border: none;
+    padding: 18px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* --- SECCIÓN INFERIOR --- */
+.product-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    gap: 3rem;
+    background-color: #faf9f6; /* Fondo ligeramente beige */
+    padding: 4rem;
+    border-top: 1px solid #eee;
+}
+
+.section-title {
+    font-family: 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: 2rem;
+}
+
+.detail-accordion {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-accordion.border-none {
+    border-bottom: none;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.accordion-header h3 {
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+.specs-grid, .measurements-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.measurements-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.text-block {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
+/* --- BOTÓN DE RETROCESO (VERSIÓN MODERNA) --- */
+.back-link-container {
+    margin-bottom: 2rem;
+}
+
+.btn-back-cool {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    background-color: #ffffff;
+    color: #334155;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 30px; /* Le da la forma ovalada/píldora */
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.btn-back-cool .icon-arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover interactivo */
+.btn-back-cool:hover {
+    background-color: #1a2b4c; /* Azul oscuro corporativo */
+    color: #ffffff;
+    border-color: #1a2b4c;
+    box-shadow: 0 6px 15px rgba(26, 43, 76, 0.2);
+    transform: translateY(-2px); /* Da la sensación de que el botón se levanta */
+}
+
+.btn-back-cool:hover .icon-arrow {
+    transform: translateX(-4px);
+}
+
+
+
