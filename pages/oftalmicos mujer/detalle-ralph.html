@@ -16,7 +16,7 @@
             </a>
         </div>
             
-        <!-- AQUÍ FALTABA ABRIR LA ETIQUETA PARA LAS DOS COLUMNAS -->
+        <!-- Columna Superior de Dos Columnas -->
         <section class="product-top-grid">
             
             <!-- Columna Izquierda: Galería -->
@@ -82,60 +82,112 @@
                 <p class="installments">Hasta 12 cuotas sin interés - Valor cuota: S/ 34.16</p>
                 
                 <div class="payment-methods">
-                    <span class="pay-icon">💳 Tarjetas</span>
-                    <span class="pay-icon">📱 Yape/Plin</span>
+                    <span class="pay-icon"> Tarjetas</span>
+                    <span class="pay-icon"> Yape/Plin</span>
                 </div>
 
                 <button class="btn-select-lenses">SELECCIONAR LENTES</button>
             </div>
             
-        </section> <!-- Aquí se cierra correctamente el grid de las dos columnas -->
+        </section>
 
-        <!-- SECCIÓN INFERIOR: Detalles Técnicos -->
+        <!-- SECCIÓN INFERIOR: Detalles Técnicos con Tablas -->
         <section class="product-bottom-grid">
             <div class="bottom-left">
                 <h2 class="section-title">Acerca de la montura</h2>
             </div>
             
             <div class="bottom-right">
-                <!-- Bloque 1: Detalles -->
+                <!-- Bloque 1: Detalles de la montura -->
                 <div class="detail-accordion">
                     <div class="accordion-header">
                         <h3>Detalles de la montura</h3>
                         <span>︿</span>
                     </div>
-                    <div class="accordion-content specs-grid">
-                        <div>
-                            <strong>Material:</strong><br>Acetato Premium
-                        </div>
-                        <div>
-                            <strong>Forma:</strong><br>Cat Eye / Mariposa
-                        </div>
-                        <div>
-                            <strong>Color:</strong><br>Havana Oscuro (Carey)
-                        </div>
-                        <div>
-                            <strong>Género:</strong><br>Mujer
-                        </div>
+                    <div class="accordion-content">
+                        <table class="specs-table">
+                            <colgroup>
+                                <col style="width: 35%;">
+                                <col style="width: 65%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Característica</th>
+                                    <th>Especificación Técnica</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Material</strong></td>
+                                    <td>Acetato Premium</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Forma</strong></td>
+                                    <td>Cat Eye / Mariposa</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td>Havana Oscuro (Carey)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Género</strong></td>
+                                    <td>Mujer</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"><strong>Categoría y Uso</strong></td>
+                                    <td>Montura Oftálmica de Lujo</td>
+                                </tr>
+                                <tr>
+                                    <td>Uso Diario / Formal</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2"> Producto original con certificación de calidad G&A</td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
                 </div>
 
-                <!-- Bloque 2: Medidas -->
+                <!-- Bloque 2: Medidas de la montura -->
                 <div class="detail-accordion">
                     <div class="accordion-header">
                         <h3>Medidas de la montura</h3>
                         <span>︿</span>
                     </div>
-                    <div class="accordion-content measurements-grid">
-                        <div>
-                            <strong>Tamaño de las lunas:</strong><br>54mm
-                        </div>
-                        <div>
-                            <strong>Ancho del puente:</strong><br>17mm
-                        </div>
-                        <div>
-                            <strong>Largo de la varilla:</strong><br>140mm
-                        </div>
+                    <div class="accordion-content">
+                        <table class="specs-table">
+                            <colgroup>
+                                <col style="width: 50%;">
+                                <col style="width: 50%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Medida</th>
+                                    <th>Dimensión</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Tamaño de las lunas</strong></td>
+                                    <td>54mm</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ancho del puente</strong></td>
+                                    <td>17mm</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Largo de la varilla</strong></td>
+                                    <td>140mm</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2">Medidas expresadas en milímetros (mm)</td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
                 </div>
 
@@ -152,7 +204,8 @@
             </div>
         </section>
     </main>
-
-    <!-- FOOTER GLOBAL -->
+<footer class="footer-bottom">
+        <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
+    </footer>
 </body>
 </html>

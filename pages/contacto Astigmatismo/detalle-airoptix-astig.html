@@ -11,7 +11,7 @@
         <div class="back-link-container">
             <!-- Asegúrate de que este href apunte al nombre real de tu catálogo de astigmatismo -->
             <a href="cont-astigmatismo.html" class="btn-back-cool">
-                <span class="icon-arrow">←</span> Volver al catálogo
+                <span class="icon-arrow">&larr;</span> Volver al catálogo
             </a>
         </div>
             
@@ -19,16 +19,16 @@
             <div class="gallery-section">
                 <div class="gallery-header">
                     <h2 class="gallery-brand">ALCON</h2>
-                    <button class="btn-try-model">👓 CONSULTAR</button>
+                    <button class="btn-try-model">CONSULTAR</button>
                 </div>
                 
                 <div class="gallery-main">
                     <div class="gallery-thumbnails">
-                        <button class="thumb-nav">︿</button>
+                        <button class="thumb-nav">&and;</button>
                         <span class="dot"></span>
                         <span class="dot active"></span>
                         <span class="dot"></span>
-                        <button class="thumb-nav">﹀</button>
+                        <button class="thumb-nav">&or;</button>
                     </div>
                     <img src="../../img/cont_astig_1.png" alt="Air Optix Hydraglyde Astigmatismo" class="main-image">
                 </div>
@@ -57,37 +57,71 @@
                 <p class="installments">Hasta 12 cuotas sin interés - Valor cuota: S/ 30.83</p>
                 
                 <div class="payment-methods">
-                    <span class="pay-icon">💳 Tarjetas</span>
-                    <span class="pay-icon">📱 Yape/Plin</span>
+                    <span class="pay-icon">Tarjetas</span>
+                    <span class="pay-icon">Yape/Plin</span>
                 </div>
 
                 <button class="btn-select-lenses">SELECCIONAR LENTES</button>
             </div>
         </section>
 
+        <!-- SECCIÓN INFERIOR: Detalles Técnicos con Tablas -->
         <section class="product-bottom-grid">
             <div class="bottom-left">
                 <h2 class="section-title">Acerca del producto</h2>
             </div>
             
             <div class="bottom-right">
+                <!-- Bloque 1: Detalles de los lentes en Tabla -->
                 <div class="detail-accordion">
                     <div class="accordion-header">
                         <h3>Detalles de los lentes</h3>
-                        <span>︿</span>
+                        <span>&and;</span>
                     </div>
-                    <div class="accordion-content specs-grid">
-                        <div><strong>Tipo:</strong><br>Mensuales</div>
-                        <div><strong>Uso:</strong><br>Astigmatismo (Tóricos)</div>
-                        <div><strong>Material:</strong><br>Lotrafilcon B</div>
-                        <div><strong>Cantidad:</strong><br>6 lentes por caja</div>
+                    <div class="accordion-content">
+                        <table class="specs-table">
+                            <colgroup>
+                                <col style="width: 35%;">
+                                <col style="width: 65%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Característica</th>
+                                    <th>Especificación Técnica</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Tipo</strong></td>
+                                    <td>Mensuales</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Uso</strong></td>
+                                    <td>Astigmatismo (Tóricos)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Material</strong></td>
+                                    <td>Lotrafilcon B</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cantidad</strong></td>
+                                    <td>6 lentes por caja</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2">Producto original con certificación de calidad G&A</td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
                 </div>
 
+                <!-- Bloque 2: Acerca de la marca -->
                 <div class="detail-accordion border-none">
                     <div class="accordion-header">
                         <h3>Acerca de ALCON</h3>
-                        <span>︿</span>
+                        <span>&and;</span>
                     </div>
                     <div class="accordion-content text-block">
                         Lentes tóricos mensuales con tecnología de diseño de estabilización por balance de precisión, que evitan que el lente se mueva al parpadear, garantizando una visión nítida y constante todo el día.
@@ -96,5 +130,8 @@
             </div>
         </section>
     </main>
+    <footer class="footer-bottom">
+        <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
+    </footer>
 </body>
 </html>
