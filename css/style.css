@@ -588,6 +588,13 @@ body {
     margin-bottom: 15px;
 }
 
+.agenda-info img {
+    width: 500px;
+    height: 500px;
+    display: block;
+    margin: 20px auto;
+}
+
 .agenda-form {
     padding: 30px;
     border: 1px solid #e5e5e5;
