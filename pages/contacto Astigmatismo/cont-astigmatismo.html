@@ -68,34 +68,7 @@
             </div>
         </div>
 
-         <div class="filter-panel" id="filterPanel">
-            <h3>FILTRAR PRODUCTOS</h3>
-            <div class="filter-group">
-                <label for="marca">Marca</label>
-                <select id="marca">
-                    <option value="todas">Todas las marcas</option>
-                    <option value="Alcon">Alcon</option>
-                    <option value="Johnson&Johnson">Johnson&Johnson</option>
-                    <option value="iWear">iWear</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label>Rango de precio</label>
-                <div class="price-inputs">
-                    <input type="number" id="precioMin" placeholder="Precio mínimo">
-                    <input type="number" id="precioMax" placeholder="Precio máximo">
-                </div>
-            </div>
-            <div class="filter-buttons">
-                <button class="btn-apply-filter" onclick="aplicarFiltros()">
-                    Aplicar filtros
-                </button>
-                <button class="btn-clear-filter" onclick="limpiarFiltros()">
-                    Limpiar filtros
-                </button>
-            </div>
-        </div>
-
+        <!-- Panel de Filtros único y limpio -->
         <div class="filter-panel" id="filterPanel">
             <h3>FILTRAR PRODUCTOS</h3>
             <div class="filter-group">
@@ -124,54 +97,53 @@
             </div>
         </div>
 
-
         <section class="products-grid">
-           <!-- Producto 1: Air Optix Hydraglyde Astigmatismo -->
-<article class="product-card" data-marca="ALCON" data-precio="370">
-    <a href="detalle-airoptix-astig.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-image-container">
-            <span class="badge">NUEVO</span>
-            <img src="../../img/cont_astig_1.png" alt="Air Optix Hydraglyde Astigmatismo">
-            <button class="btn-quick-add">Recoge al día siguiente*</button>
-        </div>
-        <div class="product-info">
-            <p class="brand">ALCON</p>
-            <h3 class="product-name">Air Optix Hydraglyde Astigmatismo</h3>
-            <p class="price">S/370</p>
-        </div>
-    </a>
-</article>
+            <!-- Producto 1: Air Optix Hydraglyde Astigmatismo -->
+            <article class="product-card" data-marca="ALCON" data-precio="370">
+                <a href="detalle-airoptix-astig.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">NUEVO</span>
+                        <img src="../../img/cont_astig_1.png" alt="Air Optix Hydraglyde Astigmatismo">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">ALCON</p>
+                        <h3 class="product-name">Air Optix Hydraglyde Astigmatismo</h3>
+                        <p class="price">S/370</p>
+                    </div>
+                </a>
+            </article>
 
-<!-- Producto 2: Acuvue Oasys Astigmatismo -->
-<article class="product-card" data-marca="JOHNSON & JOHNSON" data-precio="370">
-    <a href="detalle-acuvue-oasys-astig.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-image-container">
-            <img src="../../img/cont_astig_2.png" alt="Acuvue Oasys Astigmatismo">
-            <button class="btn-quick-add">Recoge al día siguiente*</button>
-        </div>
-        <div class="product-info">
-            <p class="brand">JOHNSON&JOHNSON</p>
-            <h3 class="product-name">Acuvue Oasys Astigmatismo</h3>
-            <p class="price">S/370</p>
-        </div>
-    </a>
-</article>
+            <!-- Producto 2: Acuvue Oasys Astigmatismo -->
+            <article class="product-card" data-marca="JOHNSON & JOHNSON" data-precio="370">
+                <a href="detalle-acuvue-oasys-astig.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <img src="../../img/cont_astig_2.png" alt="Acuvue Oasys Astigmatismo">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">JOHNSON&JOHNSON</p>
+                        <h3 class="product-name">Acuvue Oasys Astigmatismo</h3>
+                        <p class="price">S/370</p>
+                    </div>
+                </a>
+            </article>
 
-<!-- Producto 3: Acuvue 1 Day Moist Astigmatismo -->
-<article class="product-card" data-marca="JOHNSON & JOHNSON" data-precio="330">
-    <a href="detalle-acuvue-moist-astig.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-image-container">
-            <span class="badge">NUEVO</span>
-            <img src="../../img/cont_astig_3.png" alt="Acuvue 1 Day Moist Astigmatismo">
-            <button class="btn-quick-add">Recoge al día siguiente*</button>
-        </div>
-        <div class="product-info">
-            <p class="brand">JOHNSON&JOHNSON</p>
-            <h3 class="product-name">Acuvue 1 Day Moist Astigmatismo</h3>
-            <p class="price">S/330</p>
-        </div>
-    </a>
-</article>
+            <!-- Producto 3: Acuvue 1 Day Moist Astigmatismo -->
+            <article class="product-card" data-marca="JOHNSON & JOHNSON" data-precio="330">
+                <a href="detalle-acuvue-moist-astig.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">NUEVO</span>
+                        <img src="../../img/cont_astig_3.png" alt="Acuvue 1 Day Moist Astigmatismo">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">JOHNSON&JOHNSON</p>
+                        <h3 class="product-name">Acuvue 1 Day Moist Astigmatismo</h3>
+                        <p class="price">S/330</p>
+                    </div>
+                </a>
+            </article>
 
             <!-- Producto 4 -->
             <article class="product-card" data-marca="iWear" data-precio="520">
