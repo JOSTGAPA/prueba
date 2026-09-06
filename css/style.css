@@ -602,6 +602,14 @@ body {
     font-size: 1.2rem;
     letter-spacing: 1px;
 }
+.agenda-info .imagen {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 15px auto 0;
+    float:none
+}
 
 .agenda-group {
     margin-bottom: 18px;
