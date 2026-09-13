@@ -1,19 +1,22 @@
+
+/* ========================================= */
 /* Reseteo básico para limpiar márgenes por defecto */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+/*===========================================*/
+/*estilos generales de la pagina*/
 body {
     color: #33455c;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    min-height: 100vh;    /* Asegura que el cuerpo ocupe al menos toda la altura de la ventana */
+    display: flex;       /*sirve para linear en fila */
+    flex-direction: column; /*se usa para que los elementos se alineen en columna */
     font-family: Arial, sans-serif;
 }
 
-.header {
+.cabezera {
     background-color: #293b53;
     padding: 20px 40px;
     display: flex;
@@ -21,18 +24,18 @@ body {
     align-items: center;
 }
 
-.logo-header {
+.logo-cabezera {
     width: 150px;
     height: auto;
     display: block;
 }
 
-.nav-bar {
+.nav-bar {         /* Contenedor del menú de navegación */
     display: flex;
     align-items: center;
 }
 
-.nav-menu {
+.nav-menu {     /* Lista de elementos del menú */
     display: flex;
     list-style: none;
     gap: 20px;
@@ -40,19 +43,19 @@ body {
     text-transform: uppercase;
 }
 
-.nav-menu > li {
+.nav-menu > li {   /* seleciona Cada elemento del menú <li>*/
     position: relative;
 }
 
-.nav-menu a {
+.nav-menu a {  /* Estilos para los enlaces del menú <a>*/
     text-decoration: none;
     color: white;
     font-size: 0.9rem;
     transition: color 0.3s ease;
 }
 
-.nav-menu a:hover {
-    color: #a8b8d0;
+.nav-menu a:hover { /* Efecto hover para los enlaces del menú al pasar el cursor */
+    color: #c96c14;
 }
 
 /* Menú Desplegable */
@@ -87,7 +90,8 @@ body {
 .dropdown-menu li a:hover {
     background-color: #293b53;
 }
-
+/*fin de estilos generales de la pagina*/
+/*
 /* Contenido Principal */
 .main-content {
     flex: 1;
