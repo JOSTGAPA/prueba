@@ -62,64 +62,71 @@ body {
     color: #c96c14;
 }
 
-/* Menú Desplegable */
+/*=================================================================
+ Menú Desplegable 
+ ==================================================================*/
+ /* Contenedor del submenú oculto en su estado inicial */
 .dropdown-menu {
     background-color: #33455c; 
     position: absolute;
     top: 100%;
     left: 0;
-    min-width: 180px;
-    border-radius: 8px;
+    min-width: 180px;/* Ancho mínimo para que el submenú no se vea demasiado estrecho */
+    border-radius: 8px; /* Bordes redondeados para un aspecto más moderno */
     padding: 10px 0;
     list-style: none;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    z-index: 100;
+    /* Configuración para animación de aparición (Fade + Slide) */
+    opacity: 0; /* Completamente transparente al inicio */
+    visibility: hidden; /* Oculta el submenú inicialmente */
+    transform: translateY(10px); /* Desplaza el submenú hacia abajo inicialmente */
+    transition: all 0.3s ease; /* Anima todos los cambios en 0.3 segundos */
+    z-index: 100; /* Asegura que el menú quede por encima de otros elementos */
 }
-
+/* Estado activo: Muestra el submenú cuando el cursor entra a .dropdown  despegable*/
 .dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    opacity: 1; /* Pasa a ser 100% visible */
+    visibility: visible; /* Habilita la interacción y clics */
+    transform: translateY(0); /* Regresa a su posición original creando el efecto de subida */
 }
-
+/* Enlaces individuales de cada opción */
 .dropdown-menu li a {
-    display: block;
-    padding: 10px 20px;
-    width: 100%;
+    display: block; /* Convierte el enlace en bloque para que toda la fila sea cliqueable */
+    padding: 10px 20px; /* Relleno interno para dar área de toque */
+    width: 100%; /* Ocupa todo el ancho del menú */
 }
-
+/* Cambio de color visual al pasar el cursor sobre un ítem */
 .dropdown-menu li a:hover {
-    background-color: #293b53;
+    background-color: #293b53; /* Azul más oscuro para resaltar la opción seleccionada */
 }
 
 
 /* ========================================= */
 /* 3. CONTENIDO PRINCIPAL Y HOME             */
 /* ========================================= */
+/* Contenedor central flexible */
 .main-content {
-    flex: 1;
+    flex: 1; /* Crece para empujar el footer al fondo en páginas con poco contenido */
     max-width: 1200px;
     margin: 0 auto;
     padding: 3rem 1.5rem;
     width: 100%;
 }
-
+/* Titulares dentro del contenido principal */
 .main-content h2, .main-content h3 {
     margin-bottom: 1rem;
     text-align: center;
 }
-
+/* Parrafos explicativos centrado */
 .main-content p {
     font-size: 1.1rem;
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 2rem auto;
-    line-height: 1.6;
+    margin: 0 auto 2rem auto; /* Centra el bloque de texto con margen inferior */
+    line-height: 1.6; /* Interlineado cómodo para la lectura */
 }
-
+/*==============================================
+ Banner Principal (Hero)
+ ===============================================*/
 /* Imágenes - Ajuste estético para equilibrar tamaños */
 .hero-container {
     text-align: center;
@@ -127,43 +134,43 @@ body {
 }
 
 .hero-img {
-    max-width: 100%;
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
     width: 700px; /* Tamaño máximo controlado para que no se vea gigante */
     height: auto;
     max-height: 420px; /* Limita la altura */
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra sutil para dar profundidad */
 }
 
 /* Cuadrícula de Categorías */
 .categorias-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* crea tres columnas iguales */
+    gap: 20px; /* Espacio entre las tarjetas */
     margin-top: 3rem;
 }
-
+/* Tarjeta individual de categoría */
 .card {
     text-decoration: none;
     color: inherit;
     background-color: #f4f4f4;
     border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+    overflow: hidden; /* Evita que el contenido sobresalga de los bordes redondeados */
+    transition: transform 0.3s ease; /* Animación suave para elevación */
 }
-
+/* Efecto de elevación de tarjeta al pasar el cursor */
 .card:hover {
-    transform: scale(1.03);
+    transform: scale(1.03); /* Agranda ligeramente la tarjeta un 3% */
 }
 
 .card img {
     width: 100%;
     height: 250px;
-    object-fit: cover;
+    object-fit: cover; /* Mantiene la proporción de la imagen y recorta si es necesario */
     display: block;
 }
-
+/* Pie de tarjeta con el nombre de la categoría */
 .card-footer {
     background-color: #334155; 
     padding: 15px;
@@ -174,13 +181,14 @@ body {
     color: white;
     margin: 0;
 }
+/* Iconos de Redes Sociales */
 .social-links {
     display: flex;
     gap: 12px;
     align-items: center;
     margin-top: 10px;
 }
-
+/* Botón circular individual para cada red social */
 .social-links a {
     display: inline-flex;
     align-items: center;
@@ -189,7 +197,7 @@ body {
     height: 36px;  /* Alto fijo exacto */
     min-width: 36px;
     min-height: 36px;
-    border-radius: 50%;
+    border-radius: 50%; /* Hace que el botón sea perfectamente circular */
     background-color: white;
     border: 1px solid #ddd;
     overflow: hidden; /* Esto corta cualquier excedente */
@@ -206,12 +214,13 @@ body {
 }
 
 .social-links a:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Agranda el botón un 10% al pasar el cursor */
 }
 
 /* ========================================= */
 /* 4. TIENDA, CATÁLOGO Y FILTROS             */
 /* ========================================= */
+/* Barra promocional superior del catálogo */
 .promo-bar {
     background-color: #33455c;
     color: white;
@@ -227,7 +236,7 @@ body {
     padding: 2rem 1.5rem;
     width: 100%;
 }
-
+/* Migas de pan (Navegación jerárquica) */
 .breadcrumbs {
     font-size: 0.85rem;
     color: #666;
@@ -238,7 +247,7 @@ body {
     color: #666;
     text-decoration: none;
 }
-
+/* Título de la categoría actual */
 .category-title {
     font-size: 2.5rem;
     font-weight: 300;
@@ -246,7 +255,7 @@ body {
     margin-bottom: 2rem;
     text-transform: uppercase;
 }
-
+/* Barra de herramientas (Contador de productos y ordenamiento) */
 .store-toolbar {
     display: flex;
     justify-content: space-between;
@@ -269,13 +278,14 @@ body {
     color: #333;
     cursor: pointer;
 }
-
+/* Rejilla de productos responsive (Auto-fill) */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Añade columnas automáticamente según espacio */
+    gap: 30px;
     gap: 30px;
 }
-
+/* Tarjeta individual de producto */
 .product-card {
     background: white;
     transition: box-shadow 0.3s ease;
@@ -285,11 +295,11 @@ body {
 }
 
 .product-card:hover {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra sutil al pasar el cursor */
 }
-
+/* Marco contenedor de la imagen del producto */
 .product-image-container {
-    position: relative;
+    position: relative; /* Permite ubicar la etiqueta badge y botón dentro */
     background-color: #fcfcfc;
     padding: 40px 20px;
     text-align: center;
@@ -304,19 +314,19 @@ body {
     max-width: 100%;
     height: auto;
 }
-
+/* Etiqueta de promoción o estado (ej. NUEVO, 15% DCTO) */
 .badge {
     position: absolute;
     top: 15px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Centra horizontalmente la etiqueta */
     background-color: #f4f4f4;
     padding: 4px 12px;
     font-size: 0.7rem;
     letter-spacing: 1px;
     color: #333;
 }
-
+/* Botón flotante para agregar rápido */
 .btn-quick-add {
     width: 100%;
     background-color: #33455c;
@@ -326,18 +336,18 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    opacity: 0;
+    opacity: 0; /*oculto por defecto */
     transition: opacity 0.3s ease;
     cursor: pointer;
 }
-
+/* Muestra el botón de rápida adición al pasar el cursor sobre la tarjeta */
 .product-card:hover .btn-quick-add {
     opacity: 1;
 }
-
+/* Información de texto del producto */
 .product-info {
     padding: 15px 0;
-    margin-top: auto;
+    margin-top: auto; /* Empuja la información al final para igualar alturas */
 }
 
 .brand {
@@ -358,7 +368,9 @@ body {
     font-weight: bold;
     color: #000;
 }
-
+/* --------------------------------------------------------------------------
+   Panel de Filtros Interactivos
+   -------------------------------------------------------------------------- */
 /* Filtros de Productos */
 .btn-filter {
     padding: 8px 20px;
@@ -373,15 +385,15 @@ body {
 .btn-filter:hover {
     background-color: #293b53;
 }
-
+/* Panel desplegable de filtros oculto */
 .filter-panel {
-    display: none;
+    display: none; /* Oculto por defecto */
     background-color: #f7f6f2;
     border: 1px solid #ddd;
     padding: 25px;
     margin-bottom: 30px;
 }
-
+/* Estado activo del panel de filtros */
 .filter-panel.active {
     display: block;
 }
@@ -409,7 +421,7 @@ body {
     border: 1px solid #ccc;
     background-color: white;
 }
-
+/* Inputs de rango de precio en dos columnas */
 .price-inputs {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -443,14 +455,16 @@ body {
 }
 
 
-/* ========================================= */
-/* 5. PÁGINAS ESPECÍFICAS                    */
-/* ========================================= */
+/* ==========================================================================
+   5. PÁGINAS ESPECÍFICAS
+   ========================================================================== */
 
-/* Sección Sedes */
+/* --------------------------------------------------------------------------
+   Sección: Sedes
+   -------------------------------------------------------------------------- */
 .sedes-centrado {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Matriz de 2x2 para las sedes */
     grid-template-rows: repeat(2, auto);
     gap: 30px;
     max-width: 900px;
@@ -472,7 +486,9 @@ body {
     text-align: center;
 }
 
-/* Página Agenda tu Examen Visual */
+/* --------------------------------------------------------------------------
+   Sección: Agenda tu Examen Visual
+   -------------------------------------------------------------------------- */
 .agenda-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -496,7 +512,7 @@ body {
     color: #666;
     margin-bottom: 2rem;
 }
-
+/* Estructura dividida: Información a la izquierda, Formulario a la derecha */
 .agenda-container {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -582,9 +598,9 @@ body {
 .btn-agenda-form:hover {
     background-color: #293b53;
 }
-
+/* Mensaje de confirmación tras enviar el formulario */
 .mensaje-exito, .success-message {
-    display: none;
+    display: none; /* Oculto hasta ser activado con JavaScript */
     margin-top: 15px;
     padding: 15px;
     background-color: #e6f4ea;
@@ -597,8 +613,9 @@ body {
 .mensaje-exito.activo {
     display: block;
 }
-
-/* Vista de Detalle de Producto */
+/* --------------------------------------------------------------------------
+   Sección: Vista de Detalle de Producto
+   -------------------------------------------------------------------------- */
 .product-detail-page {
     max-width: 1300px;
     margin: 0 auto;
@@ -606,7 +623,7 @@ body {
     font-family: Arial, sans-serif;
     color: #333;
 }
-
+/* Cuadrícula superior: Galería de Fotos (Izq) + Zona de Compra (Der) */
 .product-top-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -643,7 +660,7 @@ body {
     font-size: 0.8rem;
     cursor: pointer;
 }
-
+/* Imagen principal con miniaturas de navegación */
 .gallery-main {
     display: flex;
     align-items: center;
@@ -794,7 +811,7 @@ body {
     cursor: pointer;
     border-radius: 4px;
 }
-
+/* Sección inferior de especificaciones del producto */
 .product-bottom-grid {
     display: grid;
     grid-template-columns: 1fr 2.5fr;
@@ -851,7 +868,7 @@ body {
     text-align: justify;
 }
 
-/* Botón de retroceso */
+/* Botón estilo píldora para regresar al catálogo */
 .back-link-container {
     margin-bottom: 2rem;
 }
@@ -870,7 +887,7 @@ body {
     letter-spacing: 1px;
     border-radius: 30px;
     border: 1px solid #e2e8f0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transición suave para todos los cambios de estilo */
     box-shadow: 0 2px 5px rgba(0,0,0,0.03);
 }
 
@@ -878,23 +895,25 @@ body {
     font-size: 1.2rem;
     transition: transform 0.3s ease;
 }
-
+/* Animación del botón volver al pasar el cursor */
 .btn-back-cool:hover {
     background-color: #1a2b4c;
     color: #ffffff;
     border-color: #1a2b4c;
     box-shadow: 0 6px 15px rgba(26, 43, 76, 0.2);
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Efecto de elevación de 2px al pasar el cursor */
 }
 
 .btn-back-cool:hover .icon-arrow {
-    transform: translateX(-4px);
+    transform: translateX(-4px);/* Desplaza la flecha 4px hacia la izquierda al pasar el cursor */
 }
 
-/* Tablas de especificaciones */
-.specs-table {
+/* --------------------------------------------------------------------------
+   Tablas de Especificaciones Técnicas
+   -------------------------------------------------------------------------- */
+   .specs-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: collapse; /* Elimina los espacios entre celdas */
     margin-top: 10px;
     font-size: 0.9rem;
     text-align: left;
@@ -906,14 +925,14 @@ body {
     padding: 10px 12px;
     border-bottom: 1px solid #e0e0e0;
 }
-
+/* Encabezado de la tabla de especificaciones */
 .specs-table thead th {
     background-color: #33455c;
     color: white;
     font-weight: bold;
     letter-spacing: 0.5px;
 }
-
+/* Listrado de filas intercaladas (Efecto Zebra) */
 .specs-table tbody tr:nth-child(even) {
     background-color: #f2f2f2;
 }
@@ -925,7 +944,7 @@ body {
 .specs-table tbody tr:hover {
     background-color: #e9ecef;
 }
-
+/* Pie de la tabla */
 .specs-table tfoot td {
     background-color: #f7f6f2;
     font-style: italic;
@@ -938,17 +957,18 @@ body {
 /* ========================================= */
 /* 6. PIES DE PÁGINA (FOOTERS)               */
 /* ========================================= */
+/* Footer simple por defecto */
 .footer {
     background-color: #f4f4f4;
     text-align: center;
     padding: 20px;
-    margin-top: auto;
+    margin-top: auto; /* Lo mantiene abajo mediante flexbox */
 }
 
 .footer strong {
     color: #293b53;
 }
-
+/* Footer completo multicolumna (Mega Footer) */
 .mega-footer {
     background-color: #f7f6f2; 
     color: #333;
@@ -960,7 +980,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas iguales para el footer */
     gap: 40px;
     padding: 0 1.5rem 3rem 1.5rem;
 }
@@ -1029,7 +1049,7 @@ body {
     color: #333;
     text-decoration: none;
 }
-
+/* Franja final de derechos reservados */
 .footer-bottom {
     background-color: #f0efe9;
     text-align: center;
@@ -1049,16 +1069,17 @@ body {
 /* 7. RESPONSIVE - CELULARES                 */
 /* ========================================= */
 @media (max-width: 768px) {
+    /* La cabecera se apila en vertical */
     .header {
         flex-direction: column;
         gap: 20px;
     }
-
+/* Opciones del menú envolventes centrado */
     .nav-menu {
         flex-wrap: wrap;
         justify-content: center;
     }
-
+/* El contenedor de agenda pasa a 1 sola columna */
     .agenda-container {
         grid-template-columns: 1fr;
     }
@@ -1066,11 +1087,11 @@ body {
     .agenda-title {
         font-size: 2rem;
     }
-
+/* Las tarjetas de productos se apilan a 1 por fila */
     .products-grid {
         grid-template-columns: 1fr;
     }
-
+/* Las columnas del footer pasan a 1 sola fila */
     .footer-container {
         grid-template-columns: 1fr;
     }
