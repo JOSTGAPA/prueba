@@ -3,40 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lentes de sol para Hombre - Óptica G&A</title>
-    <!-- Ruta al CSS global -->
+    <title>Lentes para Mujer - Óptica G&A</title>
+    <!-- Los ../../ hacen que retroceda dos carpetas para encontrar el CSS -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <!-- HEADER GLOBAL CON RUTAS CORREGIDAS -->
+    <!-- HEADER GLOBAL (Actualizado con rutas relativas) -->
     <header class="header">
-        <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A"> 
+        <a href="../inicio/index.html">
+        <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
+        </a>
         <nav class="nav-bar">
             <ul class="nav-menu">
+                <!-- La ruta corregida para volver al inicio -->
                 <li><a href="../inicio/index.html">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
                 <li class="dropdown">
                     <a href="#" class="active">Lentes Oftálmicos ▾</a>
                     <ul class="dropdown-menu">
-                        <li><a href="../oftalmicos mujer/of-mujer.html">Mujer</a></li>
-                        <li><a href="../oftalmicos hombre/of-hombre.html">Hombre</a></li>
-                        <li><a href="../oftalmicos nino/of-niño.html">Niños</a></li>
+                        <!-- Como ya estás en esta carpeta, el enlace es directo -->
+                        <li><a href="../mujer/index.html">Mujer</a></li>
+                        <li><a href="../hombre/index.html">Hombre</a></li>
+                        <li><a href="../nino/index.html">Niños</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#">Lentes de Sol ▾</a>
                     <ul class="dropdown-menu">
-                        <li><a href="../sol mujer/sol-mujer.html">Mujer</a></li>
-                        <li><a href="../sol hombre/sol-hombre.html">Hombre</a></li>
-                        <li><a href="../sol nino/sol-niño.html">Niños</a></li>
+                        <li><a href="../mujer/sol.html">Mujer</a></li>
+                        <li><a href="../hombre/sol.html">Hombre</a></li>
+                        <li><a href="../niño/sol.html">Niños</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                 <a href="#">Lentes de Contacto ▾</a>
                 <ul class="dropdown-menu">
-                        <li><a href="../contacto Miopía e Hipermetropía/cont-miopia.html">Miopía e Hipermetropía</a></li>
-                        <li><a href="../contacto Astigmatismo/cont-astigmatismo.html">Astigmatismo</a></li>
-                        <li><a href="../contacto Presbicia/cont-presbicia.html">Presbicia</a></li>
+                        <li><a href="../lentes de contacto/cont-miopia.html">Miopía e Hipermetropía</a></li>
+                        <li><a href="../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
+                        <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
                     </ul>
                 </li>
                 <li><a href="../reservas/examen-visual.html" class="btn-agenda">Agenda tu Examen Visual</a></li>
@@ -51,16 +55,16 @@
     <!-- CONTENIDO DE PRODUCTOS -->
     <main class="store-content">
         <div class="breadcrumbs">
-            <a href="../inicio/index.html">Inicio</a> / <span>Lentes de sol para hombre</span>
+            <a href="../inicio/index.html">Inicio</a> / <span>Lentes para mujer</span>
         </div>
         
-        <h2 class="category-title">LENTES DE SOL PARA HOMBRE</h2>
+        <h2 class="category-title">LENTES PARA MUJER</h2>
         
         <div class="store-toolbar">
             <span class="product-count">9 productos</span>
             <div class="store-filters">
                 <select class="sort-select" id="ordenarProductos" onchange="ordenarProductos()">
-                   <option value="mas-vendidos">Ordenar por: Mas vendidos</option>
+                    <option value="mas-vendidos">Ordenar por: Mas vendidos</option>
                     <option value="mayor">precio: Mayor a Menor</option>
                     <option value="menor">precio: Menor a Mayor</option>
                 </select>
@@ -74,167 +78,162 @@
                 <label for="marca">Marca</label>
                 <select id="marca">
                     <option value="todas">Todas las marcas</option>
-                    <option value="OAKLEY">OAKLEY</option>
-                    <option value="BURBERRY">BURBERRY</option>
-                    <option value="PRADA">PRADA</option>
-                    <option value="VOGUE EYEWEAR">VOGUE EYEWEAR</option>
-                    <option value="GUCCI">GUCCI</option>
-                    <option value="DOLCE & GABBANA">DOLCE & GABBANA</option>
+                    <option value="SEEN">SEEN</option>
+                    <option value="RALPH">RALPH</option>
+                    <option value="MICHAEL KORS">MICHAEL KORS</option>
+                    <option value="VOGUE">VOGUE</option>
                     <option value="RAY-BAN">RAY-BAN</option>
+                    <option value="GUCCI">GUCCI</option>
                     <option value="ARMANI EXCHANGE">ARMANI EXCHANGE</option>
-                    <option value="VERSACE">VERSACE</option>
+                    <option value="PRADA">PRADA</option>
                 </select>
             </div>
             <div class="filter-group">
                 <label>Rango de precio</label>
                 <div class="price-inputs">
                     <input type="number" id="precioMin" placeholder="Precio mínimo">
-                    <input  type="number" id="precioMax" placeholder="Precio máximo">
+                    <input type="number" id="precioMax" placeholder="Precio máximo">
                 </div>
             </div>
             <div class="filter-buttons">
-                <button class="btn-apply-filter"
-                onclick="aplicarFiltros()">
-                Aplicar filtros
+                <button class="btn-apply-filter" onclick="aplicarFiltros()">
+                    Aplicar filtros
                 </button>
-
-                <button class="btn-clear-filter"
-                onclick="limpiarFiltros()">
-                Limpiar filtros
+                <button class="btn-clear-filter" onclick="limpiarFiltros()">
+                    Limpiar filtros
                 </button>
             </div>
         </div>
-        <section class="products-grid">
 
-            <!-- Producto 1: Oakley -->
+        <section class="products-grid">
+            <!-- Producto 1 -->
 <article class="product-card">
-    <a href="detalles/detalle-oakley-urban.html" style="text-decoration: none; color: inherit; display: block;">
+    <!-- El enlace que conecta a tu nueva página -->
+    <a href="detalles/detalle-seen.html" style="text-decoration: none; color: inherit; display: block;">
         <div class="product-image-container">
-            <span class="badge">OBTÉN 50% 2DO PAR</span>
-            <img src="../../img/sol_hombre_1.png" alt="Oakley Urban Black">
+            <img src="../../img/image_1.png" alt="Lente Mujer 1">
             <button class="btn-quick-add">Recoge al día siguiente*</button>
         </div>
         <div class="product-info">
-            <p class="brand">OAKLEY</p>
-            <h3 class="product-name">Urban Black</h3>
-            <p class="price">S/180</p>
+            <p class="brand">SEEN</p>
+            <h3 class="product-name">Havana Brown Havana</h3>
+            <p class="price">S/129</p>
         </div>
     </a>
 </article>
-
-<!-- Producto 2: Burberry -->
+        
+            <!-- Producto 2 -->
 <article class="product-card">
-    <a href="detalles/detalle-burberry.html" style="text-decoration: none; color: inherit; display: block;">
+    <a href="detalles/detalle-ralph.html" style="text-decoration: none; color: inherit; display: block;">
         <div class="product-image-container">
             <span class="badge">15% DCTO</span>
-            <img src="../../img/sol_hombre_2.png" alt="Burberry Desert Brown">
+            <!-- Asegúrate de que el nombre del archivo coincida con el que tienes en tu carpeta img -->
+            <img src="../../img/image_2.png" alt="Ralph Havana Clásico">
             <button class="btn-quick-add">Recoge al día siguiente*</button>
         </div>
         <div class="product-info">
-            <p class="brand">BURBERRY</p>
-            <h3 class="product-name">Desert Brown</h3>
-            <p class="price">S/910</p>
+            <p class="brand">RALPH</p>
+            <h3 class="product-name">Havana Clásico</h3>
+            <p class="price">S/410</p>
         </div>
     </a>
 </article>
-
-<!-- Producto 3: Prada -->
+        
+            <!-- Producto 3 -->
 <article class="product-card">
-    <a href="detalles/detalle-prada.html" style="text-decoration: none; color: inherit; display: block;">
+    <a href="detalles/detalle-michael.html" style="text-decoration: none; color: inherit; display: block;">
         <div class="product-image-container">
-            <span class="badge">10% DCTO</span>
-            <img src="../../img/sol_hombre_3.png" alt="Prada Shadow Black">
+            <span class="badge">20% DCTO</span>
+            <img src="../../img/image_3.png" alt="Michael Kors Santa Clara Negro">
             <button class="btn-quick-add">Recoge al día siguiente*</button>
         </div>
         <div class="product-info">
-            <p class="brand">PRADA</p>
-            <h3 class="product-name">Shadow Black</h3>
-            <p class="price">S/318</p>
+            <p class="brand">MICHAEL KORS</p>
+            <h3 class="product-name">Santa Clara Negro</h3>
+            <p class="price">S/605</p>
         </div>
     </a>
 </article>
-
+        
             <!-- Producto 4 -->
-            <article class="product-card" data-marca="VOGUE EYEWEAR" data-precio="275">
+            <article class="product-card" data-marca="VOGUE" data-precio="320">
                 <div class="product-image-container">
                     <span class="badge">NUEVO</span>
-                    <img src="../../img/sol_hombre_4.png" alt="Lente Hombre 4">
+                    <img src="../../img/image_4.png" alt="Lente Mujer 4">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
-                    <p class="brand">VOGUE EYEWEAR</p>
-                    <h3 class="product-name">Royal Aviator</h3>
-                    <p class="price">S/275</p>
+                    <p class="brand">VOGUE</p>
+                    <h3 class="product-name">Cat Eye Elegance</h3>
+                    <p class="price">S/320</p>
                 </div>
             </article>
-
+        
             <!-- Producto 5 -->
-            <article class="product-card" data-marca="GUCCI" data-precio="225">
+            <article class="product-card" data-marca="RAY-BAN" data-precio="550">
                 <div class="product-image-container">
-                    <span class="badge">10% DCTO</span>
-                    <img src="../../img/sol_hombre_5.png" alt="Lente Hombre 5">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">GUCCI</p>
-                    <h3 class="product-name">Matte Titanium</h3>
-                    <p class="price">S/225</p>
-                </div>
-            </article>
-
-            <!-- Producto 6 -->
-            <article class="product-card" data-marca="DOLCE & GABBANA" data-precio="915">
-                <div class="product-image-container">
-                    <span class="badge">20% DCTO</span>
-                    <img src="../../img/sol_hombre_6.png" alt="Lente Hombre 6">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">DOLCE & GABBANA</p>
-                    <h3 class="product-name">Carbon Dark</h3>
-                    <p class="price">S/915</p>
-                </div>
-            </article>
-
-            <!-- Producto 7 -->
-            <article class="product-card" data-marca="RAY-BAN" data-precio="575">
-                <div class="product-image-container">
-                    <span class="badge">OBTÉN 50% 2DO PAR</span>
-                    <img src="../../img/sol_hombre_7.png" alt="Lente Hombre 7">
+                    <span class="badge">15% DCTO</span>
+                    <img src="../../img/image_5.png" alt="Lente Mujer 5">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
                     <p class="brand">RAY-BAN</p>
-                    <h3 class="product-name">Sunset Brown</h3>
-                    <p class="price">S/575</p>
+                    <h3 class="product-name">Wayfarer Light</h3>
+                    <p class="price">S/550</p>
                 </div>
             </article>
-
-            <!-- Producto 8 -->
-            <article class="product-card" data-marca="ARMANI EXCHANGE" data-precio="479">
+        
+            <!-- Producto 6 -->
+            <article class="product-card" data-marca="GUCCI" data-precio="890">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/sol_hombre_8.png" alt="Lente Hombre 8">
+                    <span class="badge">20% DCTO</span>
+                    <img src="../../img/image_6.png" alt="Lente Mujer 6">
+                    <button class="btn-quick-add">Recoge al día siguiente*</button>
+                </div>
+                <div class="product-info">
+                    <p class="brand">GUCCI</p>
+                    <h3 class="product-name">Gold Metal Frame</h3>
+                    <p class="price">S/890</p>
+                </div>
+            </article>
+        
+            <!-- Producto 7 -->
+            <article class="product-card" data-marca="ARMANI EXCHANGE" data-precio="380">
+                <div class="product-image-container">
+                    <img src="../../img/image_7.png" alt="Lente Mujer 7">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
                     <p class="brand">ARMANI EXCHANGE</p>
-                    <h3 class="product-name">Midnight Black</h3>
-                    <p class="price">S/479</p>
+                    <h3 class="product-name">Matte Black</h3>
+                    <p class="price">S/380</p>
                 </div>
             </article>
-
-            <!-- Producto 9 -->
-            <article class="product-card" data-marca="VERSACE" data-precio="445">
+        
+            <!-- Producto 8 -->
+            <article class="product-card" data-marca="PRADA" data-precio="950">
                 <div class="product-image-container">
                     <span class="badge">15% DCTO</span>
-                    <img src="../../img/sol_hombre_9.png" alt="Lente Hombre 9">
+                    <img src="../../img/image_8.png" alt="Lente Mujer 8">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
-                    <p class="brand">VERSACE</p>
-                    <h3 class="product-name">Steel Frame</h3>
-                    <p class="price">S/445</p>
+                    <p class="brand">PRADA</p>
+                    <h3 class="product-name">Tortoise Shell</h3>
+                    <p class="price">S/950</p>
+                </div>
+            </article>
+        
+            <!-- Producto 9 -->
+            <article class="product-card" data-marca="SEEN" data-precio="149">
+                <div class="product-image-container">
+                    <img src="../../img/image_9.png" alt="Lente Mujer 9">
+                    <button class="btn-quick-add">Recoge al día siguiente*</button>
+                </div>
+                <div class="product-info">
+                    <p class="brand">SEEN</p>
+                    <h3 class="product-name">Minimalist Clear</h3>
+                    <p class="price">S/149</p>
                 </div>
             </article>
         </section>
@@ -275,7 +274,15 @@
                 <p><strong>Consultas:</strong> 0800-14600</p>
                 <p>Calle Amador Merino Reyna 223, San Isidro, Lima</p>
                 <div class="social-links">
-                    <a href="#">F</a> <a href="#">I</a> <a href="#">T</a>
+                     <a href="https://www.facebook.com/">
+                        <img src="../../img/facebook.png" alt="facebook">
+                    </a>
+                    <a href="https://www.instagram.com/">
+                        <img src="../../img/instagram.png" alt="instagram">
+                    </a> 
+                    <a href="https://www.tiktok.com/">
+                        <img src="../../img/tiktok.png" alt="tiktok">
+                    </a>
                 </div>
             </div>
         </div>
@@ -284,4 +291,4 @@
         </div>
     </footer>
 </body>
-</html>>
+</html>

@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lentes de Contacto Astigmatismo - Óptica G&A</title>
+    <title>Lentes de Contacto Miopía e Hipermetropía - Óptica G&A</title>
     <!-- Ruta al CSS global -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
     <!-- HEADER GLOBAL CON RUTAS CORREGIDAS -->
     <header class="header">
-       <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
+        <a href="../inicio/index.html">
+        <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
+        </a>
         <nav class="nav-bar">
             <ul class="nav-menu">
                 <li><a href="../inicio/index.html">Inicio</a></li>
@@ -18,25 +20,25 @@
                 <li class="dropdown">
                     <a href="#" class="active">Lentes Oftálmicos ▾</a>
                     <ul class="dropdown-menu">
-                        <li><a href="../oftalmicos mujer/of-mujer.html">Mujer</a></li>
-                        <li><a href="../oftalmicos hombre/of-hombre.html">Hombre</a></li>
-                        <li><a href="../oftalmicos nino/of-niño.html">Niños</a></li>
+                        <li><a href="../mujer/index.html">Mujer</a></li>
+                        <li><a href="../hombre/index.html">Hombre</a></li>
+                        <li><a href="../nino/index.html">Niños</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#">Lentes de Sol ▾</a>
                     <ul class="dropdown-menu">
-                        <li><a href="../sol mujer/sol-mujer.html">Mujer</a></li>
-                        <li><a href="../sol hombre/sol-hombre.html">Hombre</a></li>
-                        <li><a href="../sol nino/sol-niño.html">Niños</a></li>
+                        <li><a href="../mujer/sol.html">Mujer</a></li>
+                        <li><a href="../hombre/sol.html">Hombre</a></li>
+                        <li><a href="../niño/sol.html">Niños</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                 <a href="#">Lentes de Contacto ▾</a>
                 <ul class="dropdown-menu">
-                        <li><a href="../contacto Miopía e Hipermetropía/cont-miopia.html">Miopía e Hipermetropía</a></li>
-                        <li><a href="../contacto Astigmatismo/cont-astigmatismo.html">Astigmatismo</a></li>
-                        <li><a href="../contacto Presbicia/cont-presbicia.html">Presbicia</a></li>
+                        <li><a href="../lentes de contacto/cont-miopia.html">Miopía e Hipermetropía</a></li>
+                        <li><a href="../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
+                        <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
                     </ul>
                 </li>
                 <li><a href="../reservas/examen-visual.html" class="btn-agenda">Agenda tu Examen Visual</a></li>
@@ -51,10 +53,10 @@
     <!-- CONTENIDO DE PRODUCTOS -->
     <main class="store-content">
         <div class="breadcrumbs">
-            <a href="../inicio/index.html">Inicio</a> / <span>Lentes de Contacto Astigmatismo</span>
+            <a href="../inicio/index.html">Inicio</a> / <span>Lentes de Contacto Miopía e Hipermetropía</span>
         </div>
         
-        <h2 class="category-title">Lentes de Contacto Astigmatismo</h2>
+        <h2 class="category-title">Lentes de Contacto Miopía e Hipermetropía</h2>
         
         <div class="store-toolbar">
             <span class="product-count">6 productos</span>
@@ -68,15 +70,14 @@
             </div>
         </div>
 
-        <!-- Panel de Filtros único y limpio -->
-        <div class="filter-panel" id="filterPanel">
+         <div class="filter-panel" id="filterPanel">
             <h3>FILTRAR PRODUCTOS</h3>
             <div class="filter-group">
                 <label for="marca">Marca</label>
                 <select id="marca">
                     <option value="todas">Todas las marcas</option>
-                    <option value="Alcon">Alcon</option>
                     <option value="Johnson&Johnson">Johnson&Johnson</option>
+                    <option value="Alcon">Alcon</option>
                     <option value="iWear">iWear</option>
                 </select>
             </div>
@@ -98,90 +99,89 @@
         </div>
 
         <section class="products-grid">
-            <!-- Producto 1: Air Optix Hydraglyde Astigmatismo -->
-            <article class="product-card" data-marca="ALCON" data-precio="370">
-                <a href="detalles/detalle-airoptix-astig.html" style="text-decoration: none; color: inherit; display: block;">
-                    <div class="product-image-container">
-                        <span class="badge">NUEVO</span>
-                        <img src="../../img/cont_astig_1.png" alt="Air Optix Hydraglyde Astigmatismo">
-                        <button class="btn-quick-add">Recoge al día siguiente*</button>
-                    </div>
-                    <div class="product-info">
-                        <p class="brand">ALCON</p>
-                        <h3 class="product-name">Air Optix Hydraglyde Astigmatismo</h3>
-                        <p class="price">S/370</p>
-                    </div>
-                </a>
-            </article>
+            <!-- Producto 1: Acuvue Oasys -->
+<article class="product-card" data-marca="JOHNSON & JOHNSON" data-precio="230">
+    <a href="detalles/detalle-acuvue-oasys.html" style="text-decoration: none; color: inherit; display: block;">
+        <div class="product-image-container">
+            <span class="badge">NUEVO</span>
+            <img src="../../img/cont_mio_1.png" alt="Acuvue Oasys">
+            <button class="btn-quick-add">Recoge al día siguiente*</button>
+        </div>
+        <div class="product-info">
+            <p class="brand">JOHNSON&JOHNSON</p>
+            <h3 class="product-name">Acuvue Oasys</h3>
+            <p class="price">S/230</p>
+        </div>
+    </a>
+</article>
 
-            <!-- Producto 2: Acuvue Oasys Astigmatismo -->
-            <article class="product-card" data-marca="JOHNSON & JOHNSON" data-precio="370">
-                <a href="detalles/detalle-acuvue-oasys-astig.html" style="text-decoration: none; color: inherit; display: block;">
-                    <div class="product-image-container">
-                        <img src="../../img/cont_astig_2.png" alt="Acuvue Oasys Astigmatismo">
-                        <button class="btn-quick-add">Recoge al día siguiente*</button>
-                    </div>
-                    <div class="product-info">
-                        <p class="brand">JOHNSON&JOHNSON</p>
-                        <h3 class="product-name">Acuvue Oasys Astigmatismo</h3>
-                        <p class="price">S/370</p>
-                    </div>
-                </a>
-            </article>
+<!-- Producto 2: Air Optix Hydraglyde -->
+<article class="product-card" data-marca="ALCON" data-precio="260">
+    <a href="detalles/detalle-airoptix.html" style="text-decoration: none; color: inherit; display: block;">
+        <div class="product-image-container">
+            <img src="../../img/cont_mio_2.png" alt="Air Optix Hydraglyde">
+            <button class="btn-quick-add">Recoge al día siguiente*</button>
+        </div>
+        <div class="product-info">
+            <p class="brand">ALCON</p>
+            <h3 class="product-name">Air Optix Hydraglyde</h3>
+            <p class="price">S/260</p>
+        </div>
+    </a>
+</article>
 
-            <!-- Producto 3: Acuvue 1 Day Moist Astigmatismo -->
-            <article class="product-card" data-marca="JOHNSON & JOHNSON" data-precio="330">
-                <a href="detalles/detalle-acuvue-moist-astig.html" style="text-decoration: none; color: inherit; display: block;">
-                    <div class="product-image-container">
-                        <span class="badge">NUEVO</span>
-                        <img src="../../img/cont_astig_3.png" alt="Acuvue 1 Day Moist Astigmatismo">
-                        <button class="btn-quick-add">Recoge al día siguiente*</button>
-                    </div>
-                    <div class="product-info">
-                        <p class="brand">JOHNSON&JOHNSON</p>
-                        <h3 class="product-name">Acuvue 1 Day Moist Astigmatismo</h3>
-                        <p class="price">S/330</p>
-                    </div>
-                </a>
-            </article>
-
+<!-- Producto 3: iWear Balance Plus -->
+<article class="product-card" data-marca="IWEAR" data-precio="199">
+    <a href="detalles/detalle-iwear.html" style="text-decoration: none; color: inherit; display: block;">
+        <div class="product-image-container">
+            <span class="badge">NUEVO</span>
+            <img src="../../img/cont_mio_3.png" alt="iWear Balance Plus">
+            <button class="btn-quick-add">Recoge al día siguiente*</button>
+        </div>
+        <div class="product-info">
+            <p class="brand">IWEAR</p>
+            <h3 class="product-name">iWear Balance Plus</h3>
+            <p class="price">S/199</p>
+        </div>
+    </a>
+</article>
             <!-- Producto 4 -->
-            <article class="product-card" data-marca="iWear" data-precio="520">
+            <article class="product-card" data-marca="Johnson&Johnson" data-precio="210">
                 <div class="product-image-container">
-                    <img src="../../img/cont_astig_4.png" alt="cont astig 4">
+                    <img src="../../img/cont_mio_4.png" alt="Lente contacto 4">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
-                    <p class="brand">iWear</p>
-                    <h3 class="product-name">IWEAR OXYGEN XR Astigmatismo</h3>
-                    <p class="price">S/520</p>
+                    <p class="brand">Johnson&Johnson</p>
+                    <h3 class="product-name">Acuvue 1 Day Mois</h3>
+                    <p class="price">S/210</p>
                 </div>
             </article>
 
             <!-- Producto 5 -->
-            <article class="product-card" data-marca="iWear" data-precio="330">
+            <article class="product-card" data-marca="iWear" data-precio="230">
                 <div class="product-image-container">
                     <span class="badge">NUEVO</span>
-                    <img src="../../img/cont_astig_5.png" alt="cont astig 5">
+                    <img src="../../img/cont_mio_5.png" alt="Lente contacto 5">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
                     <p class="brand">iWear</p>
-                    <h3 class="product-name">iWear Oxygen Astigmatismo</h3>
-                    <p class="price">S/330</p>
+                    <h3 class="product-name">iWear Oxygen</h3>
+                    <p class="price">S/230</p>
                 </div>
             </article>
 
             <!-- Producto 6 -->
-            <article class="product-card" data-marca="iWear" data-precio="280">
+            <article class="product-card" data-marca="Alcon" data-precio="165">
                 <div class="product-image-container">
-                    <img src="../../img/cont_astig_6.png" alt="cont astig 6">
+                    <img src="../../img/cont_mio_6.png" alt="Lente contacto 6">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
-                    <p class="brand">iWear</p>
-                    <h3 class="product-name">iWear Balance Plus Astigmatismo</h3>
-                    <p class="price">S/280</p>
+                    <p class="brand">Alcon</p>
+                    <h3 class="product-name">Dailies AquaComfort Plus</h3>
+                    <p class="price">S/165</p>
                 </div>
             </article>
         </section>
@@ -222,7 +222,15 @@
                 <p><strong>Consultas:</strong> 0800-14600</p>
                 <p>Calle Amador Merino Reyna 223, San Isidro, Lima</p>
                 <div class="social-links">
-                    <a href="#">F</a> <a href="#">I</a> <a href="#">T</a>
+                     <a href="https://www.facebook.com/">
+                        <img src="../../img/facebook.png" alt="facebook">
+                    </a>
+                    <a href="https://www.instagram.com/">
+                        <img src="../../img/instagram.png" alt="instagram">
+                    </a> 
+                    <a href="https://www.tiktok.com/">
+                        <img src="../../img/tiktok.png" alt="tiktok">
+                    </a>
                 </div>
             </div>
         </div>
@@ -231,4 +239,4 @@
         </div>
     </footer>
 </body>
-</html>
+</html>>

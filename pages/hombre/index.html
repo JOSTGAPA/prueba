@@ -3,42 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lentes para Niños - Óptica G&A</title>
-    <!-- Los ../../ hacen que retroceda dos carpetas para encontrar el CSS -->
+    <title>Lentes para Hombre - Óptica G&A</title>
+    <!-- Ruta al CSS global -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <!-- HEADER GLOBAL (Actualizado con rutas relativas) -->
+    <!-- HEADER GLOBAL CON RUTAS CORREGIDAS -->
     <header class="header">
-        <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A"> 
+       <a href="../inicio/index.html">
+        <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
+        </a>
         <nav class="nav-bar">
             <ul class="nav-menu">
-                <!-- La ruta corregida para volver al inicio -->
                 <li><a href="../inicio/index.html">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
                 <li class="dropdown">
                     <a href="#" class="active">Lentes Oftálmicos ▾</a>
                     <ul class="dropdown-menu">
-                        <!-- Como ya estás en esta carpeta, el enlace es directo -->
-                        <li><a href="../oftalmicos mujer/of-mujer.html">Mujer</a></li>
-                        <li><a href="../oftalmicos hombre/of-hombre.html">Hombre</a></li>
-                        <li><a href="../oftalmicos nino/of-niño.html">Niños</a></li>
+                        <li><a href="../mujer/index.html">Mujer</a></li>
+                        <li><a href="../hombre/index.html">Hombre</a></li>
+                        <li><a href="../nino/index.html">Niños</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#">Lentes de Sol ▾</a>
                     <ul class="dropdown-menu">
-                        <li><a href="../sol mujer/sol-mujer.html">Mujer</a></li>
-                        <li><a href="../sol hombre/sol-hombre.html">Hombre</a></li>
-                        <li><a href="../sol nino/sol-niño.html">Niños</a></li>
+                        <li><a href="../mujer/sol.html">Mujer</a></li>
+                        <li><a href="../hombre/sol.html">Hombre</a></li>
+                        <li><a href="../niño/sol.html">Niños</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                 <a href="#">Lentes de Contacto ▾</a>
                 <ul class="dropdown-menu">
-                        <li><a href="../contacto Miopía e Hipermetropía/cont-miopia.html">Miopía e Hipermetropía</a></li>
-                        <li><a href="../contacto Astigmatismo/cont-astigmatismo.html">Astigmatismo</a></li>
-                        <li><a href="../contacto Presbicia/cont-presbicia.html">Presbicia</a></li>
+                        <li><a href="../lentes de contacto/cont-miopia.html">Miopía e Hipermetropía</a></li>
+                        <li><a href="../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
+                        <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
                     </ul>
                 </li>
                 <li><a href="../reservas/examen-visual.html" class="btn-agenda">Agenda tu Examen Visual</a></li>
@@ -53,10 +53,10 @@
     <!-- CONTENIDO DE PRODUCTOS -->
     <main class="store-content">
         <div class="breadcrumbs">
-            <a href="../inicio/index.html">Inicio</a> / <span>Lentes para niños</span>
+            <a href="../inicio/index.html">Inicio</a> / <span>Lentes para hombre</span>
         </div>
         
-        <h2 class="category-title">LENTES PARA NIÑOS</h2>
+        <h2 class="category-title">LENTES PARA HOMBRE</h2>
         
         <div class="store-toolbar">
             <span class="product-count">9 productos</span>
@@ -76,18 +76,18 @@
                 <label for="marca">Marca</label>
                 <select id="marca">
                     <option value="todas">Todas las marcas</option>
-                    <option value="GUCCI">GUCCI</option>
-                    <option value="PRADA">PRADA</option>
                     <option value="RAY-BAN">RAY-BAN</option>
                     <option value="OAKLEY">OAKLEY</option>
-                    <option value="VERSACE">VERSACE</option>
-                    <option value="ARMANI EXCHANGE">ARMANI EXCHANGE</option>
-                    <option value="DOLCE & GABBANA">DOLCE & GABBANA</option>
-                    <option value="BURBERRY">BURBERRY</option>
-                    <option value="VOGUE EYEWEAR">VOGUE EYEWEAR</option>
+                    <option value="EMPORIO ARMANI">EMPORIO ARMANI</option>
+                    <option value="LACOSTE">LACOSTE</option>
+                    <option value="TOMMY HILFIGER">TOMMY HILFIGER</option>
+                    <option value="HUGO BOSS">HUGO BOSS</option>
+                    <option value="CARRERA">CARRERA</option>
+                    <option value="PRADA LINEA ROSSA">PRADA LINEA ROSSA</option>
+                    <option value="POLAROID">POLAROID</option>
                 </select>
             </div>
-            <div class="filter-group" >
+            <div class="filter-group">
                 <label>Rango de precio</label>
                 <div class="price-inputs">
                     <input type="number" id="precioMin" placeholder="Precio mínimo">
@@ -107,133 +107,131 @@
         <section class="products-grid">
             <!-- Producto 1 -->
 <article class="product-card">
-    <a href="detalles/detalle-gucci.html" style="text-decoration: none; color: inherit; display: block;">
+    <a href="detalles/detalle-rayban.html" style="text-decoration: none; color: inherit; display: block;">
         <div class="product-image-container">
-            <span class="badge">10% DCTO</span>
-            <img src="../../img/oftalmicos_ninos_1.png" alt="Gucci Little Star">
+            <span class="badge">NUEVO</span>
+            <!-- Recuerda cambiar el nombre de la imagen al que tengas en tu carpeta img -->
+            <img src="../../img/image_11.webp" alt="Ray-Ban Aviator Optics Classic">
             <button class="btn-quick-add">Recoge al día siguiente*</button>
         </div>
         <div class="product-info">
-            <p class="brand">GUCCI</p>
-            <h3 class="product-name">Little Star</h3>
-            <p class="price">S/90</p>
+            <p class="brand">RAY-BAN</p>
+            <h3 class="product-name">Aviator Optics Classic</h3>
+            <p class="price">S/450</p>
         </div>
     </a>
 </article>
 
 <!-- Producto 2 -->
 <article class="product-card">
-    <a href="detalles/detalle-prada.html" style="text-decoration: none; color: inherit; display: block;">
+    <a href="detalles/detalle-oakley.html" style="text-decoration: none; color: inherit; display: block;">
         <div class="product-image-container">
             <span class="badge">15% DCTO</span>
-            <img src="../../img/oftalmicos_ninos_2.png" alt="Prada Mini Explorer">
+            <img src="../../img/image_22.webp" alt="Oakley Crosslink Zero Negro">
             <button class="btn-quick-add">Recoge al día siguiente*</button>
         </div>
         <div class="product-info">
-            <p class="brand">PRADA</p>
-            <h3 class="product-name">Mini Explorer</h3>
-            <p class="price">S/200</p>
+            <p class="brand">OAKLEY</p>
+            <h3 class="product-name">Crosslink Zero Negro</h3>
+            <p class="price">S/520</p>
         </div>
     </a>
 </article>
 
 <!-- Producto 3 -->
 <article class="product-card">
-    <a href="detalles/detalle-rayban.html" style="text-decoration: none; color: inherit; display: block;">
+    <a href="detalles/detalle-armani.html" style="text-decoration: none; color: inherit; display: block;">
         <div class="product-image-container">
-            <span class="badge" style="background-color: #f4f4f4; color: #333;">OBTÉN 50% 2DO PAR</span>
-            <img src="../../img/oftalmicos_ninos_3.png" alt="Ray-Ban Happy Frame">
+            <span class="badge">20% DCTO</span>
+            <img src="../../img/image_33.webp" alt="Emporio Armani Matte Blue Rectangular">
             <button class="btn-quick-add">Recoge al día siguiente*</button>
         </div>
         <div class="product-info">
-            <p class="brand">RAY-BAN</p>
-            <h3 class="product-name">Happy Frame</h3>
-            <p class="price">S/185</p>
+            <p class="brand">EMPORIO ARMANI</p>
+            <h3 class="product-name">Matte Blue Rectangular</h3>
+            <p class="price">S/610</p>
         </div>
     </a>
 </article>
-        
+
             <!-- Producto 4 -->
-            <article class="product-card" data-marca="OAKLEY" data-precio="425">
+            <article class="product-card" data-marca="LACOSTE" data-precio="390">
                 <div class="product-image-container">
-                    <span class="badge">10% DCTO</span>
-                    <img src="../../img/oftalmicos_ninos_4.png" alt="Lente Mujer 4">
+                    <img src="../../img/image_44.webp" alt="Lente Hombre 4">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
-                    <p class="brand">OAKLEY</p>
-                    <h3 class="product-name">Cool Junior</h3>
-                    <p class="price">S/425</p>
+                    <p class="brand">LACOSTE</p>
+                    <h3 class="product-name">L2767 Green Detail</h3>
+                    <p class="price">S/390</p>
                 </div>
             </article>
-        
+
             <!-- Producto 5 -->
-            <article class="product-card" data-marca="VERSACE" data-precio="690">
+            <article class="product-card" data-marca="TOMMY HILFIGER" data-precio="420">
                 <div class="product-image-container">
                     <span class="badge">15% DCTO</span>
-                    <img src="../../img/oftalmicos_ninos_5.png" alt="Lente Mujer 5">
+                    <img src="../../img/image_55.webp" alt="Lente Hombre 5">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
-                    <p class="brand">VERSACE</p>
-                    <h3 class="product-name">Tiny Wayfarer</h3>
-                    <p class="price">S/690</p>
+                    <p class="brand">TOMMY HILFIGER</p>
+                    <h3 class="product-name">TH 1528 Classic</h3>
+                    <p class="price">S/420</p>
                 </div>
             </article>
-        
+
             <!-- Producto 6 -->
-            <article class="product-card" data-marca="ARMANI EXCHANGE" data-precio="740">
+            <article class="product-card" data-marca="HUGO BOSS" data-precio="890">
                 <div class="product-image-container">
                     <span class="badge">20% DCTO</span>
-                    <img src="../../img/oftalmicos_ninos_6.png" alt="Lente Mujer 6">
+                    <img src="../../img/image_66.webp" alt="Lente Hombre 6">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
-                    <p class="brand">ARMANI EXCHANGE</p>
-                    <h3 class="product-name">Smart Kids</h3>
-                    <p class="price">S/740</p>
+                    <p class="brand">HUGO BOSS</p>
+                    <h3 class="product-name">Titanium Frame</h3>
+                    <p class="price">S/890</p>
                 </div>
             </article>
-        
+
             <!-- Producto 7 -->
-            <article class="product-card" data-marca="DOLCE & GABBANA" data-precio="210">
+            <article class="product-card" data-marca="CARRERA" data-precio="350">
                 <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/oftalmicos_ninos_7.png" alt="Lente Mujer 7">
+                    <img src="../../img/image_77.webp" alt="Lente Hombre 7">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
-                    <p class="brand">DOLCE & GABBANA</p>
-                    <h3 class="product-name">Mini Classic</h3>
-                    <p class="price">S/210</p>
-                </div>
-            </article>
-        
-            <!-- Producto 8 -->
-            <article class="product-card" data-marca="BURBERRY" data-precio="370">
-                <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/oftalmicos_ninos_8.png" alt="Lente Mujer 8">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">BURBERRY</p>
-                    <h3 class="product-name">Little Dreaml</h3>
-                    <p class="price">S/370</p>
-                </div>
-            </article>
-        
-            <!-- Producto 9 -->
-            <article class="product-card" data-marca="VOGUE EYEWEAR" data-precio="350">
-                <div class="product-image-container">
-                    <span class="badge">OBTÉN 50% 2DO PAR</span>
-                    <img src="../../img/oftalmicos_ninos_9.png" alt="Lente Mujer 9">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">VOGUE EYEWEAR</p>
-                    <h3 class="product-name">Playful Frame</h3>
+                    <p class="brand">CARRERA</p>
+                    <h3 class="product-name">Carrera 8824 Negro</h3>
                     <p class="price">S/350</p>
+                </div>
+            </article>
+
+            <!-- Producto 8 -->
+            <article class="product-card" data-marca="PRADA LINEA ROSSA" data-precio="950">
+                <div class="product-image-container">
+                    <span class="badge">15% DCTO</span>
+                    <img src="../../img/image_88.webp" alt="Lente Hombre 8">
+                    <button class="btn-quick-add">Recoge al día siguiente*</button>
+                </div>
+                <div class="product-info">
+                    <p class="brand">PRADA LINEA ROSSA</p>
+                    <h3 class="product-name">Sport Active Frame</h3>
+                    <p class="price">S/950</p>
+                </div>
+            </article>
+
+            <!-- Producto 9 -->
+            <article class="product-card" data-marca="POLAROID" data-precio="180">
+                <div class="product-image-container">
+                    <img src="../../img/image_99.webp" alt="Lente Hombre 9">
+                    <button class="btn-quick-add">Recoge al día siguiente*</button>
+                </div>
+                <div class="product-info">
+                    <p class="brand">POLAROID</p>
+                    <h3 class="product-name">Essential Basic</h3>
+                    <p class="price">S/180</p>
                 </div>
             </article>
         </section>
@@ -274,7 +272,15 @@
                 <p><strong>Consultas:</strong> 0800-14600</p>
                 <p>Calle Amador Merino Reyna 223, San Isidro, Lima</p>
                 <div class="social-links">
-                    <a href="#">F</a> <a href="#">I</a> <a href="#">T</a>
+                     <a href="https://www.facebook.com/">
+                        <img src="../../img/facebook.png" alt="facebook">
+                    </a>
+                    <a href="https://www.instagram.com/">
+                        <img src="../../img/instagram.png" alt="instagram">
+                    </a> 
+                    <a href="https://www.tiktok.com/">
+                        <img src="../../img/tiktok.png" alt="tiktok">
+                    </a>
                 </div>
             </div>
         </div>
