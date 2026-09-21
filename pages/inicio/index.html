@@ -8,14 +8,19 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+    <!-- ==========================================
+         ENCABEZADO (HEADER) Y NAVEGACIÓN
+         ========================================== -->
     <header class="header">
         <a href="../inicio/index.html">
-        <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
+            <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
         </a>
+        
         <nav class="nav-bar">
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
+                
                 <li class="dropdown">
                     <a href="#">Lentes Oftálmicos ▾</a>
                     <ul class="dropdown-menu">
@@ -24,6 +29,7 @@
                         <li><a href="../nino/index.html">Niños</a></li>
                     </ul>
                 </li>
+                
                 <li class="dropdown">
                     <a href="#">Lentes de Sol ▾</a>
                     <ul class="dropdown-menu">
@@ -32,24 +38,31 @@
                         <li><a href="../niño/sol.html">Niños</a></li>
                     </ul>
                 </li>
+                
                 <li class="dropdown">
-                <a href="#">Lentes de Contacto ▾</a>
-                <ul class="dropdown-menu">
+                    <a href="#">Lentes de Contacto ▾</a>
+                    <ul class="dropdown-menu">
                         <li><a href="../lentes de contacto/cont-miopia.html">Miopía e Hipermetropía</a></li>
                         <li><a href="../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
                         <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
                     </ul>
                 </li>
+                
                 <li><a href="../reservas/examen-visual.html" class="btn-agenda">Agenda tu Examen Visual</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- ==========================================
+         HERO SECTION (BANNER PRINCIPAL)
+         ========================================== -->
     <div class="hero-container">
-        
         <img class="hero-img" src="../../img/optica.jpg" alt="Imagen principal de la Óptica">
     </div>
 
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL: CATEGORÍAS
+         ========================================== -->
     <main class="main-content">
         <h2>Bienvenidos a nuestra Óptica</h2>
         <p>Cuida tu salud visual con nuestros productos de alta calidad.</p>
@@ -81,9 +94,14 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <p><strong>Derechos Reservados 2026 &copy; Óptica G&A</strong></p>
-    </footer>
+    <!-- ==========================================
+         PIE DE PÁGINA (FOOTER)
+         ========================================== -->
+    <!-- 
+        Nota de mantenimiento: Se ha eliminado el footer redundante (<footer class="footer">) 
+        que estaba justo antes de este 'mega-footer', consolidando los derechos reservados 
+        en la sección '.footer-bottom' para evitar contenido duplicado en la interfaz. 
+    -->
     <footer class="mega-footer">
         <div class="footer-container">
             <div class="footer-col brand-col">
@@ -131,7 +149,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
+            <p><strong>Derechos Reservados 2026 &copy; Óptica G&A - Expertos en salud visual y Lentes en Perú.</strong></p>
         </div>
     </footer>
 </body>

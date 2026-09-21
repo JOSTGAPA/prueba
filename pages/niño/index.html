@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <!-- HEADER GLOBAL (Actualizado con rutas relativas) -->
+    <!-- ==========================================
+         ENCABEZADO (HEADER) Y NAVEGACIÓN
+         ========================================== -->
     <header class="header">
         <a href="../inicio/index.html">
-        <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
+            <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
         </a> 
         <nav class="nav-bar">
             <ul class="nav-menu">
@@ -36,8 +38,8 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                <a href="#">Lentes de Contacto ▾</a>
-                <ul class="dropdown-menu">
+                    <a href="#">Lentes de Contacto ▾</a>
+                    <ul class="dropdown-menu">
                         <li><a href="../lentes de contacto/cont-miopia.html">Miopía e Hipermetropía</a></li>
                         <li><a href="../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
                         <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
@@ -52,7 +54,9 @@
         <p>Suscríbete y obtén 15% DCTO en tu primera compra. Aplican T&C</p>
     </div>
 
-    <!-- CONTENIDO DE PRODUCTOS -->
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL: CATÁLOGO DE PRODUCTOS
+         ========================================== -->
     <main class="store-content">
         <div class="breadcrumbs">
             <a href="../inicio/index.html">Inicio</a> / <span>Lentes para niños</span>
@@ -89,7 +93,7 @@
                     <option value="VOGUE EYEWEAR">VOGUE EYEWEAR</option>
                 </select>
             </div>
-            <div class="filter-group" >
+            <div class="filter-group">
                 <label>Rango de precio</label>
                 <div class="price-inputs">
                     <input type="number" id="precioMin" placeholder="Precio mínimo">
@@ -107,59 +111,59 @@
         </div>
 
         <section class="products-grid">
-            <!-- Producto 1 -->
-<article class="product-card">
-    <a href="detalles/detalle-gucci.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-image-container">
-            <span class="badge">10% DCTO</span>
-            <img src="../../img/oftalmicos_ninos_1.png" alt="Gucci Little Star">
-            <button class="btn-quick-add">Recoge al día siguiente*</button>
-        </div>
-        <div class="product-info">
-            <p class="brand">GUCCI</p>
-            <h3 class="product-name">Little Star</h3>
-            <p class="price">S/90</p>
-        </div>
-    </a>
-</article>
+            <!-- Producto 1: Gucci Little Star -->
+            <article class="product-card" data-marca="GUCCI" data-precio="90">
+                <a href="detalles/detalle-gucci.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                    <div class="product-image-container">
+                        <span class="badge">10% DCTO</span>
+                        <img src="../../img/oftalmicos_ninos_1.png" alt="Gucci Little Star">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">GUCCI</p>
+                        <h3 class="product-name">Little Star</h3>
+                        <p class="price">S/90</p>
+                    </div>
+                </a>
+            </article>
 
-<!-- Producto 2 -->
-<article class="product-card">
-    <a href="detalles/detalle-prada.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-image-container">
-            <span class="badge">15% DCTO</span>
-            <img src="../../img/oftalmicos_ninos_2.png" alt="Prada Mini Explorer">
-            <button class="btn-quick-add">Recoge al día siguiente*</button>
-        </div>
-        <div class="product-info">
-            <p class="brand">PRADA</p>
-            <h3 class="product-name">Mini Explorer</h3>
-            <p class="price">S/200</p>
-        </div>
-    </a>
-</article>
+            <!-- Producto 2: Prada Mini Explorer -->
+            <article class="product-card" data-marca="PRADA" data-precio="200">
+                <a href="detalles/detalle-prada.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                    <div class="product-image-container">
+                        <span class="badge">15% DCTO</span>
+                        <img src="../../img/oftalmicos_ninos_2.png" alt="Prada Mini Explorer">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">PRADA</p>
+                        <h3 class="product-name">Mini Explorer</h3>
+                        <p class="price">S/200</p>
+                    </div>
+                </a>
+            </article>
 
-<!-- Producto 3 -->
-<article class="product-card">
-    <a href="detalles/detalle-rayban.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-image-container">
-            <span class="badge" style="background-color: #f4f4f4; color: #333;">OBTÉN 50% 2DO PAR</span>
-            <img src="../../img/oftalmicos_ninos_3.png" alt="Ray-Ban Happy Frame">
-            <button class="btn-quick-add">Recoge al día siguiente*</button>
-        </div>
-        <div class="product-info">
-            <p class="brand">RAY-BAN</p>
-            <h3 class="product-name">Happy Frame</h3>
-            <p class="price">S/185</p>
-        </div>
-    </a>
-</article>
+            <!-- Producto 3: Ray-Ban Happy Frame -->
+            <article class="product-card" data-marca="RAY-BAN" data-precio="185">
+                <a href="detalles/detalle-rayban.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                    <div class="product-image-container">
+                        <span class="badge" style="background-color: #f4f4f4; color: #333;">OBTÉN 50% 2DO PAR</span>
+                        <img src="../../img/oftalmicos_ninos_3.png" alt="Ray-Ban Happy Frame">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">RAY-BAN</p>
+                        <h3 class="product-name">Happy Frame</h3>
+                        <p class="price">S/185</p>
+                    </div>
+                </a>
+            </article>
         
-            <!-- Producto 4 -->
+            <!-- Producto 4: Oakley Cool Junior -->
             <article class="product-card" data-marca="OAKLEY" data-precio="425">
                 <div class="product-image-container">
                     <span class="badge">10% DCTO</span>
-                    <img src="../../img/oftalmicos_ninos_4.png" alt="Lente Mujer 4">
+                    <img src="../../img/oftalmicos_ninos_4.png" alt="Lente Niños Oakley Cool Junior">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
@@ -169,11 +173,11 @@
                 </div>
             </article>
         
-            <!-- Producto 5 -->
+            <!-- Producto 5: Versace Tiny Wayfarer -->
             <article class="product-card" data-marca="VERSACE" data-precio="690">
                 <div class="product-image-container">
                     <span class="badge">15% DCTO</span>
-                    <img src="../../img/oftalmicos_ninos_5.png" alt="Lente Mujer 5">
+                    <img src="../../img/oftalmicos_ninos_5.png" alt="Lente Niños Versace Tiny Wayfarer">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
@@ -183,11 +187,11 @@
                 </div>
             </article>
         
-            <!-- Producto 6 -->
+            <!-- Producto 6: Armani Exchange Smart Kids -->
             <article class="product-card" data-marca="ARMANI EXCHANGE" data-precio="740">
                 <div class="product-image-container">
                     <span class="badge">20% DCTO</span>
-                    <img src="../../img/oftalmicos_ninos_6.png" alt="Lente Mujer 6">
+                    <img src="../../img/oftalmicos_ninos_6.png" alt="Lente Niños Armani Exchange Smart Kids">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
@@ -197,11 +201,11 @@
                 </div>
             </article>
         
-            <!-- Producto 7 -->
+            <!-- Producto 7: Dolce & Gabbana Mini Classic -->
             <article class="product-card" data-marca="DOLCE & GABBANA" data-precio="210">
                 <div class="product-image-container">
                     <span class="badge">NUEVO</span>
-                    <img src="../../img/oftalmicos_ninos_7.png" alt="Lente Mujer 7">
+                    <img src="../../img/oftalmicos_ninos_7.png" alt="Lente Niños Dolce & Gabbana Mini Classic">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
@@ -211,11 +215,11 @@
                 </div>
             </article>
         
-            <!-- Producto 8 -->
+            <!-- Producto 8: Burberry Little Dreaml -->
             <article class="product-card" data-marca="BURBERRY" data-precio="370">
                 <div class="product-image-container">
                     <span class="badge">NUEVO</span>
-                    <img src="../../img/oftalmicos_ninos_8.png" alt="Lente Mujer 8">
+                    <img src="../../img/oftalmicos_ninos_8.png" alt="Lente Niños Burberry Little Dreaml">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
@@ -225,11 +229,11 @@
                 </div>
             </article>
         
-            <!-- Producto 9 -->
+            <!-- Producto 9: Vogue Eyewear Playful Frame -->
             <article class="product-card" data-marca="VOGUE EYEWEAR" data-precio="350">
                 <div class="product-image-container">
                     <span class="badge">OBTÉN 50% 2DO PAR</span>
-                    <img src="../../img/oftalmicos_ninos_9.png" alt="Lente Mujer 9">
+                    <img src="../../img/oftalmicos_ninos_9.png" alt="Lente Niños Vogue Eyewear Playful Frame">
                     <button class="btn-quick-add">Recoge al día siguiente*</button>
                 </div>
                 <div class="product-info">
@@ -241,7 +245,9 @@
         </section>
     </main>
 
-    <!-- FOOTER GRANDE Y ELEGANTE -->
+    <!-- ==========================================
+         PIE DE PÁGINA (FOOTER)
+         ========================================== -->
     <footer class="mega-footer">
         <div class="footer-container">
             <div class="footer-col brand-col">

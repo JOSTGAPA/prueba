@@ -4,19 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Kors Santa Clara - Óptica G&A</title>
+    <!-- Ruta al CSS global ajustada a la profundidad del archivo -->
     <link rel="stylesheet" href="../../../css/style.css">
 </head>
 <body>
-    <!-- HEADER GLOBAL (Pega aquí tu header habitual) -->
-    
+    <!-- ==========================================
+         ENCABEZADO (HEADER) Y NAVEGACIÓN
+         ========================================== -->
+    <header class="header">
+        <a href="../../inicio/index.html">
+            <img class="logo-header" src="../../../img/logo.png.jpeg" alt="Óptica G&A">
+        </a>
+        <nav class="nav-bar">
+            <ul class="nav-menu">
+                <li><a href="../../inicio/index.html">Inicio</a></li>
+                <li><a href="../../sedes/sedes.html">Sedes</a></li>
+                
+                <li class="dropdown">
+                    <a href="#" class="active">Lentes Oftálmicos ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../../mujer/index.html">Mujer</a></li>
+                        <li><a href="../../hombre/index.html">Hombre</a></li>
+                        <li><a href="../../nino/index.html">Niños</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#">Lentes de Sol ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../../mujer/sol.html">Mujer</a></li>
+                        <li><a href="../../hombre/sol.html">Hombre</a></li>
+                        <li><a href="../../niño/sol.html">Niños</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#">Lentes de Contacto ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../../lentes de contacto/cont-miopia.html">Miopía e Hipermetropía</a></li>
+                        <li><a href="../../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
+                        <li><a href="../../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="../../reservas/examen-visual.html" class="btn-agenda">Agenda tu Examen Visual</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ==========================================
+         CONTENEDOR PRINCIPAL DEL PRODUCTO
+         ========================================== -->
     <main class="product-detail-page">
+        
+        <!-- Navegación de retroceso -->
         <div class="back-link-container">
             <a href="../index.html" class="btn-back-cool">
                 <span class="icon-arrow">&larr;</span> Volver al catálogo
             </a>
         </div>
+        
+        <!-- ==========================================
+             SECCIÓN SUPERIOR: GALERÍA Y COMPRA
+             ========================================== -->
         <section class="product-top-grid">    
-            <!-- Columna Izquierda: Galería -->
+            
+            <!-- 1. Galería de Imágenes -->
             <div class="gallery-section">
                 <div class="gallery-header">
                     <h2 class="gallery-brand">MICHAEL KORS</h2>
@@ -24,11 +77,12 @@
                 </div>
                 
                 <div class="gallery-main">
+                    <!-- Controles de miniaturas -->
                     <div class="gallery-thumbnails">
                         <button class="thumb-nav">&and;</button>
                         <span class="dot"></span>
                         <span class="dot"></span>
-                        <span class="dot active"></span>
+                        <span class="dot active"></span> <!-- Clase 'active' marca la imagen actual -->
                         <span class="dot"></span>
                         <button class="thumb-nav">&or;</button>
                     </div>
@@ -37,17 +91,19 @@
                 </div>
             </div>
 
-            <!-- Columna Derecha: Información de Compra -->
+            <!-- 2. Información de Compra -->
             <div class="purchase-section">
                 <h1 class="product-brand">MICHAEL KORS</h1>
                 <p class="product-sku">Santa Clara Negro - MK4067</p>
                 
+                <!-- Etiquetas de promociones -->
                 <div class="promos-container">
                     <p>Promociones aplicadas:</p>
                     <span class="promo-tag">20% DCTO</span>
                     <span class="promo-tag">ENVÍO GRATIS</span>
                 </div>
 
+                <!-- Lista de beneficios (Garantías y cupones) -->
                 <ul class="benefits-list">
                     <li>
                         <a href="#">Suscríbete y descarga tu cupón 15% DCTO adicional aquí.</a>
@@ -72,6 +128,7 @@
                     </li>
                 </ul>
 
+                <!-- Precios y Métodos de pago -->
                 <div class="price-container">
                     <span class="price-label">PRECIO:</span>
                     <span class="price-value">S/605</span>
@@ -83,18 +140,22 @@
                     <span class="pay-icon">Yape/Plin</span>
                 </div>
 
+                <!-- CTA Principal -->
                 <button class="btn-select-lenses">SELECCIONAR LENTES</button>
             </div>
         </section>
 
-        <!-- SECCIÓN INFERIOR: Detalles Técnicos con Tablas -->
+        <!-- ==========================================
+             SECCIÓN INFERIOR: DETALLES TÉCNICOS
+             ========================================== -->
         <section class="product-bottom-grid">
             <div class="bottom-left">
                 <h2 class="section-title">Acerca de la montura</h2>
             </div>
             
             <div class="bottom-right">
-                <!-- Bloque 1: Detalles de la montura en Tabla -->
+                
+                <!-- Acordeón 1: Detalles de la montura -->
                 <div class="detail-accordion">
                     <div class="accordion-header">
                         <h3>Detalles de la montura</h3>
@@ -139,7 +200,7 @@
                     </div>
                 </div>
 
-                <!-- Bloque 2: Medidas de la montura en Tabla -->
+                <!-- Acordeón 2: Medidas de la montura -->
                 <div class="detail-accordion">
                     <div class="accordion-header">
                         <h3>Medidas de la montura</h3>
@@ -180,7 +241,7 @@
                     </div>
                 </div>
 
-                <!-- Bloque 3: Acerca de la marca -->
+                <!-- Acordeón 3: Acerca de la marca -->
                 <div class="detail-accordion border-none">
                     <div class="accordion-header">
                         <h3>Acerca de MICHAEL KORS</h3>
@@ -190,10 +251,14 @@
                         Michael Kors es una marca líder en moda de lujo accesible. La colección de lentes refleja el estilo de vida jet-set característico de la marca, ofreciendo monturas sofisticadas y de alta calidad. El modelo Santa Clara destaca por su perfil geométrico y elegante, ideal para aportar un toque de glamour a cualquier look diario.
                     </div>
                 </div>
+                
             </div>
         </section>
     </main>
 
+    <!-- ==========================================
+         PIE DE PÁGINA SIMPLE
+         ========================================== -->
     <footer class="footer-bottom">
         <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
     </footer>

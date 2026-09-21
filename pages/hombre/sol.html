@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lentes de sol para Hombre - Óptica G&A</title>
-    <!-- Ruta al CSS global -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <!-- HEADER GLOBAL CON RUTAS CORREGIDAS -->
+    <!-- ==========================================
+         ENCABEZADO (HEADER) Y NAVEGACIÓN
+         ========================================== -->
     <header class="header">
         <a href="../inicio/index.html">
-        <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
+            <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
         </a>
+        
         <nav class="nav-bar">
             <ul class="nav-menu">
                 <li><a href="../inicio/index.html">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
+                
+                <!-- Menú desplegable: Lentes Oftálmicos -->
                 <li class="dropdown">
                     <a href="#" class="active">Lentes Oftálmicos ▾</a>
                     <ul class="dropdown-menu">
@@ -25,6 +29,8 @@
                         <li><a href="../nino/index.html">Niños</a></li>
                     </ul>
                 </li>
+                
+                <!-- Menú desplegable: Lentes de Sol -->
                 <li class="dropdown">
                     <a href="#">Lentes de Sol ▾</a>
                     <ul class="dropdown-menu">
@@ -33,36 +39,45 @@
                         <li><a href="../niño/sol.html">Niños</a></li>
                     </ul>
                 </li>
+                
+                <!-- Menú desplegable: Lentes de Contacto -->
                 <li class="dropdown">
-                <a href="#">Lentes de Contacto ▾</a>
-                <ul class="dropdown-menu">
+                    <a href="#">Lentes de Contacto ▾</a>
+                    <ul class="dropdown-menu">
                         <li><a href="../lentes de contacto/cont-miopia.html">Miopía e Hipermetropía</a></li>
                         <li><a href="../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
                         <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
                     </ul>
                 </li>
+                
                 <li><a href="../reservas/examen-visual.html" class="btn-agenda">Agenda tu Examen Visual</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Barra de promociones superior -->
     <div class="promo-bar">
         <p>Suscríbete y obtén 15% DCTO en tu primera compra. Aplican T&C</p>
     </div>
 
-    <!-- CONTENIDO DE PRODUCTOS -->
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL: CATÁLOGO DE PRODUCTOS
+         ========================================== -->
     <main class="store-content">
+        
+        <!-- Navegación por migas de pan (Breadcrumbs) -->
         <div class="breadcrumbs">
             <a href="../inicio/index.html">Inicio</a> / <span>Lentes de sol para hombre</span>
         </div>
         
         <h2 class="category-title">LENTES DE SOL PARA HOMBRE</h2>
         
+        <!-- Barra de herramientas: Conteo y ordenamiento -->
         <div class="store-toolbar">
             <span class="product-count">9 productos</span>
             <div class="store-filters">
                 <select class="sort-select" id="ordenarProductos" onchange="ordenarProductos()">
-                   <option value="mas-vendidos">Ordenar por: Mas vendidos</option>
+                    <option value="mas-vendidos">Ordenar por: Mas vendidos</option>
                     <option value="mayor">precio: Mayor a Menor</option>
                     <option value="menor">precio: Menor a Mayor</option>
                 </select>
@@ -70,8 +85,10 @@
             </div>
         </div>
 
+        <!-- Panel de Filtros -->
         <div class="filter-panel" id="filterPanel">
             <h3>FILTRAR PRODUCTOS</h3>
+            
             <div class="filter-group">
                 <label for="marca">Marca</label>
                 <select id="marca">
@@ -87,76 +104,77 @@
                     <option value="VERSACE">VERSACE</option>
                 </select>
             </div>
+            
             <div class="filter-group">
                 <label>Rango de precio</label>
                 <div class="price-inputs">
                     <input type="number" id="precioMin" placeholder="Precio mínimo">
-                    <input  type="number" id="precioMax" placeholder="Precio máximo">
+                    <input type="number" id="precioMax" placeholder="Precio máximo">
                 </div>
             </div>
+            
             <div class="filter-buttons">
-                <button class="btn-apply-filter"
-                onclick="aplicarFiltros()">
-                Aplicar filtros
-                </button>
-
-                <button class="btn-clear-filter"
-                onclick="limpiarFiltros()">
-                Limpiar filtros
-                </button>
+                <button class="btn-apply-filter" onclick="aplicarFiltros()">Aplicar filtros</button>
+                <button class="btn-clear-filter" onclick="limpiarFiltros()">Limpiar filtros</button>
             </div>
         </div>
+
+        <!-- Grilla de Tarjetas de Producto -->
         <section class="products-grid">
+            <!-- 
+                Mantenimiento: Se han añadido los atributos 'data-marca' y 'data-precio' a los productos 1, 2 y 3 
+                para asegurar que el filtrado y ordenamiento con JavaScript funcione globalmente en todo el catálogo.
+            -->
 
-            <!-- Producto 1: Oakley -->
-<article class="product-card">
-    <a href="detalles/detalle-oakley-urban.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-image-container">
-            <span class="badge">OBTÉN 50% 2DO PAR</span>
-            <img src="../../img/sol_hombre_1.png" alt="Oakley Urban Black">
-            <button class="btn-quick-add">Recoge al día siguiente*</button>
-        </div>
-        <div class="product-info">
-            <p class="brand">OAKLEY</p>
-            <h3 class="product-name">Urban Black</h3>
-            <p class="price">S/180</p>
-        </div>
-    </a>
-</article>
+            <!-- Producto 1 -->
+            <article class="product-card" data-marca="OAKLEY" data-precio="180">
+                <a href="detalles/detalle-oakley-urban.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">OBTÉN 50% 2DO PAR</span>
+                        <img src="../../img/sol_hombre_1.png" alt="Oakley Urban Black">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">OAKLEY</p>
+                        <h3 class="product-name">Urban Black</h3>
+                        <p class="price">S/180</p>
+                    </div>
+                </a>
+            </article>
 
-<!-- Producto 2: Burberry -->
-<article class="product-card">
-    <a href="detalles/detalle-burberry.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-image-container">
-            <span class="badge">15% DCTO</span>
-            <img src="../../img/sol_hombre_2.png" alt="Burberry Desert Brown">
-            <button class="btn-quick-add">Recoge al día siguiente*</button>
-        </div>
-        <div class="product-info">
-            <p class="brand">BURBERRY</p>
-            <h3 class="product-name">Desert Brown</h3>
-            <p class="price">S/910</p>
-        </div>
-    </a>
-</article>
+            <!-- Producto 2 -->
+            <article class="product-card" data-marca="BURBERRY" data-precio="910">
+                <a href="detalles/detalle-burberry.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">15% DCTO</span>
+                        <img src="../../img/sol_hombre_2.png" alt="Burberry Desert Brown">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">BURBERRY</p>
+                        <h3 class="product-name">Desert Brown</h3>
+                        <p class="price">S/910</p>
+                    </div>
+                </a>
+            </article>
 
-<!-- Producto 3: Prada -->
-<article class="product-card">
-    <a href="detalles/detalle-prada.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-image-container">
-            <span class="badge">10% DCTO</span>
-            <img src="../../img/sol_hombre_3.png" alt="Prada Shadow Black">
-            <button class="btn-quick-add">Recoge al día siguiente*</button>
-        </div>
-        <div class="product-info">
-            <p class="brand">PRADA</p>
-            <h3 class="product-name">Shadow Black</h3>
-            <p class="price">S/318</p>
-        </div>
-    </a>
-</article>
+            <!-- Producto 3 -->
+            <article class="product-card" data-marca="PRADA" data-precio="318">
+                <a href="detalles/detalle-prada.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">10% DCTO</span>
+                        <img src="../../img/sol_hombre_3.png" alt="Prada Shadow Black">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">PRADA</p>
+                        <h3 class="product-name">Shadow Black</h3>
+                        <p class="price">S/318</p>
+                    </div>
+                </a>
+            </article>
 
-            <!-- Producto 4 -->
+            <!-- Producto 4 (Nota: Falta etiqueta <a> de enlace a detalles) -->
             <article class="product-card" data-marca="VOGUE EYEWEAR" data-precio="275">
                 <div class="product-image-container">
                     <span class="badge">NUEVO</span>
@@ -242,15 +260,19 @@
         </section>
     </main>
 
-    <!-- FOOTER GRANDE Y ELEGANTE -->
+    <!-- ==========================================
+         PIE DE PÁGINA (FOOTER)
+         ========================================== -->
     <footer class="mega-footer">
         <div class="footer-container">
+            <!-- Columna de Marca y Newsletter -->
             <div class="footer-col brand-col">
                 <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A"> 
                 <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
                 <button class="btn-subscribe">SUSCRIBIRSE</button>
             </div>
             
+            <!-- Columna de Servicios -->
             <div class="footer-col">
                 <h3>SERVICIOS</h3>
                 <ul>
@@ -261,6 +283,7 @@
                 </ul>
             </div>
 
+            <!-- Columna Institucional -->
             <div class="footer-col">
                 <h3>NOSOTROS</h3>
                 <ul>
@@ -271,6 +294,7 @@
                 </ul>
             </div>
 
+            <!-- Columna de Contacto y Redes -->
             <div class="footer-col contact-col">
                 <h3>CONTACTO</h3>
                 <p><strong>Horario atención:</strong> Lunes a Sábado 10:00 a 19:00</p>
@@ -294,4 +318,4 @@
         </div>
     </footer>
 </body>
-</html>>
+</html>

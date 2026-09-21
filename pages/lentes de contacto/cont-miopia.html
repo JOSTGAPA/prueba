@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <!-- HEADER GLOBAL CON RUTAS CORREGIDAS -->
+    <!-- ==========================================
+         ENCABEZADO (HEADER) Y NAVEGACIÓN
+         ========================================== -->
     <header class="header">
-        <a href="../inicio/index.html">
+       <a href="../inicio/index.html">
         <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
         </a>
         <nav class="nav-bar">
             <ul class="nav-menu">
                 <li><a href="../inicio/index.html">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
+                
                 <li class="dropdown">
                     <a href="#" class="active">Lentes Oftálmicos ▾</a>
                     <ul class="dropdown-menu">
@@ -25,6 +28,7 @@
                         <li><a href="../nino/index.html">Niños</a></li>
                     </ul>
                 </li>
+                
                 <li class="dropdown">
                     <a href="#">Lentes de Sol ▾</a>
                     <ul class="dropdown-menu">
@@ -33,24 +37,28 @@
                         <li><a href="../niño/sol.html">Niños</a></li>
                     </ul>
                 </li>
+                
                 <li class="dropdown">
                 <a href="#">Lentes de Contacto ▾</a>
                 <ul class="dropdown-menu">
                         <li><a href="../lentes de contacto/cont-miopia.html">Miopía e Hipermetropía</a></li>
                         <li><a href="../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
                         <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
-                    </ul>
+                    </ul> <!-- Cierre agregado aquí -->
                 </li>
                 <li><a href="../reservas/examen-visual.html" class="btn-agenda">Agenda tu Examen Visual</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Barra de promociones superior -->
     <div class="promo-bar">
         <p>Con la compra de 400 soles o mas te llevas un cupon de descuento de 20% en tu siguiente compra</p>
     </div>
 
-    <!-- CONTENIDO DE PRODUCTOS -->
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL: CATÁLOGO DE PRODUCTOS
+         ========================================== -->
     <main class="store-content">
         <div class="breadcrumbs">
             <a href="../inicio/index.html">Inicio</a> / <span>Lentes de Contacto Miopía e Hipermetropía</span>
@@ -70,6 +78,7 @@
             </div>
         </div>
 
+        <!-- Panel de Filtros -->
          <div class="filter-panel" id="filterPanel">
             <h3>FILTRAR PRODUCTOS</h3>
             <div class="filter-group">
@@ -99,52 +108,57 @@
         </div>
 
         <section class="products-grid">
+            
             <!-- Producto 1: Acuvue Oasys -->
-<article class="product-card" data-marca="JOHNSON & JOHNSON" data-precio="230">
-    <a href="detalles/detalle-acuvue-oasys.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-image-container">
-            <span class="badge">NUEVO</span>
-            <img src="../../img/cont_mio_1.png" alt="Acuvue Oasys">
-            <button class="btn-quick-add">Recoge al día siguiente*</button>
-        </div>
-        <div class="product-info">
-            <p class="brand">JOHNSON&JOHNSON</p>
-            <h3 class="product-name">Acuvue Oasys</h3>
-            <p class="price">S/230</p>
-        </div>
-    </a>
-</article>
+            <!-- Mantenimiento: data-marca unificado -->
+            <article class="product-card" data-marca="Johnson&Johnson" data-precio="230">
+                <a href="detalles/detalle-acuvue-oasys.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">NUEVO</span>
+                        <img src="../../img/cont_mio_1.png" alt="Acuvue Oasys">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">JOHNSON&JOHNSON</p>
+                        <h3 class="product-name">Acuvue Oasys</h3>
+                        <p class="price">S/230</p>
+                    </div>
+                </a>
+            </article>
 
-<!-- Producto 2: Air Optix Hydraglyde -->
-<article class="product-card" data-marca="ALCON" data-precio="260">
-    <a href="detalles/detalle-airoptix.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-image-container">
-            <img src="../../img/cont_mio_2.png" alt="Air Optix Hydraglyde">
-            <button class="btn-quick-add">Recoge al día siguiente*</button>
-        </div>
-        <div class="product-info">
-            <p class="brand">ALCON</p>
-            <h3 class="product-name">Air Optix Hydraglyde</h3>
-            <p class="price">S/260</p>
-        </div>
-    </a>
-</article>
+            <!-- Producto 2: Air Optix Hydraglyde -->
+            <!-- Mantenimiento: data-marca unificado -->
+            <article class="product-card" data-marca="Alcon" data-precio="260">
+                <a href="detalles/detalle-airoptix.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <img src="../../img/cont_mio_2.png" alt="Air Optix Hydraglyde">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">ALCON</p>
+                        <h3 class="product-name">Air Optix Hydraglyde</h3>
+                        <p class="price">S/260</p>
+                    </div>
+                </a>
+            </article>
 
-<!-- Producto 3: iWear Balance Plus -->
-<article class="product-card" data-marca="IWEAR" data-precio="199">
-    <a href="detalles/detalle-iwear.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-image-container">
-            <span class="badge">NUEVO</span>
-            <img src="../../img/cont_mio_3.png" alt="iWear Balance Plus">
-            <button class="btn-quick-add">Recoge al día siguiente*</button>
-        </div>
-        <div class="product-info">
-            <p class="brand">IWEAR</p>
-            <h3 class="product-name">iWear Balance Plus</h3>
-            <p class="price">S/199</p>
-        </div>
-    </a>
-</article>
+            <!-- Producto 3: iWear Balance Plus -->
+            <!-- Mantenimiento: data-marca unificado -->
+            <article class="product-card" data-marca="iWear" data-precio="199">
+                <a href="detalles/detalle-iwear.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">NUEVO</span>
+                        <img src="../../img/cont_mio_3.png" alt="iWear Balance Plus">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">IWEAR</p>
+                        <h3 class="product-name">iWear Balance Plus</h3>
+                        <p class="price">S/199</p>
+                    </div>
+                </a>
+            </article>
+
             <!-- Producto 4 -->
             <article class="product-card" data-marca="Johnson&Johnson" data-precio="210">
                 <div class="product-image-container">
@@ -153,7 +167,7 @@
                 </div>
                 <div class="product-info">
                     <p class="brand">Johnson&Johnson</p>
-                    <h3 class="product-name">Acuvue 1 Day Mois</h3>
+                    <h3 class="product-name">Acuvue 1 Day Moist</h3>
                     <p class="price">S/210</p>
                 </div>
             </article>
@@ -187,7 +201,9 @@
         </section>
     </main>
 
-    <!-- FOOTER GRANDE Y ELEGANTE -->
+    <!-- ==========================================
+         PIE DE PÁGINA (FOOTER)
+         ========================================== -->
     <footer class="mega-footer">
         <div class="footer-container">
             <div class="footer-col brand-col">
@@ -239,4 +255,4 @@
         </div>
     </footer>
 </body>
-</html>>
+</html>
