@@ -4,9 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEEN Havana - Óptica G&A</title>
+    <!-- Ruta al CSS global ajustada a la profundidad del archivo -->
     <link rel="stylesheet" href="../../../css/style.css">
 </head>
 <body>
+    <!-- ==========================================
+         ENCABEZADO (HEADER) Y NAVEGACIÓN
+         ========================================== -->
+    <header class="header">
+        <a href="../../inicio/index.html">
+            <img class="logo-header" src="../../../img/logo.png.jpeg" alt="Óptica G&A">
+        </a>
+        <nav class="nav-bar">
+            <ul class="nav-menu">
+                <li><a href="../../inicio/index.html">Inicio</a></li>
+                <li><a href="../../sedes/sedes.html">Sedes</a></li>
+                
+                <li class="dropdown">
+                    <a href="#" class="active">Lentes Oftálmicos ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../../mujer/index.html">Mujer</a></li>
+                        <li><a href="../../hombre/index.html">Hombre</a></li>
+                        <li><a href="../../nino/index.html">Niños</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#">Lentes de Sol ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../../mujer/sol.html">Mujer</a></li>
+                        <li><a href="../../hombre/sol.html">Hombre</a></li>
+                        <li><a href="../../niño/sol.html">Niños</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#">Lentes de Contacto ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../../lentes de contacto/cont-miopia.html">Miopía e Hipermetropía</a></li>
+                        <li><a href="../../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
+                        <li><a href="../../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="../../reservas/examen-visual.html" class="btn-agenda">Agenda tu Examen Visual</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ==========================================
+         CONTENEDOR PRINCIPAL DEL PRODUCTO
+         ========================================== -->
     <main class="product-detail-page">
         <div class="back-link-container">
             <a href="../of-mujer.html" class="btn-back-cool">
@@ -14,6 +62,9 @@
             </a>
         </div>
 
+        <!-- ==========================================
+             SECCIÓN SUPERIOR: GALERÍA Y COMPRA
+             ========================================== -->
         <section class="product-top-grid">
             <div class="gallery-section">
                 <div class="gallery-header">
@@ -85,7 +136,9 @@
             </div>
         </section>
 
-        <!-- SECCIÓN INFERIOR: Detalles Técnicos en Tablas -->
+        <!-- ==========================================
+             SECCIÓN INFERIOR: DETALLES TÉCNICOS
+             ========================================== -->
         <section class="product-bottom-grid">
             <div class="bottom-left">
                 <h2 class="section-title">Acerca de la montura</h2>
@@ -128,6 +181,11 @@
                                     <td>Mujer</td>
                                 </tr>
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2">Producto original con certificación de calidad G&A</td>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
@@ -141,13 +199,13 @@
                     <div class="accordion-content">
                         <table class="specs-table">
                             <colgroup>
-                                <col style="width: 35%;">
-                                <col style="width: 65%;">
+                                <col style="width: 50%;">
+                                <col style="width: 50%;">
                             </colgroup>
                             <thead>
                                 <tr>
-                                    <th>Dimensión</th>
                                     <th>Medida</th>
+                                    <th>Dimensión</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -164,6 +222,11 @@
                                     <td>140mm</td>
                                 </tr>
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2">Medidas expresadas en milímetros (mm)</td>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
@@ -182,7 +245,9 @@
         </section>
     </main>
 
-    <!-- FOOTER GLOBAL -->
+    <!-- ==========================================
+         PIE DE PÁGINA SIMPLE
+         ========================================== -->
     <footer class="footer-bottom">
         <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
     </footer>

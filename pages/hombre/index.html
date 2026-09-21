@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración básica y metaetiquetas de responsividad -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lentes para Hombre - Óptica G&A</title>
-    <!-- Ruta al CSS global -->
+    
+    <!-- Hoja de estilos global. 
+         La ruta '../../' asume que este archivo está en pages/hombre/ 
+         y retrocede dos niveles para llegar a css/style.css -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <!-- HEADER GLOBAL CON RUTAS CORREGIDAS -->
+    <!-- ==========================================
+         ENCABEZADO (HEADER) Y NAVEGACIÓN
+         ========================================== -->
     <header class="header">
-       <a href="../inicio/index.html">
-        <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
+        <!-- Logo con enlace a Inicio -->
+        <a href="../inicio/index.html">
+            <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
         </a>
+        
         <nav class="nav-bar">
             <ul class="nav-menu">
                 <li><a href="../inicio/index.html">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
+                
+                <!-- Menú desplegable: Lentes Oftálmicos -->
                 <li class="dropdown">
+                    <!-- Clase 'active' indica la sección actual -->
                     <a href="#" class="active">Lentes Oftálmicos ▾</a>
                     <ul class="dropdown-menu">
                         <li><a href="../mujer/index.html">Mujer</a></li>
@@ -25,6 +36,8 @@
                         <li><a href="../nino/index.html">Niños</a></li>
                     </ul>
                 </li>
+                
+                <!-- Menú desplegable: Lentes de Sol -->
                 <li class="dropdown">
                     <a href="#">Lentes de Sol ▾</a>
                     <ul class="dropdown-menu">
@@ -33,6 +46,8 @@
                         <li><a href="../niño/sol.html">Niños</a></li>
                     </ul>
                 </li>
+                
+                <!-- Menú desplegable: Lentes de Contacto -->
                 <li class="dropdown">
                 <a href="#">Lentes de Contacto ▾</a>
                 <ul class="dropdown-menu">
@@ -41,37 +56,48 @@
                         <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
                     </ul>
                 </li>
+                
+                <!-- CTA Principal -->
                 <li><a href="../reservas/examen-visual.html" class="btn-agenda">Agenda tu Examen Visual</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Barra de promociones superior -->
     <div class="promo-bar">
         <p>Suscríbete y obtén 15% DCTO en tu primera compra. Aplican T&C</p>
     </div>
 
-    <!-- CONTENIDO DE PRODUCTOS -->
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL: TIENDA
+         ========================================== -->
     <main class="store-content">
+        <!-- Navegación por migas de pan (Breadcrumbs) -->
         <div class="breadcrumbs">
             <a href="../inicio/index.html">Inicio</a> / <span>Lentes para hombre</span>
         </div>
         
         <h2 class="category-title">LENTES PARA HOMBRE</h2>
         
+        <!-- Barra de herramientas: Conteo y ordenamiento -->
         <div class="store-toolbar">
             <span class="product-count">9 productos</span>
             <div class="store-filters">
+                <!-- Select de ordenamiento. Depende de la función JS ordenarProductos() -->
                 <select class="sort-select" id="ordenarProductos" onchange="ordenarProductos()">
                     <option value="mas-vendidos">Ordenar por: Mas vendidos</option>
                     <option value="mayor">precio: Mayor a Menor</option>
                     <option value="menor">precio: Menor a Mayor</option>
                 </select>
+                <!-- Botón para desplegar panel lateral. Depende de mostrarFiltros() -->
                 <button class="btn-filter" onclick="mostrarFiltros()">Filtros</button>
             </div>
         </div>
 
+        <!-- Panel de Filtros -->
         <div class="filter-panel" id="filterPanel">
             <h3>FILTRAR PRODUCTOS</h3>
+            
             <div class="filter-group">
                 <label for="marca">Marca</label>
                 <select id="marca">
@@ -87,6 +113,7 @@
                     <option value="POLAROID">POLAROID</option>
                 </select>
             </div>
+            
             <div class="filter-group">
                 <label>Rango de precio</label>
                 <div class="price-inputs">
@@ -94,67 +121,72 @@
                     <input type="number" id="precioMax" placeholder="Precio máximo">
                 </div>
             </div>
+            
+            <!-- Botones de aplicación de filtros JS -->
             <div class="filter-buttons">
-                <button class="btn-apply-filter" onclick="aplicarFiltros()">
-                    Aplicar filtros
-                </button>
-                <button class="btn-clear-filter" onclick="limpiarFiltros()">
-                    Limpiar filtros
-                </button>
+                <button class="btn-apply-filter" onclick="aplicarFiltros()">Aplicar filtros</button>
+                <button class="btn-clear-filter" onclick="limpiarFiltros()">Limpiar filtros</button>
             </div>
         </div>
 
+        <!-- Grilla de Tarjetas de Producto -->
         <section class="products-grid">
+            <!-- 
+                ESTRUCTURA DE PRODUCTO:
+                Mantenimiento: Se han añadido los atributos 'data-marca' y 'data-precio' a los primeros 
+                tres artículos para mantener la consistencia con los productos 4 al 9 y garantizar 
+                que las funciones de filtro JS operen correctamente sobre todo el catálogo.
+            -->
+            
             <!-- Producto 1 -->
-<article class="product-card">
-    <a href="detalles/detalle-rayban.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-image-container">
-            <span class="badge">NUEVO</span>
-            <!-- Recuerda cambiar el nombre de la imagen al que tengas en tu carpeta img -->
-            <img src="../../img/image_11.webp" alt="Ray-Ban Aviator Optics Classic">
-            <button class="btn-quick-add">Recoge al día siguiente*</button>
-        </div>
-        <div class="product-info">
-            <p class="brand">RAY-BAN</p>
-            <h3 class="product-name">Aviator Optics Classic</h3>
-            <p class="price">S/450</p>
-        </div>
-    </a>
-</article>
+            <article class="product-card" data-marca="RAY-BAN" data-precio="450">
+                <a href="detalles/detalle-rayban.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">NUEVO</span>
+                        <img src="../../img/image_11.webp" alt="Ray-Ban Aviator Optics Classic">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">RAY-BAN</p>
+                        <h3 class="product-name">Aviator Optics Classic</h3>
+                        <p class="price">S/450</p>
+                    </div>
+                </a>
+            </article>
 
-<!-- Producto 2 -->
-<article class="product-card">
-    <a href="detalles/detalle-oakley.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-image-container">
-            <span class="badge">15% DCTO</span>
-            <img src="../../img/image_22.webp" alt="Oakley Crosslink Zero Negro">
-            <button class="btn-quick-add">Recoge al día siguiente*</button>
-        </div>
-        <div class="product-info">
-            <p class="brand">OAKLEY</p>
-            <h3 class="product-name">Crosslink Zero Negro</h3>
-            <p class="price">S/520</p>
-        </div>
-    </a>
-</article>
+            <!-- Producto 2 -->
+            <article class="product-card" data-marca="OAKLEY" data-precio="520">
+                <a href="detalles/detalle-oakley.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">15% DCTO</span>
+                        <img src="../../img/image_22.webp" alt="Oakley Crosslink Zero Negro">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">OAKLEY</p>
+                        <h3 class="product-name">Crosslink Zero Negro</h3>
+                        <p class="price">S/520</p>
+                    </div>
+                </a>
+            </article>
 
-<!-- Producto 3 -->
-<article class="product-card">
-    <a href="detalles/detalle-armani.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-image-container">
-            <span class="badge">20% DCTO</span>
-            <img src="../../img/image_33.webp" alt="Emporio Armani Matte Blue Rectangular">
-            <button class="btn-quick-add">Recoge al día siguiente*</button>
-        </div>
-        <div class="product-info">
-            <p class="brand">EMPORIO ARMANI</p>
-            <h3 class="product-name">Matte Blue Rectangular</h3>
-            <p class="price">S/610</p>
-        </div>
-    </a>
-</article>
+            <!-- Producto 3 -->
+            <article class="product-card" data-marca="EMPORIO ARMANI" data-precio="610">
+                <a href="detalles/detalle-armani.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">20% DCTO</span>
+                        <img src="../../img/image_33.webp" alt="Emporio Armani Matte Blue Rectangular">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">EMPORIO ARMANI</p>
+                        <h3 class="product-name">Matte Blue Rectangular</h3>
+                        <p class="price">S/610</p>
+                    </div>
+                </a>
+            </article>
 
-            <!-- Producto 4 -->
+            <!-- Producto 4 (Falta etiqueta <a> de enlace a detalles) -->
             <article class="product-card" data-marca="LACOSTE" data-precio="390">
                 <div class="product-image-container">
                     <img src="../../img/image_44.webp" alt="Lente Hombre 4">
@@ -237,15 +269,19 @@
         </section>
     </main>
 
-    <!-- FOOTER GRANDE Y ELEGANTE -->
+    <!-- ==========================================
+         PIE DE PÁGINA (FOOTER)
+         ========================================== -->
     <footer class="mega-footer">
         <div class="footer-container">
+            <!-- Columna de Marca y Newsletter -->
             <div class="footer-col brand-col">
                 <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A"> 
                 <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
                 <button class="btn-subscribe">SUSCRIBIRSE</button>
             </div>
             
+            <!-- Columna de Servicios -->
             <div class="footer-col">
                 <h3>SERVICIOS</h3>
                 <ul>
@@ -256,6 +292,7 @@
                 </ul>
             </div>
 
+            <!-- Columna Institucional -->
             <div class="footer-col">
                 <h3>NOSOTROS</h3>
                 <ul>
@@ -266,6 +303,7 @@
                 </ul>
             </div>
 
+            <!-- Columna de Contacto y Redes -->
             <div class="footer-col contact-col">
                 <h3>CONTACTO</h3>
                 <p><strong>Horario atención:</strong> Lunes a Sábado 10:00 a 19:00</p>

@@ -8,15 +8,19 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <!-- HEADER GLOBAL CON RUTAS CORREGIDAS -->
+    <!-- ==========================================
+         ENCABEZADO (HEADER) Y NAVEGACIÓN
+         ========================================== -->
     <header class="header">
-       <a href="../inicio/index.html">
-        <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
+        <a href="../inicio/index.html">
+            <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
         </a>
         <nav class="nav-bar">
             <ul class="nav-menu">
                 <li><a href="../inicio/index.html">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
+                
+                <!-- Menú desplegable: Lentes Oftálmicos -->
                 <li class="dropdown">
                     <a href="#" class="active">Lentes Oftálmicos ▾</a>
                     <ul class="dropdown-menu">
@@ -25,6 +29,8 @@
                         <li><a href="../nino/index.html">Niños</a></li>
                     </ul>
                 </li>
+                
+                <!-- Menú desplegable: Lentes de Sol -->
                 <li class="dropdown">
                     <a href="#">Lentes de Sol ▾</a>
                     <ul class="dropdown-menu">
@@ -33,30 +39,40 @@
                         <li><a href="../niño/sol.html">Niños</a></li>
                     </ul>
                 </li>
+                
+                <!-- Menú desplegable: Lentes de Contacto -->
                 <li class="dropdown">
-                <a href="#">Lentes de Contacto ▾</a>
-                <ul class="dropdown-menu">
+                    <a href="#">Lentes de Contacto ▾</a>
+                    <ul class="dropdown-menu">
                         <li><a href="../lentes de contacto/cont-miopia.html">Miopía e Hipermetropía</a></li>
                         <li><a href="../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
                         <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
+                    </ul> <!-- Corrección: Etiqueta </ul> faltante agregada aquí -->
                 </li>
+                
                 <li><a href="../reservas/examen-visual.html" class="btn-agenda">Agenda tu Examen Visual</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Barra de promociones superior -->
     <div class="promo-bar">
         <p>Con la compra de 400 soles o mas te llevas un cupon de descuento de 20% en tu siguiente compra</p>
     </div>
 
-    <!-- CONTENIDO DE PRODUCTOS -->
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL: CATÁLOGO DE PRODUCTOS
+         ========================================== -->
     <main class="store-content">
+        
+        <!-- Navegación por migas de pan (Breadcrumbs) -->
         <div class="breadcrumbs">
             <a href="../inicio/index.html">Inicio</a> / <span>Lentes de Contacto Astigmatismo</span>
         </div>
         
         <h2 class="category-title">Lentes de Contacto Astigmatismo</h2>
         
+        <!-- Barra de herramientas: Conteo y ordenamiento -->
         <div class="store-toolbar">
             <span class="product-count">6 productos</span>
             <div class="store-filters">
@@ -69,18 +85,21 @@
             </div>
         </div>
 
-        <!-- Panel de Filtros único y limpio -->
+        <!-- Panel de Filtros -->
         <div class="filter-panel" id="filterPanel">
             <h3>FILTRAR PRODUCTOS</h3>
+            
             <div class="filter-group">
                 <label for="marca">Marca</label>
                 <select id="marca">
                     <option value="todas">Todas las marcas</option>
                     <option value="Alcon">Alcon</option>
-                    <option value="Johnson&Johnson">Johnson&Johnson</option>
+                    <!-- Mantenimiento: Valor unificado para facilitar el filtrado con JavaScript -->
+                    <option value="Johnson&Johnson">Johnson&Johnson</option> 
                     <option value="iWear">iWear</option>
                 </select>
             </div>
+            
             <div class="filter-group">
                 <label>Rango de precio</label>
                 <div class="price-inputs">
@@ -88,6 +107,7 @@
                     <input type="number" id="precioMax" placeholder="Precio máximo">
                 </div>
             </div>
+            
             <div class="filter-buttons">
                 <button class="btn-apply-filter" onclick="aplicarFiltros()">
                     Aplicar filtros
@@ -98,7 +118,9 @@
             </div>
         </div>
 
+        <!-- Grilla de Tarjetas de Producto -->
         <section class="products-grid">
+            
             <!-- Producto 1: Air Optix Hydraglyde Astigmatismo -->
             <article class="product-card" data-marca="ALCON" data-precio="370">
                 <a href="detalles/detalle-airoptix-astig.html" style="text-decoration: none; color: inherit; display: block;">
@@ -116,7 +138,8 @@
             </article>
 
             <!-- Producto 2: Acuvue Oasys Astigmatismo -->
-            <article class="product-card" data-marca="JOHNSON & JOHNSON" data-precio="370">
+            <!-- Mantenimiento: data-marca ajustado de "JOHNSON & JOHNSON" a "JOHNSON&JOHNSON" para coincidir con el select -->
+            <article class="product-card" data-marca="JOHNSON&JOHNSON" data-precio="370">
                 <a href="detalles/detalle-acuvue-oasys-astig.html" style="text-decoration: none; color: inherit; display: block;">
                     <div class="product-image-container">
                         <img src="../../img/cont_astig_2.png" alt="Acuvue Oasys Astigmatismo">
@@ -131,7 +154,7 @@
             </article>
 
             <!-- Producto 3: Acuvue 1 Day Moist Astigmatismo -->
-            <article class="product-card" data-marca="JOHNSON & JOHNSON" data-precio="330">
+            <article class="product-card" data-marca="JOHNSON&JOHNSON" data-precio="330">
                 <a href="detalles/detalle-acuvue-moist-astig.html" style="text-decoration: none; color: inherit; display: block;">
                     <div class="product-image-container">
                         <span class="badge">NUEVO</span>
@@ -146,7 +169,7 @@
                 </a>
             </article>
 
-            <!-- Producto 4 -->
+            <!-- Producto 4: IWEAR OXYGEN XR Astigmatismo -->
             <article class="product-card" data-marca="iWear" data-precio="520">
                 <div class="product-image-container">
                     <img src="../../img/cont_astig_4.png" alt="cont astig 4">
@@ -159,7 +182,7 @@
                 </div>
             </article>
 
-            <!-- Producto 5 -->
+            <!-- Producto 5: iWear Oxygen Astigmatismo -->
             <article class="product-card" data-marca="iWear" data-precio="330">
                 <div class="product-image-container">
                     <span class="badge">NUEVO</span>
@@ -173,7 +196,7 @@
                 </div>
             </article>
 
-            <!-- Producto 6 -->
+            <!-- Producto 6: iWear Balance Plus Astigmatismo -->
             <article class="product-card" data-marca="iWear" data-precio="280">
                 <div class="product-image-container">
                     <img src="../../img/cont_astig_6.png" alt="cont astig 6">
@@ -188,15 +211,19 @@
         </section>
     </main>
 
-    <!-- FOOTER GRANDE Y ELEGANTE -->
+    <!-- ==========================================
+         PIE DE PÁGINA (FOOTER)
+         ========================================== -->
     <footer class="mega-footer">
         <div class="footer-container">
+            <!-- Columna de Marca y Newsletter -->
             <div class="footer-col brand-col">
                 <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A">
                 <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
                 <button class="btn-subscribe">SUSCRIBIRSE</button>
             </div>
             
+            <!-- Columna de Servicios -->
             <div class="footer-col">
                 <h3>SERVICIOS</h3>
                 <ul>
@@ -207,6 +234,7 @@
                 </ul>
             </div>
 
+            <!-- Columna Institucional -->
             <div class="footer-col">
                 <h3>NOSOTROS</h3>
                 <ul>
@@ -217,6 +245,7 @@
                 </ul>
             </div>
 
+            <!-- Columna de Contacto y Redes -->
             <div class="footer-col contact-col">
                 <h3>CONTACTO</h3>
                 <p><strong>Horario atención:</strong> Lunes a Sábado 10:00 a 19:00</p>
