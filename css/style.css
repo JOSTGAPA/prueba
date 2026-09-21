@@ -1,4 +1,7 @@
-/* Reseteo básico para limpiar márgenes por defecto */
+
+/* ========================================= */
+/* 1. RESETEO Y BASE                         */
+/* ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -7,12 +10,16 @@
 
 body {
     color: #33455c;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    min-height: 100vh;    /* Asegura que el cuerpo ocupe al menos toda la altura de la ventana */
+    display: flex;       /*sirve para linear en fila */
+    flex-direction: column; /*se usa para que los elementos se alineen en columna */
     font-family: Arial, sans-serif;
 }
 
+
+/* ========================================= */
+/* 2. CABECERA Y NAVEGACIÓN                  */
+/* ========================================= */
 .header {
     background-color: #293b53;
     padding: 20px 40px;
@@ -27,12 +34,12 @@ body {
     display: block;
 }
 
-.nav-bar {
+.nav-bar {         /* Contenedor del menú de navegación */
     display: flex;
     align-items: center;
 }
 
-.nav-menu {
+.nav-menu {     /* Lista de elementos del menú */
     display: flex;
     list-style: none;
     gap: 20px;
@@ -40,19 +47,19 @@ body {
     text-transform: uppercase;
 }
 
-.nav-menu > li {
+.nav-menu > li {   /* seleciona Cada elemento del menú <li>*/
     position: relative;
 }
 
-.nav-menu a {
+.nav-menu a {  /* Estilos para los enlaces del menú <a>*/
     text-decoration: none;
     color: white;
     font-size: 0.9rem;
     transition: color 0.3s ease;
 }
 
-.nav-menu a:hover {
-    color: #a8b8d0;
+.nav-menu a:hover { /* Efecto hover para los enlaces del menú al pasar el cursor */
+    color: #c96c14;
 }
 
 /* Menú Desplegable */
@@ -88,7 +95,10 @@ body {
     background-color: #293b53;
 }
 
-/* Contenido Principal */
+
+/* ========================================= */
+/* 3. CONTENIDO PRINCIPAL Y HOME             */
+/* ========================================= */
 .main-content {
     flex: 1;
     max-width: 1200px;
@@ -164,23 +174,44 @@ body {
     color: white;
     margin: 0;
 }
-
-/* Pie de página */
-.footer {
-    background-color: #f4f4f4;
-    text-align: center;
-    padding: 20px;
-    margin-top: auto;
+.social-links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 10px;
 }
 
-.footer strong {
-    color: #293b53;
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;   /* Ancho fijo exacto */
+    height: 36px;  /* Alto fijo exacto */
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #ddd;
+    overflow: hidden; /* Esto corta cualquier excedente */
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
 }
 
-/* =========================================
-   ESTILOS DE LA TIENDA Y PRODUCTOS
-   ========================================= */
+.social-links a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mantiene la proporción del logo sin recortarlo de más */
+    display: block;
+}
 
+.social-links a:hover {
+    transform: scale(1.1);
+}
+
+/* ========================================= */
+/* 4. TIENDA, CATÁLOGO Y FILTROS             */
+/* ========================================= */
 .promo-bar {
     background-color: #33455c;
     color: white;
@@ -328,130 +359,7 @@ body {
     color: #000;
 }
 
-.mega-footer {
-    background-color: #f7f6f2; 
-    color: #333;
-    padding-top: 4rem;
-    border-top: 1px solid #eaeaea;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    padding: 0 1.5rem 3rem 1.5rem;
-}
-
-.footer-col h2 {
-    font-family: 'Times New Roman', serif;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
-}
-
-.footer-col h3 {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    color: #555;
-    letter-spacing: 1px;
-}
-
-.footer-col p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    color: #555;
-}
-
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-col ul li {
-    margin-bottom: 0.8rem;
-}
-
-.footer-col ul a {
-    text-decoration: none;
-    color: #555;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
-
-.footer-col ul a:hover {
-    color: #33455c;
-    text-decoration: underline;
-}
-
-.btn-subscribe {
-    background-color: #33455c;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-}
-
-.social-links a {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    border: 1px solid #ccc;
-    text-align: center;
-    line-height: 35px;
-    margin-right: 10px;
-    color: #333;
-    text-decoration: none;
-}
-
-.footer-bottom {
-    background-color: #f0efe9;
-    text-align: center;
-    padding: 15px;
-    font-size: 0.8rem;
-    color: #666;
-}
-
-/* SECCIÓN SEDES ACTUALIZADA A CUADRÍCULA 2x2 */
-.sedes-centrado {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 30px;
-    max-width: 900px;
-    margin: 3rem auto;
-}
-
-.sedes-centrado .card {
-    width: 100%;
-}
-
-.sedes-centrado .card img {
-    height: 250px;
-    object-fit: cover; 
-}
-
-.titulo-sedes {
-    font-size: 3rem; 
-    margin-bottom: 1rem; 
-    text-align: center;
-}
-
-.brand-col .logo {
-    width: 150px;
-    height: auto;
-    display: block;
-}
-
-/* =========================================
-   FILTROS DE PRODUCTOS
-   ========================================= */
-
+/* Filtros de Productos */
 .btn-filter {
     padding: 8px 20px;
     background-color: #33455c;
@@ -466,7 +374,6 @@ body {
     background-color: #293b53;
 }
 
-/* Panel de filtros */
 .filter-panel {
     display: none;
     background-color: #f7f6f2;
@@ -535,10 +442,37 @@ body {
     background-color: #293b53;
 }
 
-/* =========================================
-   PÁGINA AGENDA TU EXAMEN VISUAL
-   ========================================= */
 
+/* ========================================= */
+/* 5. PÁGINAS ESPECÍFICAS                    */
+/* ========================================= */
+
+/* Sección Sedes */
+.sedes-centrado {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 30px;
+    max-width: 900px;
+    margin: 3rem auto;
+}
+
+.sedes-centrado .card {
+    width: 100%;
+}
+
+.sedes-centrado .card img {
+    height: 250px;
+    object-fit: cover; 
+}
+
+.titulo-sedes {
+    font-size: 3rem; 
+    margin-bottom: 1rem; 
+    text-align: center;
+}
+
+/* Página Agenda tu Examen Visual */
 .agenda-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -588,6 +522,15 @@ body {
     color: #555;
     line-height: 1.6;
     margin-bottom: 15px;
+}
+
+.agenda-info .imagen {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 15px auto 0;
+    float: none;
 }
 
 .agenda-form {
@@ -640,7 +583,6 @@ body {
     background-color: #293b53;
 }
 
-/* Ocultar el mensaje de éxito por defecto (solo aparecerá tras el registro con JS) */
 .mensaje-exito, .success-message {
     display: none;
     margin-top: 15px;
@@ -656,47 +598,7 @@ body {
     display: block;
 }
 
-/* =========================================
-   RESPONSIVE - CELULARES
-   ========================================= */
-
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .nav-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .agenda-container {
-        grid-template-columns: 1fr;
-    }
-
-    .agenda-title {
-        font-size: 2rem;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr;
-    }
-
-    /* En celulares las sedes se verán en una sola columna */
-    .sedes-centrado {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* =========================================
-   VISTA DE DETALLE DE PRODUCTO
-   ========================================= */
-
+/* Vista de Detalle de Producto */
 .product-detail-page {
     max-width: 1300px;
     margin: 0 auto;
@@ -705,7 +607,6 @@ body {
     color: #333;
 }
 
-/* --- SECCIÓN SUPERIOR --- */
 .product-top-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -713,7 +614,6 @@ body {
     margin-bottom: 4rem;
 }
 
-/* Galería */
 .gallery-section {
     position: relative;
 }
@@ -785,7 +685,6 @@ body {
     margin: 0 auto;
 }
 
-/* Información de Compra */
 .purchase-section {
     padding-top: 1rem;
 }
@@ -896,7 +795,6 @@ body {
     border-radius: 4px;
 }
 
-/* --- SECCIÓN INFERIOR --- */
 .product-bottom-grid {
     display: grid;
     grid-template-columns: 1fr 2.5fr;
@@ -953,7 +851,7 @@ body {
     text-align: justify;
 }
 
-/* --- BOTÓN DE RETROCESO (VERSIÓN MODERNA) --- */
+/* Botón de retroceso */
 .back-link-container {
     margin-bottom: 2rem;
 }
@@ -993,10 +891,7 @@ body {
     transform: translateX(-4px);
 }
 
-/* =========================================
-   ESTILOS PARA LAS TABLAS DE ESPECIFICACIONES
-   ========================================= */
-
+/* Tablas de especificaciones */
 .specs-table {
     width: 100%;
     border-collapse: collapse;
@@ -1037,4 +932,151 @@ body {
     color: #666;
     text-align: center;
     font-size: 0.85rem;
+}
+
+
+/* ========================================= */
+/* 6. PIES DE PÁGINA (FOOTERS)               */
+/* ========================================= */
+.footer {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+.footer strong {
+    color: #293b53;
+}
+
+.mega-footer {
+    background-color: #f7f6f2; 
+    color: #333;
+    padding-top: 4rem;
+    border-top: 1px solid #eaeaea;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 0 1.5rem 3rem 1.5rem;
+}
+
+.footer-col h2 {
+    font-family: 'Times New Roman', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.footer-col h3 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-col ul a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-col ul a:hover {
+    color: #33455c;
+    text-decoration: underline;
+}
+
+.btn-subscribe {
+    background-color: #33455c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    background-color: #f0efe9;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.brand-col .logo {
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+
+/* ========================================= */
+/* 7. RESPONSIVE - CELULARES                 */
+/* ========================================= */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .agenda-container {
+        grid-template-columns: 1fr;
+    }
+
+    .agenda-title {
+        font-size: 2rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* En celulares las sedes se verán en una sola columna */
+    .sedes-centrado {
+        grid-template-columns: 1fr;
+    }
 }

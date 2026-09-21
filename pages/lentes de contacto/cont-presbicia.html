@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Óptica G&A</title>
-    <!-- Los ../../ le indican que salga de 'inicio' y de 'pages' para encontrar la carpeta css -->
+    <title>Lentes de Contacto Presbicia - Óptica G&A</title>
+    <!-- Ruta al CSS global -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+    <!-- HEADER GLOBAL CON RUTAS CORREGIDAS -->
     <header class="header">
         <a href="../inicio/index.html">
         <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
         </a>
         <nav class="nav-bar">
             <ul class="nav-menu">
-                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="../inicio/index.html">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
                 <li class="dropdown">
-                    <a href="#">Lentes Oftálmicos ▾</a>
+                    <a href="#" class="active">Lentes Oftálmicos ▾</a>
                     <ul class="dropdown-menu">
                         <li><a href="../mujer/index.html">Mujer</a></li>
                         <li><a href="../hombre/index.html">Hombre</a></li>
@@ -45,49 +46,80 @@
         </nav>
     </header>
 
-    <div class="hero-container">
-        
-        <img class="hero-img" src="../../img/optica.jpg" alt="Imagen principal de la Óptica">
+    <div class="promo-bar">
+        <p>Con la compra de 400 soles o mas te llevas un cupon de descuento de 20% en tu siguiente compra</p>
     </div>
 
-    <main class="main-content">
-        <h2>Bienvenidos a nuestra Óptica</h2>
-        <p>Cuida tu salud visual con nuestros productos de alta calidad.</p>
+    <!-- CONTENIDO DE PRODUCTOS -->
+    <main class="store-content">
+        <div class="breadcrumbs">
+            <a href="../inicio/index.html">Inicio</a> / <span>Lentes de Contacto Presbicia</span>
+        </div>
         
-        <h3>Abre los Ojos</h3>
-        <p>Somos una marca que ve las cosas diferente. Sabemos que el mundo necesita lentes de buena calidad a un precio justo y nosotros estamos comprometidos a ofrecer siempre lo mejor.</p>
+        <h2 class="category-title">Lentes de Contacto Presbicia</h2>
         
-        <section class="categorias-grid">
-            <a href="#" class="card">
-                <img src="../../img/pri_oft.png" alt="Lentes Oftálmicos">
-                <div class="card-footer">
-                    <h4>LENTES OFTÁLMICOS</h4>
-                </div>
-            </a>
+        <div class="store-toolbar">
+            <span class="product-count">1 producto</span>
+            <div class="store-filters">
+                <select class="sort-select" id="ordenar" onchange="ordenarProductos()">
+                    <option value="mas-vendidos">Ordenar por: Mas vendidos</option>
+                    <option value="mayor">precio: Mayor a Menor</option>
+                    <option value="menor">precio: Menor a Mayor</option>
+                </select>
+                <button class="btn-filter" onclick="mostrarFiltros()">Filtros</button>
+            </div>
+        </div>
 
-            <a href="#" class="card">
-                <img src="../../img/pri_len.png" alt="Lentes de Sol">
-                <div class="card-footer">
-                    <h4>LENTES DE SOL</h4>
+        <div class="filter-panel" id="filterPanel">
+            <h3>FILTRAR PRODUCTOS</h3>
+            <div class="filter-group">
+                <label for="marca">Marca</label>
+                <select id="marca">
+                    <option value="todas">Todas las marcas</option>
+                    <option value="ALCON">ALCON</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Rango de precio</label>
+                <div class="price-inputs">
+                    <input type="number" id="precioMin" placeholder="Precio mínimo">
+                    <input type="number" id="precioMax" placeholder="Precio máximo">
                 </div>
-            </a>
+            </div>
+            <div class="filter-buttons">
+                <button class="btn-apply-filter" onclick="aplicarFiltros()">
+                    Aplicar filtros
+                </button>
+                <button class="btn-clear-filter" onclick="limpiarFiltros()">
+                    Limpiar filtros
+                </button>
+            </div>
+        </div>
 
-            <a href="#" class="card">
-                <img src="../../img/pri_con.png" alt="Lentes de Contacto">
-                <div class="card-footer">
-                    <h4>LENTES DE CONTACTO</h4>
-                </div>
-            </a>
+        <section class="products-grid">
+            <!-- Producto 1: Air Optix Hydraglyde Multifocal -->
+            <article class="product-card" data-marca="ALCON" data-precio="440">
+                <a href="detalles/detalle-airoptix-multifocal.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">NUEVO</span>
+                        <img src="../../img/cont_presbicia_1.png" alt="Air Optix Hydraglyde Multifocal">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">ALCON</p>
+                        <h3 class="product-name">Air Optix Hydraglyde Multifocal</h3>
+                        <p class="price">S/440</p>
+                    </div>
+                </a>
+            </article>
         </section>
     </main>
 
-    <footer class="footer">
-        <p><strong>Derechos Reservados 2026 &copy; Óptica G&A</strong></p>
-    </footer>
+    <!-- FOOTER GRANDE Y ELEGANTE -->
     <footer class="mega-footer">
         <div class="footer-container">
             <div class="footer-col brand-col">
-                <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A">
+                <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A"> 
                 <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
                 <button class="btn-subscribe">SUSCRIBIRSE</button>
             </div>
@@ -118,7 +150,7 @@
                 <p><strong>Consultas:</strong> 0800-14600</p>
                 <p>Calle Amador Merino Reyna 223, San Isidro, Lima</p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/">
+                     <a href="https://www.facebook.com/">
                         <img src="../../img/facebook.png" alt="facebook">
                     </a>
                     <a href="https://www.instagram.com/">
