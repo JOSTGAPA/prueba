@@ -3,443 +3,522 @@
 /* 1. RESETEO Y BASE                         */
 /* ========================================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;                  /*Elimina márgenes por defecto*/
+    padding: 0;                 /*Elimina rellenos por defecto*/
+    box-sizing: border-box;     /*Hace que el ancho y alto incluyan el contenido, padding y borde*/
 }
 
-body {
-    color: #33455c;
-    min-height: 100vh;    /* Asegura que el cuerpo ocupe al menos toda la altura de la ventana */
-    display: flex;       /*sirve para linear en fila */
-    flex-direction: column; /*se usa para que los elementos se alineen en columna */
-    font-family: Arial, sans-serif;
+body { /*estructura general de todas las página*/
+    color: #33455c;               /*Define color de texto*/
+    min-height: 100vh;              /*Asegura que el cuerpo ocupe al menos toda la altura de la ventana */
+    display: flex;                  /*sirve para linear en fila */
+    flex-direction: column;         /*se usa para que los elementos se alineen en columna */
+    font-family: Arial, sans-serif; /*Define el tipo de la letra de la página*/
+    /*SE VE EN:
+    - Página principal / Inicio
+    - Hombre
+    - Mujer
+    - Niño
+    - Lentes de contacto
+    - Sedes
+    - Páginas de detalles*/
 }
 
 
 /* ========================================= */
 /* 2. CABECERA Y NAVEGACIÓN                  */
 /* ========================================= */
-.header {
-    background-color: #293b53;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between; /* Separa el logo del menú */
-    align-items: center;
+.header { /*parte superior de todas las páginas*/
+    background-color: #293b53;        /*Color de fondo del encabezado*/
+    padding: 20px 40px;                 /*Agrega espacio arriba-abajo y a los lados */
+    display: flex;                      /*Coloca el logo y el menú usando flexbox*/
+    justify-content: space-between;     /* Separa el logo del menú */
+    align-items: center;                /*Centra verticalmente el logo y el menú */
+     /*SE VE EN:
+    - Inicio
+    - Hombre
+    - Mujer
+    - Niño
+    - Sedes
+    - Lentes de contacto*/
 }
 
-.logo-header {
-    width: 150px;
-    height: auto;
-    display: block;
+.logo-header { /*logo que aparece en la cabecera*/
+    width: 150px;       /*/Define el ancho del logo*/
+    height: auto;       /*Mantiene la proporción de la imagen*/
+    display: block;     /*Hace que el logo se muestre como un bloque */
+     /* SE VE EN EL ENCABEZADO DE TODAS LAS PÁGINAS */
 }
 
-.nav-bar {         /* Contenedor del menú de navegación */
-    display: flex;
-    align-items: center;
+.nav-bar { /* Contenedor del menú de navegación */
+
+    display: flex;          /*Permite organizar los elementos del menú*/
+    align-items: center;    /*Centra verticalmente el menuú*/
+     /* SE VE EN LA PARTE SUPERIOR DE TODAS LAS PÁGINAS */
 }
 
-.nav-menu {     /* Lista de elementos del menú */
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    align-items: center;
-    text-transform: uppercase;
+.nav-menu { /* Lista de elementos del menú */
+    display: flex;                  /*Coloca las opciones una al lado de otra*/
+    list-style: none;               /*Quita los puntos de la lista*/
+    gap: 20px;                      /*Deja 20px de separacion entre las opciones*/
+    align-items: center;            /*Centra las opciones verticalmente*/
+    text-transform: uppercase;      /*Convierte los textos del menú a mayúsculas*/
+    /*SE VE EN: 
+    INICIO → HOMBRE → MUJER → NIÑOS → LENTES DE CONTACTO → SEDES*/
 }
 
-.nav-menu > li {   /* seleciona Cada elemento del menú <li>*/
-    position: relative;
+.nav-menu > li { /* seleciona Cada elemento del menú <li>*/
+    position: relative;     /*Permite colocar correctamente los menús desplegables*/
+    /* SE VE EN CADA OPCIÓN DEL MENÚ SUPERIOR */
 }
 
-.nav-menu a {  /* Estilos para los enlaces del menú <a>*/
-    text-decoration: none;
-    color: white;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
+.nav-menu a { /* Estilos para los enlaces del menú <a>*/
+    text-decoration: none;          /*Quita el subrayado de los enlaces*/
+    color: white;                 /*CPone los textos del menú en blanco*/
+    font-size: 0.9rem;              /*Define el tamaño de la letra*/
+    transition: color 0.3s ease;    /*Hace suave el cambio de color al pasar el mouse*/
+    /* SE VE EN LOS ENLACES DEL MENÚ SUPERIOR */
 }
 
-.nav-menu a:hover { /* Efecto hover para los enlaces del menú al pasar el cursor */
-    color: #c96c14;
+.nav-menu a:hover { /*Efecto hover para los enlaces del menú al pasar el cursor */
+    color: #c96c14;     /*Cambia el texto a color naranja*/
+     /* SE VE AL PASAR EL MOUSE SOBRE LAS OPCIONES DEL MENÚ */
 }
 
-/* Menú Desplegable */
-.dropdown-menu {
-    background-color: #33455c; 
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 180px;
-    border-radius: 8px;
-    padding: 10px 0;
-    list-style: none;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    z-index: 100;
+.dropdown-menu {/* Menú Desplegable */
+    background-color: #33455c;            /*Color de fondo del menú desplegable*/
+    position: absolute;                     /*Permite colocar el menú sobre otros elementos*/
+    top: 100%;                              /*Coloca el menú debajo de la opción principal*/
+    left: 0;                                /*Alinea el menú con el lado izquierdo*/
+    min-width: 180px;                       /*Define un ancho mínimo*/
+    border-radius: 8px;                     /*Redondea las esquinas*/
+    padding: 10px 0;                        /*Agrega espacio arriba y abajo*/
+    list-style: none;                       /*Quita los puntos de la lista*/
+    opacity: 0;                             /*Lo hace invisible inicialmente*/
+    visibility: hidden;                     /*Oculta el menú*/
+    transform: translateY(10px);            /*Lo mueve ligeramente hacia abajo*/
+    transition: all 0.3s ease;              /*Hace suave la aparición del menú*/
+    z-index: 100;                           /*Hace que aparezca por encima de otros elementos*/
+     /*SE VE EN LOS MENÚS DESPLEGABLES:
+    - Lentes Oftálmicos
+    - Hombre
+    - Mujer
+    - Niños*/
 }
 
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+.dropdown:hover .dropdown-menu { /*Hace visible el menú cuando pasamos el mouse*/
+    opacity: 1;                     /*Hace visible el menú*/
+    visibility: visible;            /*Permite que se vea*/
+    transform: translateY(0);       /*Lo devuelve a su posición normal*/
+    /*SE VE CUANDO ABRIMOS UN MENÚ DESPLEGABLE*/
 }
 
-.dropdown-menu li a {
-    display: block;
-    padding: 10px 20px;
-    width: 100%;
+.dropdown-menu li a { /*Enlaces dentro del menú desplegable*/
+    display: block;         /*Hace que todo el espacio sea seleccionable*/
+    padding: 10px 20px;     /*Agrega espacio alrededor del texto*/
+    width: 100%;            /*Hace que ocupe todo el ancho disponible*/
+     /* SE VE EN LAS OPCIONES DEL MENÚ DESPLEGABLE */
 }
 
-.dropdown-menu li a:hover {
-    background-color: #293b53;
+.dropdown-menu li a:hover { /*Efecto al pasar el mouse sobre una opción del desplegable*/
+    background-color: #293b53;      /*Cambia el fondo cuando pasamos el mouse*/
+    /*SE VE EN CADA OPCIÓN DEL MENÚ DESPLEGABLE*/
 }
-
 
 /* ========================================= */
 /* 3. CONTENIDO PRINCIPAL Y HOME             */
 /* ========================================= */
-.main-content {
-    flex: 1;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem;
-    width: 100%;
+.main-content { /*Contenedor principal de la página*/
+    flex: 1;                    /*Hace que el contenido ocupe el espacio disponible*/
+    max-width: 1200px;          /*Limita el ancho máximo*/
+    margin: 0 auto;             /*Centra el contenido horizontalmente*/
+    padding: 3rem 1.5rem;       /*Agrega espacio interno*/
+    width: 100%;                /*Hace que ocupe todo el ancho disponible*/
+     /*SE VE PRINCIPALMENTE EN:
+    - Página de Inicio
+    - Contenido principal de las páginas*/
 }
 
-.main-content h2, .main-content h3 {
-    margin-bottom: 1rem;
-    text-align: center;
+.main-content h2, .main-content h3 {/* Títulos dentro del contenido principal */
+    margin-bottom: 1rem;        /*Deja espacio debajo de los títulos*/
+    text-align: center;         /*Centra los títulos*/
+    /* SE VE EN LOS TÍTULOS DE LA PÁGINA PRINCIPAL */
 }
 
-.main-content p {
-    font-size: 1.1rem;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 2rem auto;
-    line-height: 1.6;
+.main-content p { /* Párrafos del contenido principal */
+    font-size: 1.1rem;              /*Aumenta el tamaño del texto*/
+    text-align: center;             /*Centra el texto*/
+    max-width: 800px;               /*Limita el ancho del parrafo*/
+    margin: 0 auto 2rem auto;       /*Centra el párrafo y deja espacio debajo*/
+    line-height: 1.6;               /*Aumenta la separación entre líneas*/
+    /*SE VE EN LOS TEXTOS DESCRIPTIVOS DE INICIO*/
 }
 
-/* Imágenes - Ajuste estético para equilibrar tamaños */
-.hero-container {
-    text-align: center;
-    padding: 20px 0;
+.hero-container { /*Imágenes - Ajuste estético para equilibrar tamaños */
+    text-align: center;             /*Centra las imágenes*/
+    padding: 20px 0;                /*Deja espacio arriba y abajo*/
+    /*SE VE EN LA IMAGEN PRINCIPAL DE LA PÁGINA DE INICIO*/
 }
 
-.hero-img {
-    max-width: 100%;
-    width: 700px; /* Tamaño máximo controlado para que no se vea gigante */
-    height: auto;
-    max-height: 420px; /* Limita la altura */
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+.hero-img { 
+    max-width: 100%;                              /*Evita que la imagen salga del contenedor*/
+    width: 700px;                                 /* Tamaño máximo controlado para que no se vea gigante */
+    height: auto;                                 /* Mantiene la proporción */
+    max-height: 420px;                            /* Limita la altura */
+    object-fit: cover;                            /* Hace que la imagen cubra el espacio */
+    border-radius: 10px;                          /* Redondea las esquinas */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);    /* Agrega una sombra */
+    /* SE VE EN LA IMAGEN PRINCIPAL DE INICIO */
 }
 
-/* Cuadrícula de Categorías */
-.categorias-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px;
-    margin-top: 3rem;
+.categorias-grid { /* Cuadrícula de Categorías */
+    display: grid;                              /* Organiza las tarjetas usando Grid */
+    grid-template-columns: repeat(3, 1fr);      /* Crea 3 columnas del mismo tamaño */
+    gap: 20px;                                  /* Deja espacio entre las tarjetas */
+    margin-top: 3rem;                           /* Deja espacio encima de las tarjetas */
+    /*SE VE EN:
+    LAS TARJETAS/CATEGORÍAS DE LA PÁGINA DE INICIO*/
 }
 
-.card {
-    text-decoration: none;
-    color: inherit;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+.card { /* Tarjetas de categorías */
+    text-decoration: none;              /* Quita el subrayado */
+    color: inherit;                     /* Mantiene el color del elemento padre */
+    background-color: #f4f4f4;        /* Color de fondo */
+    border-radius: 10px;                /* Redondea las esquinas */
+    overflow: hidden;                   /* Oculta lo que salga de la tarjeta */
+    transition: transform 0.3s ease;    /* Hace suave el efecto de movimiento */
+    /* SE VE EN LAS TARJETAS DE INICIO Y SEDES */
 }
 
-.card:hover {
-    transform: scale(1.03);
+.card:hover { /* Efecto al pasar el mouse sobre una tarjeta */
+    transform: scale(1.03);     /* Hace que la tarjeta aumente ligeramente de tamaño */
 }
 
-.card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
+.card img { /* Imagen de una tarjeta */
+    width: 100%;            /* La imagen ocupa todo el ancho */
+    height: 250px;          /* Define la altura */
+    object-fit: cover;      /* Ajusta la imagen sin deformarla */
+    display: block;         /* Evita espacios innecesarios */
+    /* SE VE EN LAS TARJETAS DE INICIO Y SEDES */
 }
 
-.card-footer {
-    background-color: #334155; 
-    padding: 15px;
-    text-align: center;
+.card-footer { /* Parte inferior de una tarjeta */
+    background-color: #334155;        /* Color de fondo */
+    padding: 15px;                      /* Espacio interno */
+    text-align: center;                 /* Centra el texto */
+     /* SE VE DEBAJO DE LAS IMÁGENES DE LAS TARJETAS */
 }
 
-.card-footer h4 {
-    color: white;
-    margin: 0;
+.card-footer h4 { /* Título dentro de una tarjeta */
+    color: white;     /* Hace el título blanco */ 
+    margin: 0;          /* Elimina el margen */
+     /* SE VE EN LOS NOMBRES DE LAS CATEGORÍAS */
 }
 .social-links {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    margin-top: 10px;
+    display: flex;              /* Coloca los iconos uno al lado del otro */
+    gap: 12px;                  /* Deja espacio entre los iconos */
+    align-items: center;        /* Centra los iconos verticalmente */
+    margin-top: 10px;           /* Deja espacio encima de los iconos */
+     /* SE VE EN EL FOOTER:
+       FACEBOOK - INSTAGRAM - TIKTOK */
 }
 
 .social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;   /* Ancho fijo exacto */
-    height: 36px;  /* Alto fijo exacto */
-    min-width: 36px;
-    min-height: 36px;
-    border-radius: 50%;
-    background-color: white;
-    border: 1px solid #ddd;
-    overflow: hidden; /* Esto corta cualquier excedente */
-    text-decoration: none;
-    box-sizing: border-box;
-    transition: transform 0.3s ease;
+    display: inline-flex;             /* Permite centrar el icono dentro del círculo */
+    align-items: center;              /* Centra verticalmente */
+    justify-content: center;          /* Centra horizontalmente */
+    width: 36px;                      /* Define el ancho del círculo */
+    height: 36px;                     /* Define el alto del círculo */
+    min-width: 36px;                  /* Evita que el círculo se haga más pequeño */
+    min-height: 36px;                 /* Evita que el círculo se haga más pequeño */
+    border-radius: 50%;               /* Convierte el contenedor en un círculo */
+    background-color: white;        /* Pone fondo blanco */
+    border: 1px solid #ddd;         /* Agrega un borde gris */
+    overflow: hidden;                 /* Oculta cualquier parte que salga del círculo */
+    text-decoration: none;            /* Quita subrayados */
+    box-sizing: border-box;           /* Incluye borde y padding dentro del tamaño */
+    transition: transform 0.3s ease;  /* Hace suave el efecto hover */
+    /* SE VE EN LOS CÍRCULOS DE FACEBOOK, INSTAGRAM Y TIKTOK */
 }
 
 .social-links a img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Mantiene la proporción del logo sin recortarlo de más */
-    display: block;
+    width: 100%;            /* La imagen ocupa el ancho disponible */
+    height: 100%;           /* La imagen ocupa el alto disponible */
+    object-fit: contain;    /* Mantiene la proporción del logo sin recortarlo de más */
+    display: block;         /* Evita espacios innecesarios */
+    /* SE VE EN LOS ICONOS DE FACEBOOK, INSTAGRAM Y TIKTOK */
 }
 
 .social-links a:hover {
-    transform: scale(1.1);
+    transform: scale(1.1);      /* Agranda ligeramente el icono al pasar el mouse */
+    /* SE VE AL PASAR EL MOUSE SOBRE LOS ICONOS */
 }
 
 /* ========================================= */
 /* 4. TIENDA, CATÁLOGO Y FILTROS             */
 /* ========================================= */
-.promo-bar {
-    background-color: #33455c;
-    color: white;
-    text-align: center;
-    padding: 8px;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
+.promo-bar { /* Barra de promoción */
+    background-color: #33455c;        /* Color de fondo */
+    color: white;                     /* Color del texto */
+    text-align: center;                 /* Centra el texto */
+    padding: 8px;                       /* Agrega espacio alrededor */
+    font-size: 0.85rem;                 /* Tamaño del texto */
+    letter-spacing: 1px;                /* Separa un poco las letras */
+    /* SE VE EN LA BARRA DE PROMOCIÓN DE LAS PÁGINAS DE PRODUCTOS */
 }
 
-.store-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-    width: 100%;
+.store-content { /* Contenedor de las páginas de catálogo */
+    max-width: 1200px;          /* Limita el ancho máximo */
+    margin: 0 auto;             /* Centra el contenido */
+    padding: 2rem 1.5rem;       /* Agrega espacio interno */
+    width: 100%;                /* Ocupa todo el ancho disponible */
+    /*SE VE EN:
+    - Hombre
+    - Mujer
+    - Niño
+    - Lentes de contacto*/
 }
 
-.breadcrumbs {
-    font-size: 0.85rem;
-    color: #666;
-    margin-bottom: 2rem;
+.breadcrumbs { /* Ruta de navegación */
+    font-size: 0.85rem;           /* Tamaño pequeño del texto */
+    color: #666;                /* Color gris */
+    margin-bottom: 2rem;          /* Deja espacio debajo */
+    /* SE VE EN LA PARTE SUPERIOR DE LOS CATÁLOGOS */
 }
 
 .breadcrumbs a {
-    color: #666;
-    text-decoration: none;
+    color: #666;              /* Color gris del enlace */
+    text-decoration: none;      /* Quita el subrayado */
 }
 
-.category-title {
-    font-size: 2.5rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
+.category-title { /* Título del catálogo */
+    font-size: 2.5rem;              /* Tamaño grande del título */
+    font-weight: 300;               /* Hace la letra más delgada */
+    letter-spacing: 2px;            /* Separa las letras */
+    margin-bottom: 2rem;            /* Deja espacio debajo */
+    text-transform: uppercase;      /* Convierte el título a mayúsculas */
+    /*SE VE EN:
+    - CATÁLOGO HOMBRE
+    - CATÁLOGO MUJER
+    - CATÁLOGO NIÑO*/
 }
 
-.store-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    padding: 1rem 0;
-    margin-bottom: 2rem;
+.store-toolbar { /* Barra de herramientas del catálogo */
+   display: flex;                       /* Coloca sus elementos en una fila */
+    justify-content: space-between;     /* Separa los elementos hacia los extremos */
+    align-items: center;                /* Los centra verticalmente */
+    border-top: 1px solid #eee;       /* Agrega una línea arriba */
+    border-bottom: 1px solid #eee;    /* Agrega una línea abajo */
+    padding: 1rem 0;                    /* Espacio arriba y abajo */
+    margin-bottom: 2rem;                /* Espacio debajo */
+    /* SE VE EN LA PARTE SUPERIOR DE LOS CATÁLOGOS */
 }
 
-.product-count {
-    font-size: 0.9rem;
-    color: #666;
+.product-count { /* Cantidad de productos */
+    font-size: 0.9rem;      /* Tamaño del texto */
+    color: #666;          /* Color gris */
+     /* SE VE DONDE SE INDICA LA CANTIDAD DE PRODUCTOS */
 }
 
-.sort-select {
-    padding: 8px;
-    border: none;
-    background: transparent;
-    color: #333;
-    cursor: pointer;
+.sort-select { /* Selector para ordenar */
+    padding: 8px;                    /* Espacio interno */
+    border: none;                    /* Quita el borde */
+    background: transparent;         /* Fondo transparente */
+    color: #333;                   /* Color del texto */
+    cursor: pointer;                 /* Cambia el cursor al pasar encima */
+    /* SE VE EN EL SELECTOR DE ORDENAR PRODUCTOS */
+
 }
 
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
+.products-grid { /* Cuadrícula de productos */
+    display: grid;                                                      /* Organiza los productos en una cuadrícula */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));       /* Crea columnas según el espacio disponible */
+    gap: 30px;                                                          /* Deja espacio entre productos */
+     /*SE VE EN:
+    HOMBRE
+    MUJER
+    NIÑO*/
 }
 
-.product-card {
-    background: white;
-    transition: box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.product-card { /* Tarjeta individual del producto */
+    background: white;                    /* Fondo blanco */
+    transition: box-shadow 0.3s ease;       /* Hace suave la sombra */
+    display: flex;                          /* Organiza el contenido con Flexbox */
+    flex-direction: column;                 /* Coloca imagen, información, etc. verticalmente */
+    height: 100%;                           /* Hace que ocupe toda la altura disponible */
+    /* SE VE EN CADA PRODUCTO DE LOS CATÁLOGOS */
 }
 
-.product-card:hover {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+.product-card:hover { /* Efecto al pasar sobre un producto */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);    /* Agrega una sombra al producto */
 }
 
-.product-image-container {
-    position: relative;
-    background-color: #fcfcfc;
-    padding: 40px 20px;
-    text-align: center;
-    border: 1px solid #f0f0f0;
-    height: 320px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.product-image-container { /* Contenedor de la imagen del producto */
+    position: relative;               /* Permite posicionar elementos dentro */
+    background-color: #fcfcfc;        /* Fondo casi blanco */
+    padding: 40px 20px;               /* Espacio alrededor de la imagen */
+    text-align: center;               /* Centra la imagen */
+    border: 1px solid #f0f0f0;        /* Agrega un borde */
+    height: 320px;                    /* Define la altura */
+    display: flex;                    /* Organiza el contenido con Flexbox */
+    align-items: center;              /* Centra verticalmente */
+    justify-content: center;          /* Centra horizontalmente */
+    /*SE VE EN CADA PRODUCTO DE:
+    - HOMBRE
+    - MUJER
+    - NIÑO*/
 }
 
-.product-image-container img {
-    max-width: 100%;
-    height: auto;
+.product-image-container img { /* Imagen de cada producto */
+    max-width: 100%;        /* Evita que la imagen se salga */
+    height: auto;           /* Mantiene la proporción */
+    /* SE VE EN LAS IMÁGENES DE LOS PRODUCTOS */
 }
 
-.badge {
-    position: absolute;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #f4f4f4;
-    padding: 4px 12px;
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-    color: #333;
+.badge { /* Etiqueta del producto */
+    position: absolute;               /* Permite colocarla sobre la imagen */
+    top: 15px;                        /* La separa 15px desde arriba */
+    left: 50%;                        /* La coloca en el centro horizontal */
+    transform: translateX(-50%);      /* Corrige su posición para centrarla */
+    background-color: #f4f4f4;      /* Fondo gris claro */
+    padding: 4px 12px;                /* Espacio interno */
+    font-size: 0.7rem;                /* Texto pequeño */
+    letter-spacing: 1px;              /* Separa las letras */
+    color: #333;                    /* Color del texto */
+     /* SE VE EN LAS ETIQUETAS DE LOS PRODUCTOS */
 }
 
-.btn-quick-add {
-    width: 100%;
-    background-color: #33455c;
-    color: white;
-    border: none;
-    padding: 12px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    cursor: pointer;
+.btn-quick-add { /* Botón de agregar rápidamente */
+    width: 100%;                      /* Ocupa todo el ancho */
+    background-color: #33455c;        /* Fondo azul */
+    color: white;                     /* Texto blanco */
+    border: none;                     /* Quita el borde */
+    padding: 12px;                    /* Espacio interno */
+    position: absolute;               /* Lo coloca sobre el contenedor */
+    bottom: 0;                        /* Lo coloca abajo */
+    left: 0;                          /* Lo coloca desde el lado izquierdo */
+    opacity: 0;                       /* Lo mantiene oculto */
+    transition: opacity 0.3s ease;    /* Hace suave su aparición */
+    cursor: pointer;                  /* Cambia el cursor */
+    /* SE VE EN EL BOTÓN DE AGREGAR DEL PRODUCTO */
 }
 
-.product-card:hover .btn-quick-add {
-    opacity: 1;
+.product-card:hover .btn-quick-add { /* Muestra el botón cuando pasamos sobre el producto */
+    opacity: 1;             /* Hace visible el botón */
+    /* SE VE AL PASAR EL MOUSE SOBRE UN PRODUCTO */
 }
 
 .product-info {
-    padding: 15px 0;
-    margin-top: auto;
+    padding: 15px 0;        /* Espacio alrededor de la información */
+    margin-top: auto;       /* Empuja la información hacia abajo */
+    /* SE VE DEBAJO DE LAS IMÁGENES DE LOS PRODUCTOS */
 }
 
 .brand {
-    font-size: 0.8rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
+    font-size: 0.8rem;          /* Tamaño pequeño */
+    font-weight: bold;          /* Hace el texto grueso */
+    letter-spacing: 1px;        /* Separa las letras */
+    margin-bottom: 5px;         /* Deja espacio debajo */
+    /* SE VE EN LA MARCA: RAY-BAN, OAKLEY, GUCCI, ETC. */
 }
 
 .product-name {
-    font-size: 0.95rem;
-    color: #444;
-    font-weight: normal;
-    margin-bottom: 8px;
-}
+    font-size: 0.95rem;         /* Tamaño del nombre */
+    color: #444;              /* Color gris oscuro */
+    font-weight: normal;        /* Mantiene el texto normal */
+    margin-bottom: 8px;         /* Deja espacio debajo */
+    /* SE VE EN EL NOMBRE DEL MODELO DE CADA LENTE */
+} 
 
 .price {
-    font-weight: bold;
-    color: #000;
+    font-weight: bold;      /* Hace el precio más grueso */
+    color: #000;          /* Color negro */
+    /* SE VE EN EL PRECIO DE CADA PRODUCTO */   
 }
 
-/* Filtros de Productos */
-.btn-filter {
-    padding: 8px 20px;
-    background-color: #33455c;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
+.btn-filter { /* Filtros de Productos */
+    padding: 8px 20px;                          /* Espacio interno */
+    background-color: #33455c;                /* Fondo azul */
+    color: white;                             /* Texto blanco */
+    border: none;                               /* Quita el borde */
+    cursor: pointer;                            /* Cambia el cursor */
+    font-size: 0.9rem;                          /* Tamaño del texto */
+    transition: background-color 0.3s ease;     /* Hace suave el cambio de color */
+    /* SE VE EN EL BOTÓN DE FILTROS */
 }
 
 .btn-filter:hover {
-    background-color: #293b53;
+    background-color: #293b53;      /* Cambia el fondo al pasar el mouse */
+    /* SE VE AL PASAR EL MOUSE SOBRE EL BOTÓN DE FILTROS */
 }
 
 .filter-panel {
-    display: none;
-    background-color: #f7f6f2;
-    border: 1px solid #ddd;
-    padding: 25px;
-    margin-bottom: 30px;
+    display: none;                      /* Oculta el panel inicialmente */
+    background-color: #f7f6f2;        /* Fondo claro */
+    border: 1px solid #ddd;           /* Borde gris */
+    padding: 25px;                      /* Espacio interno */
+    margin-bottom: 30px;                /* Espacio debajo */
+    /* SE VE EN EL PANEL DE FILTROS */
 }
 
 .filter-panel.active {
-    display: block;
+    display: block;         /* Muestra el panel cuando tiene active */
 }
 
 .filter-panel h3 {
-    margin-bottom: 20px;
-    color: #33455c;
+    margin-bottom: 20px;    /* Deja espacio debajo */
+    color: #33455c;       /* Color del título */
 }
 
 .filter-group {
-    margin-bottom: 20px;
+    margin-bottom: 20px;    /* Separa cada grupo del filtro */
 }
 
 .filter-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-    color: #444;
+    display: block;               /* Hace que la etiqueta ocupe una línea */
+    margin-bottom: 8px;           /* Deja espacio debajo */
+    font-size: 0.9rem;            /* Tamaño del texto */
+    color: #444;                /* Color gris */
 }
 
 .filter-group select,
 .filter-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: white;
+     width: 100%;                       /* Ocupan todo el ancho */
+    padding: 10px;                      /* Espacio interno */
+    border: 1px solid #ccc;           /* Borde gris */
+    background-color: white;          /* Fondo blanco */
 }
 
 .price-inputs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    display: grid;                      /* Usa una cuadrícula */
+    grid-template-columns: 1fr 1fr;     /* Crea dos columnas iguales */
+    gap: 15px;                          /* Deja espacio entre ellas */
 }
 
 .filter-buttons {
-    display: flex;
-    gap: 10px;
+    display: flex;      /* Coloca los botones en fila */
+    gap: 10px;          /* Separa los botones */
 }
 
 .btn-apply-filter,
 .btn-clear-filter {
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
+    padding: 10px 20px;               /* Espacio interno */
+    border: none;                     /* Quita el borde */
+    cursor: pointer;                  /* Cambia el cursor */
 }
 
 .btn-apply-filter {
-    background-color: #33455c;
-    color: white;
+    background-color: #33455c;      /* Fondo azul */
+    color: white;                   /* Texto blanco */
 }
 
 .btn-clear-filter {
-    background-color: #ddd;
-    color: #333;
+    background-color: #ddd;         /* Fondo gris */
+    color: #333;                    /* Texto oscuro */
 }
 
 .btn-apply-filter:hover {
-    background-color: #293b53;
+    background-color: #293b53;      /* Cambia el color al pasar el mouse */
 }
 
 
@@ -447,491 +526,398 @@ body {
 /* 5. PÁGINAS ESPECÍFICAS                    */
 /* ========================================= */
 
-/* Sección Sedes */
-.sedes-centrado {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 30px;
-    max-width: 900px;
-    margin: 3rem auto;
+.sedes-centrado { /* Sección Sedes */
+    display: grid;                              /* Organiza las sedes en una cuadrícula */
+    grid-template-columns: repeat(2, 1fr);      /* Crea dos columnas iguales */
+    grid-template-rows: repeat(2, auto);        /* Crea dos filas */
+    gap: 30px;                                  /* Deja espacio entre las sedes */
+    max-width: 900px;                           /* Limita el ancho */
+    margin: 3rem auto;                          /* Centra el contenido y deja espacio arriba/abajo */
+    /* SE VE EN LA PÁGINA SEDES */
 }
 
 .sedes-centrado .card {
-    width: 100%;
+    width: 100%;         /* Hace que cada tarjeta ocupe todo su espacio */
 }
 
 .sedes-centrado .card img {
-    height: 250px;
-    object-fit: cover; 
+    height: 250px;          /* Define la altura de las imágenes */
+    object-fit: cover;      /* Ajusta la imagen sin deformarla */
 }
 
 .titulo-sedes {
-    font-size: 3rem; 
-    margin-bottom: 1rem; 
-    text-align: center;
+   font-size: 3rem;                   /* Hace grande el título */
+    margin-bottom: 1rem;              /* Deja espacio debajo */
+    text-align: center;               /* Centra el título */
+    /* SE VE EN EL TÍTULO "NUESTRAS SEDES" */
 }
 
-/* Página Agenda tu Examen Visual */
-.agenda-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 4rem 1.5rem;
-    width: 100%;
-}
-
-.agenda-title {
-    font-size: 2.5rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    color: #33455c;
-}
-
-.agenda-description {
-    max-width: 800px;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #666;
-    margin-bottom: 2rem;
-}
-
-.agenda-container {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 40px;
-    margin-top: 2rem;
-    align-items: start;
-}
-
-.agenda-info {
-    background-color: #f7f6f2;
-    padding: 30px;
-    border: 1px solid #e5e5e5;
-}
-
-.agenda-info h3 {
-    color: #33455c;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-}
-
-.agenda-info p {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.agenda-info .imagen {
-    display: block;
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    margin: 15px auto 0;
-    float: none;
-}
-
-.agenda-form {
-    padding: 30px;
-    border: 1px solid #e5e5e5;
-    background-color: white;
-}
-
-.agenda-form h3 {
-    color: #33455c;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-}
-
-.agenda-group {
-    margin-bottom: 18px;
-}
-
-.agenda-group label {
-    display: block;
-    margin-bottom: 7px;
-    font-size: 0.9rem;
-    color: #444;
-    font-weight: bold;
-}
-
-.agenda-group input,
-.agenda-group select {
-    width: 100%;
-    padding: 11px;
-    border: 1px solid #ccc;
-    background-color: white;
-    font-family: Arial, sans-serif;
-}
-
-.btn-agenda-form {
-    width: 100%;
-    padding: 13px;
-    background-color: #33455c;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-agenda-form:hover {
-    background-color: #293b53;
-}
-
-.mensaje-exito, .success-message {
-    display: none;
-    margin-top: 15px;
-    padding: 15px;
-    background-color: #e6f4ea;
-    border: 1px solid #ceead6;
-    color: #137333;
-    border-radius: 4px;
-    font-size: 0.9rem;
-}
-
-.mensaje-exito.activo {
-    display: block;
-}
-
-/* Vista de Detalle de Producto */
-.product-detail-page {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 2rem;
-    font-family: Arial, sans-serif;
-    color: #333;
+.product-detail-page { /* Vista de Detalle de Producto */
+    max-width: 1300px;                 /* Limita el ancho máximo */
+    margin: 0 auto;                    /* Centra el contenido */
+    padding: 2rem;                     /* Deja espacio alrededor */
+    font-family: Arial, sans-serif;    /* Usa Arial */
+    color: #333;                     /* Define el color del texto */
+     /*SE VE EN:
+    - Detalles Hombre
+    - Detalles Mujer
+    - Detalles Niño*/
 }
 
 .product-top-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 3rem;
-    margin-bottom: 4rem;
+   display: grid;                      /* Organiza la parte superior en columnas */
+    grid-template-columns: 1.2fr 1fr;  /* Crea dos columnas */
+    gap: 3rem;                         /* Deja espacio entre columnas */
+    margin-bottom: 4rem;               /* Deja espacio debajo */
+     /* SE VE EN LA PARTE SUPERIOR DE CADA DETALLE */
 }
 
 .gallery-section {
-    position: relative;
+    position: relative;        /* Permite posicionar elementos dentro */
+    /* SE VE EN LA GALERÍA DE IMÁGENES DEL PRODUCTO */
 }
 
 .gallery-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    padding: 1rem;
+    display: flex;                     /* Organiza los elementos en fila */
+    justify-content: space-between;    /* Los separa hacia los extremos */
+    align-items: center;               /* Los centra verticalmente */
+    position: absolute;                /* Lo coloca sobre la galería */
+    width: 100%;                       /* Ocupa todo el ancho */
+    top: 0;                            /* Lo coloca arriba */
+    padding: 1rem;                     /* Agrega espacio */
+    /* SE VE EN LA PARTE SUPERIOR DE LA GALERÍA */
 }
 
 .gallery-brand {
-    font-family: 'Times New Roman', serif;
-    letter-spacing: 4px;
-    font-size: 1.5rem;
+    font-family: 'Times New Roman', serif;  /* Cambia la fuente */
+    letter-spacing: 4px;                    /* Separa las letras */
+    font-size: 1.5rem;                      /* Aumenta el tamaño */
+     /* SE VE EN EL NOMBRE DE LA MARCA EN EL DETALLE */
 }
 
 .btn-try-model {
-    background-color: #666;
-    color: white;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    cursor: pointer;
+    background-color: #666;         /* Fondo gris */
+    color: white;                   /* Texto blanco */
+    border: none;                     /* Quita el borde */
+    padding: 8px 20px;                /* Espacio interno */
+    border-radius: 20px;              /* Redondea el botón */
+    font-size: 0.8rem;                /* Tamaño del texto */
+    cursor: pointer;                  /* Cambia el cursor */
+    /* BOTÓN DE PROBAR MODELO, SI APARECE EN EL DETALLE */
 }
 
 .gallery-main {
-    display: flex;
-    align-items: center;
-    height: 500px;
-    background-color: #fcfcfc;
-    border: 1px solid #f0f0f0;
+    display: flex;                    /* Organiza la galería usando Flexbox */
+    align-items: center;              /* Centra verticalmente */
+    height: 500px;                    /* Define la altura de la galería */
+    background-color: #fcfcfc;      /* Fondo casi blanco */
+    border: 1px solid #f0f0f0;      /* Borde */
+    /* SE VE EN EL CUADRO PRINCIPAL DE IMAGEN */
 }
 
 .gallery-thumbnails {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 0 20px;
+    display: flex;                     /* Organiza las miniaturas */
+    flex-direction: column;            /* Las coloca una debajo de otra */
+    align-items: center;               /* Las centra */
+    gap: 15px;                         /* Deja espacio entre ellas */
+    padding: 0 20px;                   /* Espacio a los lados */
+    /* SE VE AL LADO DE LA IMAGEN PRINCIPAL */
 }
 
 .thumb-nav {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: #999;
+    background: none;                 /* Quita el fondo */
+    border: none;                     /* Quita el borde */
+    font-size: 1.2rem;                /* Tamaño de la flecha */
+    cursor: pointer;                  /* Cambia el cursor */
+    color: #999;                    /* Color gris */
+    /* SE VE EN LAS FLECHAS DE LA GALERÍA */
 }
 
 .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 1px solid #333;
+     width: 10px;                     /* Ancho del punto */
+    height: 10px;                     /* Alto del punto */
+    border-radius: 50%;               /* Lo convierte en círculo */
+    border: 1px solid #333;         /* Agrega borde */
+    /* SE VE EN LOS PUNTOS DE LA GALERÍA */
 }
 
 .dot.active {
-    background-color: #333;
+    background-color: #333;     /* Rellena el punto seleccionado */
 }
 
 .main-image {
-    width: 80%;
-    object-fit: contain;
-    margin: 0 auto;
+    width: 80%;                 /* Define el ancho de la imagen */
+    object-fit: contain;        /* Mantiene la imagen completa */
+    margin: 0 auto;             /* Centra la imagen */
+    /* SE VE EN LA IMAGEN PRINCIPAL DEL PRODUCTO */
 }
 
 .purchase-section {
-    padding-top: 1rem;
+    padding-top: 1rem;  /* Agrega espacio arriba */
+    /* SE VE AL LADO DERECHO DE LA IMAGEN DEL PRODUCTO */
 }
 
 .product-brand {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
+    font-size: 1.2rem;                /* Tamaño de la marca */
+    letter-spacing: 2px;              /* Separa las letras */
+    margin-bottom: 5px;               /* Espacio debajo */
+    text-transform: uppercase;        /* Convierte a mayúsculas */
+    /* SE VE EN LA MARCA DEL PRODUCTO */
 }
 
 .product-sku {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    color: #666;                    /* Color gris */
+    font-size: 0.9rem;                /* Tamaño pequeño */
+    margin-bottom: 1.5rem;            /* Espacio debajo */
+    /* SE VE EN EL CÓDIGO/SKU DEL PRODUCTO */
 }
 
 .promos-container p {
-    font-size: 0.9rem;
-    margin-bottom: 8px;
+    font-size: 0.9rem;          /* Tamaño del texto */
+    margin-bottom: 8px;         /* Espacio debajo */
+     /* SE VE EN LA INFORMACIÓN DE PROMOCIONES */
 }
 
 .promo-tag {
-    display: inline-block;
-    background-color: #f4f4f4;
-    padding: 5px 10px;
-    font-size: 0.75rem;
-    margin-right: 10px;
-    margin-bottom: 15px;
-    border-radius: 3px;
+    display: inline-block;            /* Permite controlar tamaño y posición */
+    background-color: #f4f4f4;      /* Fondo gris claro */
+    padding: 5px 10px;                /* Espacio interno */
+    font-size: 0.75rem;               /* Texto pequeño */
+    margin-right: 10px;               /* Espacio a la derecha */
+    margin-bottom: 15px;              /* Espacio debajo */
+    border-radius: 3px;               /* Redondea las esquinas */
+    /* SE VE EN LAS ETIQUETAS DE PROMOCIONES */
 }
 
 .benefits-list {
-    list-style: none;
-    padding: 1.5rem 0;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 1.5rem;
+    list-style: none;                   /* Quita los puntos de la lista */
+    padding: 1.5rem 0;                  /* Espacio arriba y abajo */
+    border-top: 1px solid #ddd;       /* Línea superior */
+    border-bottom: 1px solid #ddd;    /* Línea inferior */
+    margin-bottom: 1.5rem;              /* Espacio debajo */
+     /* SE VE EN LA LISTA DE BENEFICIOS DEL PRODUCTO */
 }
 
 .benefits-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 1.2rem;
-    font-size: 0.85rem;
-    color: #555;
-    line-height: 1.4;
+    display: flex;                    /* Organiza el contenido en fila */
+    align-items: flex-start;          /* Alinea arriba */
+    gap: 15px;                        /* Separa los elementos */
+    margin-bottom: 1.2rem;            /* Espacio entre beneficios */
+    font-size: 0.85rem;               /* Tamaño del texto */
+    color: #555;                    /* Color gris */
+    line-height: 1.4;                 /* Separación entre líneas */
 }
 
 .benefits-list li:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0;        /* Quita el espacio del último elemento */
 }
 
 .benefits-list a {
-    color: #333;
-    text-decoration: underline;
+    color: #333;                  /* Color del enlace */
+    text-decoration: underline;     /* Subraya el enlace */
 }
 
 .price-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
+    display: flex;                    /* Coloca etiqueta y precio en fila */
+    justify-content: space-between;   /* Los separa hacia los extremos */
+    align-items: center;              /* Los centra verticalmente */
+    margin-bottom: 5px;               /* Espacio debajo */
+    /* SE VE EN LA ZONA DEL PRECIO */
 }
 
 .price-label {
-    font-size: 1rem;
-    letter-spacing: 1px;
+    font-size: 1rem;            /* Tamaño del texto */
+    letter-spacing: 1px;        /* Separa las letras */
 }
 
 .price-value {
-    font-size: 1.4rem;
-    font-weight: bold;
+    font-size: 1.4rem;          /* Hace más grande el precio */
+    font-weight: bold;          /* Hace el precio más grueso */
 }
 
 .installments {
-    text-align: right;
-    font-size: 0.75rem;
-    color: #666;
-    margin-bottom: 15px;
+    text-align: right;                /* Alinea el texto a la derecha */
+    font-size: 0.75rem;               /* Tamaño pequeño */
+    color: #666;                    /* Color gris */
+    margin-bottom: 15px;              /* Espacio debajo */
 }
 
 .payment-methods {
-    text-align: right;
-    margin-bottom: 20px;
+    text-align: right;              /* Alinea los métodos a la derecha */
+    margin-bottom: 20px;            /* Espacio debajo */
 }
 
 .pay-icon {
-    display: inline-block;
-    background: #f4f4f4;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    margin-left: 5px;
+    display: inline-block;            /* Permite colocarlos uno al lado del otro */
+    background: #f4f4f4;            /* Fondo gris claro */
+    padding: 5px 10px;                /* Espacio interno */
+    border-radius: 4px;               /* Redondea las esquinas */
+    font-size: 0.8rem;                /* Tamaño del texto */
+    margin-left: 5px;                 /* Espacio a la izquierda */
+     /* SE VE EN LOS MÉTODOS DE PAGO */
 }
 
 .btn-select-lenses {
-    width: 100%;
-    background-color: #334155;
-    color: white;
-    border: none;
-    padding: 18px;
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    cursor: pointer;
-    border-radius: 4px;
+    width: 100%;                      /* Ocupa todo el ancho */
+    background-color: #334155;      /* Fondo azul */
+    color: white;                   /* Texto blanco */
+    border: none;                     /* Quita el borde */
+    padding: 18px;                    /* Hace el botón más grande */
+    font-size: 1rem;                  /* Tamaño del texto */
+    font-weight: bold;                /* Texto en negrita */
+    letter-spacing: 1px;              /* Separa las letras */
+    cursor: pointer;                  /* Cambia el cursor */
+    border-radius: 4px;               /* Redondea las esquinas */
+    /* SE VE EN EL BOTÓN PRINCIPAL DE COMPRA/SELECCIÓN */
 }
 
 .product-bottom-grid {
-    display: grid;
-    grid-template-columns: 1fr 2.5fr;
-    gap: 3rem;
-    background-color: #faf9f6; 
-    padding: 4rem;
-    border-top: 1px solid #eee;
+    display: grid;                          /* Organiza el contenido en columnas */
+    grid-template-columns: 1fr 2.5fr;       /* Primera columna pequeña y segunda grande */
+    gap: 3rem;                              /* Espacio entre columnas */
+    background-color: #faf9f6;            /* Fondo claro */
+    padding: 4rem;                          /* Espacio interno */
+    border-top: 1px solid #eee;           /* Línea superior */
+    /* SE VE DEBAJO DE LA INFORMACIÓN PRINCIPAL DEL PRODUCTO */
 }
 
 .section-title {
-    font-family: 'Times New Roman', serif;
-    font-weight: normal;
-    font-size: 2rem;
+    font-family: 'Times New Roman', serif;      /* Usa otra fuente */
+    font-weight: normal;                        /* Texto normal */
+    font-size: 2rem;                            /* Tamaño grande */
+    /* SE VE EN LOS TÍTULOS DE LA INFORMACIÓN DEL PRODUCTO */
 }
 
 .detail-accordion {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #ddd;    /* Línea inferior */
+    padding-bottom: 1.5rem;             /* Espacio debajo */
+    margin-bottom: 1.5rem;              /* Espacio entre secciones */
+    /* SE VE EN LAS SECCIONES DE INFORMACIÓN DEL DETALLE */
 }
 
 .detail-accordion.border-none {
-    border-bottom: none;
+    border-bottom: none;        /* Quita la línea inferior cuando se necesita */
 }
 
 .accordion-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
+    display: flex;                    /* Organiza los elementos en fila */
+    justify-content: space-between;   /* Los separa */
+    align-items: center;              /* Los centra verticalmente */
+    margin-bottom: 1.5rem;            /* Espacio debajo */
 }
 
 .accordion-header h3 {
-    font-size: 1.1rem;
-    font-weight: normal;
+    font-size: 1.1rem;          /* Tamaño del título */
+    font-weight: normal;        /* No lo pone en negrita */
 }
 
 .specs-grid, .measurements-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    font-size: 0.9rem;
-    color: #555;
-    line-height: 1.5;
+    display: grid;                                  /* Organiza la información en columnas */
+    grid-template-columns: repeat(4, 1fr);          /* Crea cuatro columnas */
+    font-size: 0.9rem;                              /* Tamaño del texto */
+    color: #555;                                  /* Color gris */
+    line-height: 1.5;                               /* Separación entre líneas */
+    /* SE VE EN LAS ESPECIFICACIONES DEL PRODUCTO */
 }
 
 .measurements-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);      /* Cambia a tres columnas para las medidas */
 }
 
 .text-block {
-    font-size: 0.9rem;
-    color: #555;
-    line-height: 1.6;
-    text-align: justify;
+    font-size: 0.9rem;                /* Tamaño del texto */
+    color: #555;                    /* Color gris */
+    line-height: 1.6;                 /* Separación entre líneas */
+    text-align: justify;              /* Alinea el texto a ambos lados */
+    /* SE VE EN LAS DESCRIPCIONES DE LOS PRODUCTOS */
 }
 
-/* Botón de retroceso */
-.back-link-container {
-    margin-bottom: 2rem;
+.back-link-container { /* Botón de retroceso */
+    margin-bottom: 2rem;            /* Deja espacio debajo */
 }
 
 .btn-back-cool {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 22px;
-    background-color: #ffffff;
-    color: #334155;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 30px;
-    border: 1px solid #e2e8f0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    display: inline-flex;                                 /* Permite organizar el texto y la flecha */
+    align-items: center;                                  /* Centra verticalmente */
+    gap: 10px;                                            /* Separa la flecha del texto */
+    padding: 10px 22px;                                   /* Espacio dentro del botón */
+    background-color: #ffffff;                          /* Fondo blanco */
+    color: #334155;                                     /* Color del texto */
+    text-decoration: none;                                /* Quita el subrayado */
+    font-size: 0.85rem;                                   /* Tamaño del texto */
+    font-weight: bold;                                    /* Texto en negrita */
+    text-transform: uppercase;                            /* Convierte el texto a mayúsculas */
+    letter-spacing: 1px;                                  /* Separa las letras */
+    border-radius: 30px;                                  /* Hace el botón redondeado */
+    border: 1px solid #e2e8f0;                          /* Agrega borde */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);    /* Hace suave el cambio al pasar el mouse */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);             /* Agrega una sombra suave */
+    /*SE VE EN LOS DETALLES DE:
+    - HOMBRE
+    - MUJER
+    - NIÑO
+    Es el botón "VOLVER AL CATÁLOGO".*/
 }
 
 .btn-back-cool .icon-arrow {
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
+    font-size: 1.2rem;                /* Aumenta el tamaño de la flecha */
+    transition: transform 0.3s ease;  /* Hace suave el movimiento de la flecha */
 }
 
 .btn-back-cool:hover {
-    background-color: #1a2b4c;
-    color: #ffffff;
-    border-color: #1a2b4c;
-    box-shadow: 0 6px 15px rgba(26, 43, 76, 0.2);
-    transform: translateY(-2px);
+    background-color: #1a2b4c;                      /* Cambia el fondo al pasar el mouse */
+    color: #ffffff;                                 /* Cambia el texto a blanco */
+    border-color: #1a2b4c;                          /* Cambia el color del borde */
+    box-shadow: 0 6px 15px rgba(26, 43, 76, 0.2);   /* Aumenta la sombra */
+    transform: translateY(-2px);                      /* Mueve ligeramente el botón hacia arriba */
 }
 
 .btn-back-cool:hover .icon-arrow {
-    transform: translateX(-4px);
+    transform: translateX(-4px);        /* Mueve la flecha hacia la izquierda */
+    /* SE VE CUANDO PASAMOS EL MOUSE SOBRE "VOLVER AL CATÁLOGO" */
 }
 
-/* Tablas de especificaciones */
-.specs-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    text-align: left;
-    color: #555;
+.specs-table { /* Tablas de especificaciones */
+    width: 100%;                       /* Ocupa todo el ancho disponible */
+    border-collapse: collapse;         /* Une los bordes de las celdas */
+    margin-top: 10px;                  /* Deja espacio arriba */
+    font-size: 0.9rem;                 /* Tamaño del texto */
+    text-align: left;                  /* Alinea el texto a la izquierda */
+    color: #555;                       /* Color gris */
+    /* SE VE EN LAS TABLAS DE ESPECIFICACIONES */
 }
 
 .specs-table th, 
 .specs-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 12px;                /* Espacio dentro de cada celda */
+    border-bottom: 1px solid #e0e0e0;  /* Línea debajo de cada fila */
 }
 
 .specs-table thead th {
-    background-color: #33455c;
-    color: white;
-    font-weight: bold;
-    letter-spacing: 0.5px;
+    background-color: #33455c;       /* Fondo azul del encabezado */
+    color: white;                    /* Texto blanco */
+    font-weight: bold;                 /* Texto en negrita */
+    letter-spacing: 0.5px;             /* Separa las letras */
 }
 
 .specs-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2;      /* Color para filas pares */
 }
 
 .specs-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
+    background-color: #ffffff;      /* Color para filas impares */
 }
 
 .specs-table tbody tr:hover {
-    background-color: #e9ecef;
+    background-color: #e9ecef;      /* Cambia el fondo al pasar el mouse */
 }
 
 .specs-table tfoot td {
-    background-color: #f7f6f2;
-    font-style: italic;
-    color: #666;
-    text-align: center;
-    font-size: 0.85rem;
+    background-color: #f7f6f2;       /* Fondo del pie de tabla */
+    font-style: italic;                /* Texto en cursiva */
+    color: #666;                     /* Color gris */
+    text-align: center;                /* Centra el texto */
+    font-size: 0.85rem;                /* Texto un poco más pequeño */
 }
 
 
@@ -939,144 +925,136 @@ body {
 /* 6. PIES DE PÁGINA (FOOTERS)               */
 /* ========================================= */
 .footer {
-    background-color: #f4f4f4;
-    text-align: center;
-    padding: 20px;
-    margin-top: auto;
+    background-color: #f4f4f4;        /* Fondo gris claro */
+    text-align: center;                 /* Centra el contenido */
+    padding: 20px;                      /* Espacio interno */
+    margin-top: auto;                   /* Empuja el footer hacia abajo */
+    /* SE VE EN EL PIE DE PÁGINA */
 }
 
 .footer strong {
-    color: #293b53;
+    color: #293b53;                     /* Cambia el color de los textos en negrita */
 }
 
 .mega-footer {
-    background-color: #f7f6f2; 
-    color: #333;
-    padding-top: 4rem;
-    border-top: 1px solid #eaeaea;
+    background-color: #f7f6f2;            /* Fondo del footer principal */
+    color: #333;                          /* Color general del texto */
+    padding-top: 4rem;                      /* Espacio superior */
+    border-top: 1px solid #eaeaea;        /* Línea superior */
+    /* SE VE EN EL FOOTER GRANDE DE LAS PÁGINAS */
 }
 
 .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    padding: 0 1.5rem 3rem 1.5rem;
+    max-width: 1200px;                      /* Limita el ancho */
+    margin: 0 auto;                         /* Centra el footer */
+    display: grid;                          /* Organiza las columnas */
+    grid-template-columns: repeat(4, 1fr);  /* Crea 4 columnas iguales */
+    gap: 40px;                              /* Deja espacio entre columnas */
+    padding: 0 1.5rem 3rem 1.5rem;          /* Espacio interno */
+    /* SE VE EN LAS 4 COLUMNAS DEL FOOTER */
 }
 
 .footer-col h2 {
-    font-family: 'Times New Roman', serif;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
+    font-family: 'Times New Roman', serif;  /* Cambia la fuente */
+    font-size: 2.5rem;                      /* Hace grande el título */
+    margin-bottom: 1rem;                    /* Espacio debajo */
+    letter-spacing: 2px;                    /* Separa las letras */
 }
 
 .footer-col h3 {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    color: #555;
-    letter-spacing: 1px;
+    font-size: 1rem;                     /* Tamaño del título */
+    margin-bottom: 1.5rem;               /* Espacio debajo */
+    color: #555;                       /* Color gris */
+    letter-spacing: 1px;                 /* Separa las letras */
+    /* SE VE EN TÍTULOS COMO:
+    CONTACTO
+    INFORMACIÓN
+    REDES SOCIALES, ETC. */
 }
 
 .footer-col p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    color: #555;
+    font-size: 0.9rem;                   /* Tamaño del texto */
+    line-height: 1.6;                    /* Separación entre líneas */
+    margin-bottom: 1rem;                 /* Espacio debajo */
+    color: #555;                       /* Color gris */
+    /* SE VE EN LOS DATOS DEL FOOTER:
+    HORARIO
+    CONSULTAS
+    DIRECCIÓN */
 }
 
 .footer-col ul {
-    list-style: none;
-    padding: 0;
+    list-style: none;                    /* Quita los puntos de las listas */
+    padding: 0;                          /* Quita el espacio interno */
 }
 
 .footer-col ul li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.8rem;               /* Separa los elementos de la lista */
 }
 
 .footer-col ul a {
-    text-decoration: none;
-    color: #555;
-    font-size: 0.9rem;
-    transition: color 0.3s;
+    text-decoration: none;               /* Quita el subrayado */
+    color: #555;                       /* Color gris */
+    font-size: 0.9rem;                   /* Tamaño del texto */
+    transition: color 0.3s;              /* Hace suave el cambio de color */
 }
 
 .footer-col ul a:hover {
-    color: #33455c;
-    text-decoration: underline;
+    color: #33455c;                     /* Cambia el color al pasar el mouse */
+    text-decoration: underline;           /* Agrega subrayado */
+    /* SE VE CUANDO PASAMOS EL MOUSE SOBRE LOS ENLACES DEL FOOTER */
 }
 
 .btn-subscribe {
-    background-color: #33455c;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-}
-
-.social-links a {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    border: 1px solid #ccc;
-    text-align: center;
-    line-height: 35px;
-    margin-right: 10px;
-    color: #333;
-    text-decoration: none;
+    background-color: #33455c;          /* Fondo azul */
+    color: white;                       /* Texto blanco */
+    border: none;                         /* Quita el borde */
+    padding: 10px 20px;                   /* Espacio interno */
+    cursor: pointer;                      /* Cambia el cursor */
+    font-size: 0.85rem;                   /* Tamaño del texto */
+    letter-spacing: 1px;                  /* Separa las letras */
+    /* SE VE EN EL BOTÓN DE SUSCRIPCIÓN */
 }
 
 .footer-bottom {
-    background-color: #f0efe9;
-    text-align: center;
-    padding: 15px;
-    font-size: 0.8rem;
-    color: #666;
+    background-color: #f0efe9;          /* Fondo de la parte inferior */
+    text-align: center;                   /* Centra el texto */
+    padding: 15px;                        /* Espacio interno */
+    font-size: 0.8rem;                    /* Tamaño pequeño */
+    color: #666;                        /* Color gris */
+    /* SE VE EN LA PARTE MÁS BAJA DEL FOOTER */
 }
 
 .brand-col .logo {
-    width: 150px;
-    height: auto;
-    display: block;
+    width: 150px;                         /* Define el ancho del logo */
+    height: auto;                         /* Mantiene la proporción */
+    display: block;                       /* Hace que sea un elemento de bloque */
+    /* SE VE EN EL LOGO DEL FOOTER */
 }
-
 
 /* ========================================= */
 /* 7. RESPONSIVE - CELULARES                 */
 /* ========================================= */
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Estos estilos se aplican cuando la pantalla mide 768px o menos */
     .header {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: column;     /* En celular coloca logo y menú uno debajo del otro */
+        gap: 20px;                  /* Deja espacio entre ellos */
     }
-
     .nav-menu {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: wrap;            /* Permite que el menú pase a otra línea */
+        justify-content: center;    /* Centra las opciones */
     }
-
-    .agenda-container {
-        grid-template-columns: 1fr;
-    }
-
-    .agenda-title {
-        font-size: 2rem;
-    }
-
     .products-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* En celular muestra los productos en una sola columna */
     }
 
     .footer-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* En celular coloca las columnas del footer una debajo de otra */
     }
 
-    /* En celulares las sedes se verán en una sola columna */
     .sedes-centrado {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* En celular muestra las sedes en una sola columna */
     }
+    /*TODO ESTO SE VE CUANDO ABRES LA PÁGINA
+    DESDE UN CELULAR O UNA PANTALLA PEQUEÑA.*/
 }
