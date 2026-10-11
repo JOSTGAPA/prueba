@@ -1080,3 +1080,55 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* ====================cambios para la la segunda entrega =============== */
+/* ==================cambio en el inicio y sedes ======================= */
+/* Transición suave para las tarjetas de categorías */
+.categorias-grid .card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: block; /* Asegura que se comporte como un bloque interactivo */
+}
+
+/* Efecto al pasar el mouse por encima (Hover) */
+.categorias-grid .card:hover {
+    transform: scale(1.05) rotate(1.5deg); /* Aumenta un 5% su tamaño y gira ligeramente */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15); /* Crea el efecto de sombra elevada / flotante */
+}
+/* ============================fin en el inicio y sedes====================== */
+
+/*=============estilos en los productos=================== */
+/* Transición suave para las tarjetas de productos */
+.products-grid .product-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efecto al pasar el cursor sobre la tarjeta de producto */
+.products-grid .product-card:hover {
+    transform: scale(1.03) rotate(1deg); /* Aumenta un 3% su tamaño y gira sutilmente 1 grado */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); /* Crea la sombra elevada / flotante */
+}
+/*======================fin de estilos en los productos=============================== */
+
+/*============suave para el logo (escala y sombra)===================================*/
+.header .logo-header {
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* Efecto al pasar el cursor: Crece y se eleva con sombra */
+.header .logo-header:hover {
+    transform: scale(1.08); /* Aumenta un 8% su tamaño */
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.25)); /* Sombra elevada y difusa */
+}
+/*======================fin de suave para el logo (escala y sombra)=============================== */
+
+/* Transición suave para los botones de acción en la página de detalles */
+.btn-select-lenses, 
+.btn-try-model {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efecto al pasar el cursor: Solo crece con una sombra negra elegante */
+.btn-select-lenses:hover, 
+.btn-try-model:hover {
+    transform: scale(1.05); /* Solo aumenta un 5% su tamaño sin girar */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra negra más marcada y elevada */
+}
