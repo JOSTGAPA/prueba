@@ -11,7 +11,7 @@
 body { /*estructura general de todas las página*/
     color: #33455c;               /*Define color de texto*/
     min-height: 100vh;              /*Asegura que el cuerpo ocupe al menos toda la altura de la ventana */
-    display: flex;                  /*sirve para linear en fila */
+    display: flex;                  /*Organiza los elementos con Flexbox*/
     flex-direction: column;         /*se usa para que los elementos se alineen en columna */
     font-family: Arial, sans-serif; /*Define el tipo de la letra de la página*/
     /*SE VE EN:
@@ -44,7 +44,7 @@ body { /*estructura general de todas las página*/
 }
 
 .logo-header { /*logo que aparece en la cabecera*/
-    width: 150px;       /*/Define el ancho del logo*/
+    width: 150px;       /*Define el ancho del logo*/
     height: auto;       /*Mantiene la proporción de la imagen*/
     display: block;     /*Hace que el logo se muestre como un bloque */
      /* SE VE EN EL ENCABEZADO DE TODAS LAS PÁGINAS */
@@ -74,7 +74,7 @@ body { /*estructura general de todas las página*/
 
 .nav-menu a { /* Estilos para los enlaces del menú <a>*/
     text-decoration: none;          /*Quita el subrayado de los enlaces*/
-    color: white;                 /*CPone los textos del menú en blanco*/
+    color: white;                 /*Pone los textos del menú en blanco*/
     font-size: 0.9rem;              /*Define el tamaño de la letra*/
     transition: color 0.3s ease;    /*Hace suave el cambio de color al pasar el mouse*/
     /* SE VE EN LOS ENLACES DEL MENÚ SUPERIOR */
@@ -1033,28 +1033,340 @@ body { /*estructura general de todas las página*/
 }
 
 /* ========================================= */
-/* 7. RESPONSIVE - CELULARES                 */
+/* 7.1 RESPONSIVE - TABLETS                   */
+/* Pantallas desde 769px hasta 1024px        */
 /* ========================================= */
-@media (max-width: 768px) { /* Estos estilos se aplican cuando la pantalla mide 768px o menos */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* ENCABEZADO */
     .header {
-        flex-direction: column;     /* En celular coloca logo y menú uno debajo del otro */
-        gap: 20px;                  /* Deja espacio entre ellos */
+        flex-wrap: wrap;                /* Permite que los elementos pasen a otra línea */
+        gap: 15px;                      /* Deja espacio entre los elementos */
     }
+
     .nav-menu {
-        flex-wrap: wrap;            /* Permite que el menú pase a otra línea */
-        justify-content: center;    /* Centra las opciones */
+        flex-wrap: wrap;                /* Permite que el menú ocupe varias líneas */
+        justify-content: center;        /* Centra las opciones */
+        gap: 15px;                      /* Deja espacio entre las opciones */
     }
+
+    /* CATÁLOGO DE PRODUCTOS */
     .products-grid {
-        grid-template-columns: 1fr; /* En celular muestra los productos en una sola columna */
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Muestra dos columnas */
+        gap: 20px;                      /* Reduce el espacio entre productos */
     }
 
-    .footer-container {
-        grid-template-columns: 1fr; /* En celular coloca las columnas del footer una debajo de otra */
+    .store-content {
+        padding: 25px;                  /* Reduce el espacio alrededor del catálogo */
     }
 
+    .store-toolbar {
+        flex-wrap: wrap;                /* Permite que los controles pasen a otra línea */
+        gap: 15px;                      /* Deja espacio entre los controles */
+    }
+
+    .store-filters {
+        flex-wrap: wrap;                /* Permite que los filtros se acomoden */
+        gap: 10px;                      /* Deja espacio entre los filtros */
+    }
+
+    /* CATEGORÍAS DE LA PÁGINA DE INICIO */
+    .categorias-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Muestra dos columnas */
+        gap: 20px;                      /* Deja espacio entre las tarjetas */
+    }
+
+    /* SEDES */
     .sedes-centrado {
-        grid-template-columns: 1fr; /* En celular muestra las sedes en una sola columna */
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Mantiene dos columnas */
+        grid-template-rows: auto;       /* Ajusta automáticamente las filas */
+        gap: 20px;                      /* Deja espacio entre las sedes */
     }
-    /*TODO ESTO SE VE CUANDO ABRES LA PÁGINA
-    DESDE UN CELULAR O UNA PANTALLA PEQUEÑA.*/
+
+    /* DETALLES DEL PRODUCTO */
+    .product-top-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Mantiene dos columnas */
+        gap: 25px;                      /* Reduce el espacio entre columnas */
+    }
+
+    .gallery-main {
+        height: 400px;                  /* Reduce la altura de la galería */
+    }
+
+    .main-image {
+        max-width: 100%;                /* Evita que la imagen se desborde */
+        height: auto;                   /* Conserva las proporciones */
+    }
+
+    .gallery-thumbnails {
+        flex-direction: row;            /* Coloca las miniaturas en una fila */
+        flex-wrap: wrap;                /* Permite varias líneas de miniaturas */
+    }
+
+    .product-bottom-grid {
+        grid-template-columns: 1fr 2fr; /* Ajusta las columnas de los detalles */
+        gap: 25px;                      /* Deja espacio entre las columnas */
+        padding: 30px;                  /* Reduce el espacio interno */
+    }
+
+    /* PIE DE PÁGINA */
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Muestra dos columnas */
+        gap: 30px;                      /* Deja espacio entre las columnas */
+    }
+
+    /* IMAGEN PRINCIPAL */
+    .hero-img {
+        max-width: 100%;                /* Evita que la imagen se salga */
+        height: auto;                   /* Conserva las proporciones */
+    }
+}
+
+
+/* ========================================= */
+/* 7.2 RESPONSIVE - CELULARES                 */
+/* Pantallas de 768px o menos                */
+/* ========================================= */
+
+@media (max-width: 768px) {
+
+    /* ENCABEZADO */
+    .header {
+        flex-direction: column;         /* Coloca el logo y el menú uno debajo del otro */
+        align-items: center;            /* Centra los elementos */
+        gap: 15px;                       /* Deja espacio entre ellos */
+        padding: 15px;                  /* Agrega espacio interno */
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;                /* Permite que el menú pase a otra línea */
+        justify-content: center;        /* Centra las opciones */
+        gap: 10px;                       /* Reduce el espacio entre las opciones */
+    }
+
+    /* CATÁLOGO DE PRODUCTOS */
+    .store-content {
+        padding: 20px 15px;             /* Reduce los espacios del catálogo */
+    }
+
+    .store-toolbar {
+        flex-wrap: wrap;                /* Permite que los controles pasen a otra línea */
+        gap: 15px;                      /* Deja espacio entre los controles */
+    }
+
+    .store-filters {
+        flex-wrap: wrap;                /* Permite que los filtros se acomoden */
+        gap: 10px;                       /* Deja espacio entre los filtros */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Muestra dos columnas */
+        gap: 15px;                       /* Reduce el espacio entre productos */
+    }
+
+    .product-card {
+        min-width: 0;                   /* Evita que la tarjeta fuerce el ancho */
+    }
+
+    .product-image-container img {
+        max-width: 100%;                /* Evita que la imagen se desborde */
+        height: auto;                   /* Conserva las proporciones */
+        object-fit: contain;            /* Muestra la imagen sin deformarla */
+    }
+
+    .btn-quick-add {
+        opacity: 1;                     /* Mantiene visible el botón en pantallas táctiles */
+    }
+
+    /* FILTROS */
+    .price-inputs {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Mantiene dos campos por fila */
+        gap: 10px;                       /* Deja espacio entre los campos */
+    }
+
+    .filter-buttons {
+        flex-wrap: wrap;                /* Permite que los botones pasen a otra línea */
+    }
+
+    /* CATEGORÍAS */
+    .categorias-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Muestra dos columnas */
+        gap: 15px;                       /* Reduce el espacio entre las tarjetas */
+    }
+
+    /* SEDES */
+    .sedes-centrado {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Mantiene dos columnas */
+        grid-template-rows: auto;       /* Ajusta las filas automáticamente */
+        gap: 15px;                       /* Reduce el espacio entre las sedes */
+    }
+
+    /* DETALLES DEL PRODUCTO */
+    .product-top-grid {
+        grid-template-columns: 1fr;     /* Coloca la galería y la compra en una columna */
+        gap: 25px;                       /* Deja espacio entre las secciones */
+    }
+
+    .gallery-main {
+        height: auto;                   /* Permite que la galería se adapte */
+        min-height: 280px;              /* Conserva una altura mínima */
+    }
+
+    .main-image {
+        max-width: 100%;                /* Evita que la imagen se desborde */
+        height: auto;                   /* Conserva las proporciones */
+    }
+
+    .gallery-thumbnails {
+        flex-direction: row;            /* Coloca las miniaturas en una fila */
+        flex-wrap: wrap;                /* Permite varias líneas */
+        justify-content: center;        /* Centra las miniaturas */
+        gap: 10px;                       /* Deja espacio entre ellas */
+    }
+
+    .gallery-header {
+        flex-wrap: wrap;                /* Permite que el encabezado se acomode */
+        gap: 10px;                       /* Deja espacio entre sus elementos */
+    }
+
+    .product-bottom-grid {
+        grid-template-columns: 1fr;     /* Coloca los detalles en una sola columna */
+        gap: 20px;                       /* Deja espacio entre las secciones */
+        padding: 20px 15px;             /* Reduce el espacio interno */
+    }
+
+    .btn-select-lenses {
+        max-width: 100%;                /* Evita que el botón se salga */
+        box-sizing: border-box;         /* Incluye el espacio interno en el ancho */
+    }
+
+    /* PIE DE PÁGINA */
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Muestra dos columnas */
+        gap: 25px;                       /* Deja espacio entre las columnas */
+    }
+
+    .footer-col {
+        min-width: 0;                   /* Permite que las columnas se reduzcan */
+        overflow-wrap: anywhere;        /* Evita que los textos largos se desborden */
+    }
+
+    /* IMAGEN PRINCIPAL */
+    .hero-img {
+        max-width: 100%;                /* Evita que la imagen se salga */
+        height: auto;                   /* Conserva las proporciones */
+    }
+}
+
+/* ========================================= */
+/* 7.3 RESPONSIVE - CELULARES PEQUEÑOS        */
+/* Pantallas de 480px o menos                */
+/* ========================================= */
+
+@media (max-width: 480px) {
+
+    /* ENCABEZADO */
+    .header {
+        padding: 12px 10px;             /* Reduce el espacio interno */
+        gap: 12px;                       /* Reduce el espacio entre elementos */
+    }
+
+    .nav-menu {
+        gap: 8px;                        /* Reduce el espacio entre opciones */
+    }
+
+    /* CATÁLOGO DE PRODUCTOS */
+    .store-content {
+        padding: 15px 10px;             /* Reduce los márgenes internos */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Mantiene dos columnas */
+        gap: 10px;                       /* Reduce el espacio entre productos */
+    }
+
+    .product-info {
+        padding: 10px;                   /* Reduce el espacio interno */
+    }
+
+    .product-name {
+        font-size: 14px;                 /* Reduce el tamaño del nombre */
+        overflow-wrap: anywhere;         /* Evita que el texto se desborde */
+    }
+
+    .price {
+        font-size: 15px;                 /* Reduce el tamaño del precio */
+    }
+
+    .btn-quick-add {
+        font-size: 11px;                  /* Reduce el tamaño del texto */
+        padding: 8px 5px;                /* Ajusta el espacio del botón */
+        white-space: normal;             /* Permite que el texto pase a otra línea */
+    }
+
+    /* CATEGORÍAS */
+    .categorias-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Mantiene dos columnas */
+        gap: 10px;                       /* Reduce el espacio entre tarjetas */
+    }
+
+    /* SEDES */
+    .sedes-centrado {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Mantiene dos columnas */
+        grid-template-rows: auto;        /* Ajusta la altura de las filas */
+        gap: 10px;                       /* Reduce el espacio entre sedes */
+        align-items: stretch;            /* Iguala la altura de las tarjetas por fila */
+    }
+
+    .sedes-centrado .card {
+        width: 100%;                     /* Ocupa todo el ancho disponible */
+        min-width: 0;                    /* Permite reducir el ancho de la tarjeta */
+        height: 100%;                    /* Aprovecha la altura de la fila */
+    }
+
+    .sedes-centrado .card img {
+        width: 100%;                     /* Ajusta la imagen al ancho de la tarjeta */
+        height: 150px;                   /* Iguala la altura de las imágenes */
+        object-fit: cover;               /* Recorta la imagen sin deformarla */
+        display: block;                  /* Evita espacios debajo de la imagen */
+    }
+
+    .titulo-sedes {
+        font-size: 22px;                 /* Reduce el tamaño del título */
+        text-align: center;              /* Centra el título */
+    }
+
+    /* DETALLES DEL PRODUCTO */
+    .gallery-main {
+        min-height: 220px;               /* Reduce la altura mínima de la galería */
+    }
+
+    .main-image {
+        max-width: 100%;                 /* Evita que la imagen se desborde */
+        height: auto;                    /* Conserva las proporciones */
+    }
+
+    .product-bottom-grid {
+        padding: 15px 5px;               /* Reduce el espacio interno */
+    }
+
+    .section-title {
+        font-size: 21px;                 /* Reduce el tamaño del título */
+    }
+
+    /* FILTROS */
+    .price-inputs {
+        grid-template-columns: 1fr;      /* Coloca los campos en una columna */
+    }
+
+    /* PIE DE PÁGINA */
+    .footer-container {
+        grid-template-columns: 1fr;      /* Coloca las secciones en una columna */
+        gap: 20px;                       /* Deja espacio entre las secciones */
+    }
+
+    .footer-bottom {
+        text-align: center;              /* Centra el texto final */
+    }
 }
