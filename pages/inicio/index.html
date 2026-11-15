@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <!-- Los ../../ le indican que salga de 'inicio' y de 'pages' para encontrar la carpeta css -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
+
 <body>
     <!-- ==========================================
          ENCABEZADO (HEADER) Y NAVEGACIÓN
@@ -15,12 +17,12 @@
         <a href="../inicio/index.html">
             <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
         </a>
-        
+
         <nav class="nav-bar">
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
-                
+
                 <li class="dropdown">
                     <a href="#">Lentes Oftálmicos ▾</a>
                     <ul class="dropdown-menu">
@@ -29,7 +31,7 @@
                         <li><a href="../niño/index.html">Niños</a></li>
                     </ul>
                 </li>
-                
+
                 <li class="dropdown">
                     <a href="#">Lentes de Sol ▾</a>
                     <ul class="dropdown-menu">
@@ -38,7 +40,7 @@
                         <li><a href="../niño/sol.html">Niños</a></li>
                     </ul>
                 </li>
-                
+
                 <li class="dropdown">
                     <a href="#">Lentes de Contacto ▾</a>
                     <ul class="dropdown-menu">
@@ -64,10 +66,11 @@
     <main class="main-content">
         <h2>Bienvenidos a nuestra Óptica</h2>
         <p>Cuida tu salud visual con nuestros productos de alta calidad.</p>
-        
+
         <h3>Abre los Ojos</h3>
-        <p>Somos una marca que ve las cosas diferente. Sabemos que el mundo necesita lentes de buena calidad a un precio justo y nosotros estamos comprometidos a ofrecer siempre lo mejor.</p>
-        
+        <p>Somos una marca que ve las cosas diferente. Sabemos que el mundo necesita lentes de buena calidad a un precio
+            justo y nosotros estamos comprometidos a ofrecer siempre lo mejor.</p>
+
         <section class="categorias-grid">
             <a href="#" class="card">
                 <img src="../../img/pri_oft.png" alt="Lentes Oftálmicos">
@@ -105,9 +108,11 @@
             <div class="footer-col brand-col">
                 <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A">
                 <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
-                <button class="btn-subscribe">SUSCRIBIRSE</button>
+                <button class="btn-subscribe" onclick="mostrarSuscripcion()">
+                    SUSCRIBIRSE
+                </button>
             </div>
-            
+
             <div class="footer-col">
                 <h3>SERVICIOS</h3>
                 <ul>
@@ -139,7 +144,7 @@
                     </a>
                     <a href="https://www.instagram.com/">
                         <img src="../../img/instagram.png" alt="instagram">
-                    </a> 
+                    </a>
                     <a href="https://www.tiktok.com/">
                         <img src="../../img/tiktok.png" alt="tiktok">
                     </a>
@@ -147,8 +152,29 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p><strong>Derechos Reservados 2026 &copy; Óptica G&A - Expertos en salud visual y Lentes en Perú.</strong></p>
+            <p><strong>Derechos Reservados 2026 &copy; Óptica G&A - Expertos en salud visual y Lentes en Perú.</strong>
+            </p>
         </div>
     </footer>
+    <!-- VENTANA DE SUSCRIPCIÓN -->
+    <div id="ventanaSuscripcion" class="modal">
+        <div class="modal-contenido">
+            <h2>¡Suscríbete a Óptica G&A!</h2>
+            <p>Déjanos tus datos para recibir nuestras novedades.</p>
+
+            <form id="formSuscripcion">
+                <label for="nombreSuscripcion">Nombre:</label>
+                <input type="text" id="nombreSuscripcion" required>
+
+                <label for="correoSuscripcion">Correo electrónico:</label>
+                <input type="email" id="correoSuscripcion" required>
+
+                <button type="submit">Enviar</button>
+                <button type="button" onclick="cerrarSuscripcion()">Cerrar</button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
 </body>
+
 </html>

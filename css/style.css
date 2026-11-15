@@ -1032,6 +1032,7 @@ body { /*estructura general de todas las página*/
     /* SE VE EN EL LOGO DEL FOOTER */
 }
 
+
 /* ========================================= */
 /* 7.1 RESPONSIVE - TABLETS                   */
 /* Pantallas desde 769px hasta 1024px        */
@@ -1421,4 +1422,83 @@ body { /*estructura general de todas las página*/
 .btn-try-model:hover {
     transform: scale(1.05); /* Solo aumenta un 5% su tamaño sin girar */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra negra más marcada y elevada */
+}
+
+
+/* ========================================= */
+/* 8. VENTANA FLOTANTE DE SUSCRIPCIÓN        */
+/* ========================================= */
+
+.modal {
+    display: none;                         /* Oculta la ventana inicialmente */
+    position: fixed;                       /* Mantiene la ventana fija en pantalla */
+    z-index: 1000;                         /* Hace que aparezca encima del contenido */
+    top: 0;                                /* Empieza desde arriba */
+    left: 0;                               /* Empieza desde la izquierda */
+    width: 100%;                           /* Ocupa todo el ancho */
+    height: 100%;                          /* Ocupa toda la altura */
+    background-color: rgba(0, 0, 0, 0.6);  /* Oscurece el fondo */
+    justify-content: center;               /* Centra horizontalmente */
+    align-items: center;                   /* Centra verticalmente */
+}
+
+.modal-contenido {
+    background-color: white;               /* Fondo blanco */
+    padding: 30px;                         /* Espacio interno */
+    border-radius: 12px;                   /* Redondea las esquinas */
+    width: 90%;                            /* Se adapta a pantallas pequeñas */
+    max-width: 400px;                      /* Limita el ancho máximo */
+    display: flex;                         /* Organiza los elementos */
+    flex-direction: column;                /* Coloca los elementos en columna */
+    gap: 12px;                             /* Separa los elementos */
+}
+
+.modal-contenido h2 {
+    color: #293b53;                        /* Color del título */
+    text-align: center;                    /* Centra el título */
+}
+
+.modal-contenido p {
+    text-align: center;                    /* Centra el texto */
+    font-size: 0.95rem;                    /* Define el tamaño */
+    line-height: 1.5;                      /* Separa las líneas */
+}
+
+.modal-contenido form {
+    display: flex;                         /* Organiza el formulario */
+    flex-direction: column;                /* Coloca los campos en columna */
+    gap: 10px;                             /* Separa los campos */
+}
+
+.modal-contenido label {
+    font-size: 0.9rem;                     /* Tamaño de las etiquetas */
+    font-weight: bold;                     /* Resalta las etiquetas */
+}
+
+.modal-contenido input {
+    width: 100%;                           /* Ocupa todo el ancho */
+    padding: 10px;                         /* Espacio interno */
+    border: 1px solid #ccc;                /* Borde gris */
+    border-radius: 6px;                    /* Redondea las esquinas */
+}
+
+.modal-contenido button {
+    padding: 10px;                         /* Espacio interno */
+    border: none;                          /* Quita el borde */
+    border-radius: 6px;                    /* Redondea las esquinas */
+    cursor: pointer;                       /* Cambia el cursor */
+    background-color: #33455c;             /* Fondo azul */
+    color: white;                          /* Texto blanco */
+    transition: background-color 0.3s ease; /* Suaviza el cambio */
+}
+
+.modal-contenido button:hover {
+    background-color: #293b53;             /* Oscurece el botón */
+}
+
+/* Ajuste para celulares */
+@media (max-width: 480px) {
+    .modal-contenido {
+        padding: 20px;                     /* Reduce el espacio interno */
+    }
 }
