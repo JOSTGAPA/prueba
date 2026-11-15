@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <!-- Configuración básica y metaetiquetas de responsividad -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lentes para Hombre - Óptica G&A</title>
-    
+
     <!-- Hoja de estilos global. 
          La ruta '../../' asume que este archivo está en pages/hombre/ 
          y retrocede dos niveles para llegar a css/style.css -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
+
 <body>
     <!-- ==========================================
          ENCABEZADO (HEADER) Y NAVEGACIÓN
@@ -20,12 +22,12 @@
         <a href="../inicio/index.html">
             <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
         </a>
-        
+
         <nav class="nav-bar">
             <ul class="nav-menu">
                 <li><a href="../inicio/index.html">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
-                
+
                 <!-- Menú desplegable: Lentes Oftálmicos -->
                 <li class="dropdown">
                     <!-- Clase 'active' indica la sección actual -->
@@ -36,7 +38,7 @@
                         <li><a href="../niño/index.html">Niños</a></li>
                     </ul>
                 </li>
-                
+
                 <!-- Menú desplegable: Lentes de Sol -->
                 <li class="dropdown">
                     <a href="#">Lentes de Sol ▾</a>
@@ -46,11 +48,11 @@
                         <li><a href="../niño/sol.html">Niños</a></li>
                     </ul>
                 </li>
-                
+
                 <!-- Menú desplegable: Lentes de Contacto -->
                 <li class="dropdown">
-                <a href="#">Lentes de Contacto ▾</a>
-                <ul class="dropdown-menu">
+                    <a href="#">Lentes de Contacto ▾</a>
+                    <ul class="dropdown-menu">
                         <li><a href="../lentes de contacto/cont-miopia.html">Miopía e Hipermetropía</a></li>
                         <li><a href="../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
                         <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
@@ -73,9 +75,9 @@
         <div class="breadcrumbs">
             <a href="../inicio/index.html">Inicio</a> / <span>Lentes oftálmicos para hombre</span>
         </div>
-        
+
         <h2 class="category-title">LENTES OFTÁLMICOS PARA HOMBRE</h2>
-        
+
         <!-- Barra de herramientas: Conteo y ordenamiento -->
         <div class="store-toolbar">
             <span class="product-count">9 productos</span>
@@ -94,7 +96,7 @@
         <!-- Panel de Filtros -->
         <div class="filter-panel" id="filterPanel">
             <h3>FILTRAR PRODUCTOS</h3>
-            
+
             <div class="filter-group">
                 <label for="marca">Marca</label>
                 <select id="marca">
@@ -110,7 +112,7 @@
                     <option value="POLAROID">POLAROID</option>
                 </select>
             </div>
-            
+
             <div class="filter-group">
                 <label>Rango de precio</label>
                 <div class="price-inputs">
@@ -118,7 +120,7 @@
                     <input type="number" id="precioMax" placeholder="Precio máximo">
                 </div>
             </div>
-            
+
             <!-- Botones de aplicación de filtros JS -->
             <div class="filter-buttons">
                 <button class="btn-apply-filter" onclick="aplicarFiltros()">Aplicar filtros</button>
@@ -134,7 +136,7 @@
                 tres artículos para mantener la consistencia con los productos 4 al 9 y garantizar 
                 que las funciones de filtro JS operen correctamente sobre todo el catálogo.
             -->
-            
+
             <!-- Producto 1 -->
             <article class="product-card" data-marca="RAY-BAN" data-precio="450">
                 <a href="detalles/detalle-rayban.html" style="text-decoration: none; color: inherit; display: block;">
@@ -273,11 +275,13 @@
         <div class="footer-container">
             <!-- Columna de Marca y Newsletter -->
             <div class="footer-col brand-col">
-                <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A"> 
+                <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A">
                 <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
-                <button class="btn-subscribe">SUSCRIBIRSE</button>
+                <button class="btn-subscribe" onclick="mostrarSuscripcion()">
+                    SUSCRIBIRSE
+                </button>
             </div>
-            
+
             <!-- Columna de Servicios -->
             <div class="footer-col">
                 <h3>SERVICIOS</h3>
@@ -307,12 +311,12 @@
                 <p><strong>Consultas:</strong> 0800-14600</p>
                 <p>Calle Amador Merino Reyna 223, San Isidro, Lima</p>
                 <div class="social-links">
-                     <a href="https://www.facebook.com/">
+                    <a href="https://www.facebook.com/">
                         <img src="../../img/facebook.png" alt="facebook">
                     </a>
                     <a href="https://www.instagram.com/">
                         <img src="../../img/instagram.png" alt="instagram">
-                    </a> 
+                    </a>
                     <a href="https://www.tiktok.com/">
                         <img src="../../img/tiktok.png" alt="tiktok">
                     </a>
@@ -322,6 +326,27 @@
         <div class="footer-bottom">
             <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
         </div>
+
+        <!-- VENTANA DE SUSCRIPCIÓN -->
+        <div id="ventanaSuscripcion" class="modal">
+            <div class="modal-contenido">
+                <h2>¡Suscríbete a Óptica G&A!</h2>
+                <p>Déjanos tus datos para recibir nuestras novedades.</p>
+
+                <form id="formSuscripcion">
+                    <label for="nombreSuscripcion">Nombre:</label>
+                    <input type="text" id="nombreSuscripcion" required>
+
+                    <label for="correoSuscripcion">Correo electrónico:</label>
+                    <input type="email" id="correoSuscripcion" required>
+
+                    <button type="submit">Enviar</button>
+                    <button type="button" onclick="cerrarSuscripcion()">Cerrar</button>
+                </form>
+            </div>
+        </div>
     </footer>
+    <script src="../js/script.js"></script>
 </body>
+
 </html>
