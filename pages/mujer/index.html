@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lentes para Mujer - Óptica G&A</title>
+    <!-- Ruta al CSS global ajustada a la profundidad del archivo -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <!-- ==========================================
+         ENCABEZADO (HEADER) Y NAVEGACIÓN
+         ========================================== -->
+    <header class="header">
+        <a href="../inicio/index.html">
+            <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
+        </a>
+        <nav class="nav-bar">
+            <ul class="nav-menu">
+                <li><a href="../inicio/index.html">Inicio</a></li>
+                <li><a href="../sedes/sedes.html">Sedes</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="active">Lentes Oftálmicos ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../mujer/index.html">Mujer</a></li>
+                        <li><a href="../hombre/index.html">Hombre</a></li>
+                        <li><a href="../niño/index.html">Niños</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Lentes de Sol ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../mujer/sol.html">Mujer</a></li>
+                        <li><a href="../hombre/sol.html">Hombre</a></li>
+                        <li><a href="../niño/sol.html">Niños</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Lentes de Contacto ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../lentes de contacto/cont-miopia.html">Miopía e Hipermetropía</a></li>
+                        <li><a href="../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
+                        <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- ACCESO A LA CUENTA -->
+        <div class="cuenta-header">
+            <button class="btn-cuenta" onclick="mostrarLogin()" title="Mi cuenta">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M5 21v-2a7 7 0 0 1 14 0v2" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Barra de promociones superior -->
+    <div class="promo-bar">
+        <p>Suscríbete y obtén 15% DCTO en tu primera compra. Aplican T&C</p>
+    </div>
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL: CATÁLOGO DE PRODUCTOS
+         ========================================== -->
+    <main class="store-content">
+
+        <!-- Navegación por migas de pan (Breadcrumbs) -->
+        <div class="breadcrumbs">
+            <a href="../inicio/index.html">Inicio</a> / <span>Lentes oftálmicos para mujer</span>
+        </div>
+
+        <h2 class="category-title">LENTES OFTÁLMICOS PARA MUJER</h2>
+
+        <!-- Barra de herramientas: Conteo y ordenamiento -->
+        <div class="store-toolbar">
+            <span class="product-count">9 productos</span>
+            <div class="store-filters">
+                <select class="sort-select" id="ordenarProductos" onchange="ordenarProductos()">
+                    <option value="mas-vendidos">Ordenar por: Mas vendidos</option>
+                    <option value="mayor">precio: Mayor a Menor</option>
+                    <option value="menor">precio: Menor a Mayor</option>
+                </select>
+                <button class="btn-filter" onclick="mostrarFiltros()">Filtros</button>
+            </div>
+        </div>
+
+        <!-- Panel de Filtros -->
+        <div class="filter-panel" id="filterPanel">
+            <h3>FILTRAR PRODUCTOS</h3>
+
+            <div class="filter-group">
+                <label for="marca">Marca</label>
+                <select id="marca">
+                    <option value="todas">Todas las marcas</option>
+                    <option value="SEEN">SEEN</option>
+                    <option value="RALPH">RALPH</option>
+                    <option value="MICHAEL KORS">MICHAEL KORS</option>
+                    <option value="VOGUE">VOGUE</option>
+                    <option value="RAY-BAN">RAY-BAN</option>
+                    <option value="GUCCI">GUCCI</option>
+                    <option value="ARMANI EXCHANGE">ARMANI EXCHANGE</option>
+                    <option value="PRADA">PRADA</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Rango de precio</label>
+                <div class="price-inputs">
+                    <input type="number" id="precioMin" placeholder="Precio mínimo">
+                    <input type="number" id="precioMax" placeholder="Precio máximo">
+                </div>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="btn-apply-filter" onclick="aplicarFiltros()">
+                    Aplicar filtros
+                </button>
+                <button class="btn-clear-filter" onclick="limpiarFiltros()">
+                    Limpiar filtros
+                </button>
+            </div>
+        </div>
+
+        <!-- Grilla de Tarjetas de Producto -->
+        <section class="products-grid">
+
+            <!-- Producto 1: SEEN Havana Brown Havana -->
+            <article class="product-card" data-marca="SEEN" data-precio="129">
+                <a href="detalles/detalle-seen.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <img src="../../img/image_1.png" alt="SEEN Havana Brown Havana">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">SEEN</p>
+                        <h3 class="product-name">Havana Brown Havana</h3>
+                        <p class="price">S/129</p>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Producto 2: RALPH Havana Clásico -->
+            <article class="product-card" data-marca="RALPH" data-precio="410">
+                <a href="detalles/detalle-ralph.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">15% DCTO</span>
+                        <img src="../../img/image_2.png" alt="Ralph Havana Clásico">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">RALPH</p>
+                        <h3 class="product-name">Havana Clásico</h3>
+                        <p class="price">S/410</p>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Producto 3: MICHAEL KORS Santa Clara Negro -->
+            <article class="product-card" data-marca="MICHAEL KORS" data-precio="605">
+                <a href="detalles/detalle-michael.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">20% DCTO</span>
+                        <img src="../../img/image_3.png" alt="Michael Kors Santa Clara Negro">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">MICHAEL KORS</p>
+                        <h3 class="product-name">Santa Clara Negro</h3>
+                        <p class="price">S/605</p>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Producto 4: VOGUE Cat Eye Elegance -->
+            <article class="product-card" data-marca="VOGUE" data-precio="320">
+                <a href="detalles/detalle-vogue-cat-eye.html"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">NUEVO</span>
+                        <img src="../../img/image_4.png" alt="Vogue Cat Eye Elegance">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">VOGUE</p>
+                        <h3 class="product-name">Cat Eye Elegance</h3>
+                        <p class="price">S/320</p>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Producto 5: RAY-BAN Wayfarer Light -->
+            <article class="product-card" data-marca="RAY-BAN" data-precio="550">
+                <a href="detalles/detalle-rayban-wayfarer-light.html"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">15% DCTO</span>
+                        <img src="../../img/image_5.png" alt="Ray-Ban Wayfarer Light">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">RAY-BAN</p>
+                        <h3 class="product-name">Wayfarer Light</h3>
+                        <p class="price">S/550</p>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Producto 6: GUCCI Gold Metal Frame -->
+            <article class="product-card" data-marca="GUCCI" data-precio="890">
+                <a href="detalles/detalle-gucci-gold-metal-frame.html"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">20% DCTO</span>
+                        <img src="../../img/image_6.png" alt="Gucci Gold Metal Frame">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">GUCCI</p>
+                        <h3 class="product-name">Gold Metal Frame</h3>
+                        <p class="price">S/890</p>
+                    </div>
+                </a>
+            </article>
+
+
+            <!-- Producto 7: ARMANI EXCHANGE Matte Black -->
+            <article class="product-card" data-marca="ARMANI EXCHANGE" data-precio="380">
+                <a href="detalles/detalle-armani-exchange-matte-black.html"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <img src="../../img/image_7.png" alt="Armani Exchange Matte Black">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">ARMANI EXCHANGE</p>
+                        <h3 class="product-name">Matte Black</h3>
+                        <p class="price">S/380</p>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Producto 8: PRADA Tortoise Shell -->
+            <article class="product-card" data-marca="PRADA" data-precio="950">
+                <a href="detalles/detalle-prada-tortoise-shell.html"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">15% DCTO</span>
+                        <img src="../../img/image_8.png" alt="Prada Tortoise Shell">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">PRADA</p>
+                        <h3 class="product-name">Tortoise Shell</h3>
+                        <p class="price">S/950</p>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Producto 9: SEEN Minimalist Clear -->
+            <article class="product-card" data-marca="SEEN" data-precio="149">
+                <a href="detalles/detalle-seen-minimalist-clear.html"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <img src="../../img/image_9.png" alt="Seen Minimalist Clear">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">SEEN</p>
+                        <h3 class="product-name">Minimalist Clear</h3>
+                        <p class="price">S/149</p>
+                    </div>
+                </a>
+            </article>
+        </section>
+    </main>
+
+    <!-- ==========================================
+         PIE DE PÁGINA (FOOTER)
+         ========================================== -->
+    <footer class="mega-footer">
+        <div class="footer-container">
+            <!-- Columna de Marca y Newsletter -->
+            <div class="footer-col brand-col">
+                <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A">
+                <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
+                <button class="btn-subscribe">SUSCRIBIRSE</button>
+            </div>
+
+            <!-- Columna de Servicios -->
+            <div class="footer-col">
+                <h3>SERVICIOS</h3>
+                <ul>
+                    <li><a href="#">Contáctanos</a></li>
+                    <li><a href="#">Consulta tu Factura</a></li>
+                    <li><a href="#">Seguimiento de Pedido</a></li>
+                    <li><a href="#">Garantía Extendida</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Institucional -->
+            <div class="footer-col">
+                <h3>NOSOTROS</h3>
+                <ul>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Salud Visual</a></li>
+                    <li><a href="#">Garantías</a></li>
+                    <li><a href="#">Políticas de privacidad</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna de Contacto y Redes -->
+            <div class="footer-col contact-col">
+                <h3>CONTACTO</h3>
+                <p><strong>Horario atención:</strong> Lunes a Sábado 10:00 a 19:00</p>
+                <p><strong>Consultas:</strong> 0800-14600</p>
+                <p>Calle Amador Merino Reyna 223, San Isidro, Lima</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/">
+                        <img src="../../img/facebook.png" alt="facebook">
+                    </a>
+                    <a href="https://www.instagram.com/">
+                        <img src="../../img/instagram.png" alt="instagram">
+                    </a>
+                    <a href="https://www.tiktok.com/">
+                        <img src="../../img/tiktok.png" alt="tiktok">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
+        </div>
+    </footer>
+    <!-- ==========================================
+         VENTANA DE INICIO DE SESIÓN (LOGIN)
+         ========================================== -->
+    <div id="ventanaLogin" class="modal">
+        <div class="modal-contenido">
+            <h2>Iniciar sesión</h2>
+            <p>Ingresa a tu cuenta de Óptica G&A.</p>
+
+            <form id="formLogin">
+                <label for="correoLogin">Correo electrónico:</label>
+                <input type="email" id="correoLogin" required>
+
+                <label for="passwordLogin">Contraseña:</label>
+                <input type="password" id="passwordLogin" required>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+
+            <p>¿No tienes una cuenta?
+                <a href="#" onclick="mostrarRegistro(); return false;">Crear cuenta</a>
+            </p>
+
+            <button type="button" onclick="cerrarLogin()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         VENTANA DE CREACIÓN DE CUENTA (REGISTRO)
+         ========================================== -->
+    <div id="ventanaRegistro" class="modal">
+        <div class="modal-contenido">
+            <h2>Crear cuenta</h2>
+            <p>Regístrate en Óptica G&A.</p>
+
+            <form id="formRegistro">
+                <label for="nombreRegistro">Nombre:</label>
+                <input type="text" id="nombreRegistro" required>
+
+                <label for="apellidoRegistro">Apellido:</label>
+                <input type="text" id="apellidoRegistro" required>
+
+                <label for="correoRegistro">Correo electrónico:</label>
+                <input type="email" id="correoRegistro" required>
+
+                <label for="passwordRegistro">Contraseña:</label>
+                <input type="password" id="passwordRegistro" required>
+
+                <button type="submit">Crear cuenta</button>
+            </form>
+
+            <p>¿Ya tienes una cuenta?
+                <a href="#" onclick="mostrarLogin(); return false;">Iniciar sesión</a>
+            </p>
+
+            <button type="button" onclick="cerrarRegistro()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

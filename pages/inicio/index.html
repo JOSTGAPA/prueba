@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Óptica G&A</title>
+    <!-- Los ../../ le indican que salga de 'inicio' y de 'pages' para encontrar la carpeta css -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <!-- ==========================================
+         ENCABEZADO (HEADER) Y NAVEGACIÓN
+         ========================================== -->
+    <header class="header">
+        <a href="../inicio/index.html">
+            <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
+        </a>
+
+        <nav class="nav-bar">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="../sedes/sedes.html">Sedes</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Lentes Oftálmicos ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../todo/oftalmicosall.html">Todos</a></li>
+                        <li><a href="../mujer/index.html">Mujer</a></li>
+                        <li><a href="../hombre/index.html">Hombre</a></li>
+                        <li><a href="../niño/index.html">Niños</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Lentes de Sol ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../todo/solall.html">Todos</a></li>
+                        <li><a href="../mujer/sol.html">Mujer</a></li>
+                        <li><a href="../hombre/sol.html">Hombre</a></li>
+                        <li><a href="../niño/sol.html">Niños</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Lentes de Contacto ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../todo/contactoall.html">Todos</a></li>
+                        <li><a href="../lentes de contacto/cont-miopia.html">Miopía e Hipermetropía</a></li>
+                        <li><a href="../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
+                        <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- ACCESO A LA CUENTA -->
+        <div class="cuenta-header">
+            <button class="btn-cuenta" onclick="mostrarLogin()" title="Mi cuenta">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M5 21v-2a7 7 0 0 1 14 0v2" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         HERO SECTION (BANNER PRINCIPAL)
+         ========================================== -->
+    <div class="hero-container">
+        <img class="hero-img" src="../../img/optica.jpg" alt="Imagen principal de la Óptica">
+    </div>
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL: CATEGORÍAS
+         ========================================== -->
+    <main class="main-content">
+        <h2>Bienvenidos a nuestra Óptica</h2>
+        <p>Cuida tu salud visual con nuestros productos de alta calidad.</p>
+
+        <h3>Abre los Ojos</h3>
+        <p>Somos una marca que ve las cosas diferente. Sabemos que el mundo necesita lentes de buena calidad a un precio
+            justo y nosotros estamos comprometidos a ofrecer siempre lo mejor.</p>
+
+        <section class="categorias-grid">
+            <a href="../todo/oftalmicosall.html" class="card">
+                <img src="../../img/pri_oft.png" alt="Lentes Oftálmicos">
+                <div class="card-footer">
+                    <h4>LENTES OFTÁLMICOS</h4>
+                </div>
+            </a>
+
+            <a href="../todo/solall.html" class="card">
+                <img src="../../img/pri_len.png" alt="Lentes de Sol">
+                <div class="card-footer">
+                    <h4>LENTES DE SOL</h4>
+                </div>
+            </a>
+
+            <a href="../todo/contactoall.html" class="card">
+                <img src="../../img/pri_con.png" alt="Lentes de Contacto">
+                <div class="card-footer">
+                    <h4>LENTES DE CONTACTO</h4>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <!-- ==========================================
+         PIE DE PÁGINA (FOOTER)
+         ========================================== -->
+    <!-- 
+        Nota de mantenimiento: Se ha eliminado el footer redundante (<footer class="footer">) 
+        que estaba justo antes de este 'mega-footer', consolidando los derechos reservados 
+        en la sección '.footer-bottom' para evitar contenido duplicado en la interfaz. 
+    -->
+    <footer class="mega-footer">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A">
+                <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
+                <button class="btn-subscribe" onclick="mostrarSuscripcion()">
+                    SUSCRIBIRSE
+                </button>
+            </div>
+
+            <div class="footer-col">
+                <h3>SERVICIOS</h3>
+                <ul>
+                    <li><a href="#">Contáctanos</a></li>
+                    <li><a href="#">Consulta tu Factura</a></li>
+                    <li><a href="#">Seguimiento de Pedido</a></li>
+                    <li><a href="#">Garantía Extendida</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>NOSOTROS</h3>
+                <ul>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Salud Visual</a></li>
+                    <li><a href="#">Garantías</a></li>
+                    <li><a href="#">Políticas de privacidad</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h3>CONTACTO</h3>
+                <p><strong>Horario atención:</strong> Lunes a Sábado 10:00 a 19:00</p>
+                <p><strong>Consultas:</strong> 0800-14600</p>
+                <p>Calle Amador Merino Reyna 223, San Isidro, Lima</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/">
+                        <img src="../../img/facebook.png" alt="facebook">
+                    </a>
+                    <a href="https://www.instagram.com/">
+                        <img src="../../img/instagram.png" alt="instagram">
+                    </a>
+                    <a href="https://www.tiktok.com/">
+                        <img src="../../img/tiktok.png" alt="tiktok">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><strong>Derechos Reservados 2026 &copy; Óptica G&A - Expertos en salud visual y Lentes en Perú.</strong>
+            </p>
+        </div>
+    </footer>
+    <!-- VENTANA DE SUSCRIPCIÓN -->
+    <div id="ventanaSuscripcion" class="modal">
+        <div class="modal-contenido">
+            <h2>¡Suscríbete a Óptica G&A!</h2>
+            <p>Déjanos tus datos para recibir nuestras novedades.</p>
+
+            <form id="formSuscripcion">
+                <label for="nombreSuscripcion">Nombre:</label>
+                <input type="text" id="nombreSuscripcion" required>
+
+                <label for="correoSuscripcion">Correo electrónico:</label>
+                <input type="email" id="correoSuscripcion" required>
+
+                <button type="submit">Enviar</button>
+                <button type="button" onclick="cerrarSuscripcion()">Cerrar</button>
+            </form>
+        </div>
+    </div>
+    <!-- ==========================================
+         VENTANA DE INICIO DE SESIÓN (LOGIN)
+         ========================================== -->
+    <div id="ventanaLogin" class="modal">
+        <div class="modal-contenido">
+
+            <h2>Iniciar sesión</h2>
+            <p>Ingresa a tu cuenta de Óptica G&A.</p>
+
+            <form id="formLogin">
+                <label for="correoLogin">Correo electrónico:</label>
+                <input type="email" id="correoLogin" required>
+
+                <label for="passwordLogin">Contraseña:</label>
+                <input type="password" id="passwordLogin" required>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+
+            <p>¿No tienes una cuenta?
+                <a href="#" onclick="mostrarRegistro(); return false;">Crear cuenta</a>
+            </p>
+
+            <button type="button" onclick="cerrarLogin()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         VENTANA DE CREACIÓN DE CUENTA (REGISTRO)
+         ========================================== -->
+    <div id="ventanaRegistro" class="modal">
+        <div class="modal-contenido">
+
+            <h2>Crear cuenta</h2>
+            <p>Regístrate en Óptica G&A.</p>
+
+            <form id="formRegistro">
+                <label for="nombreRegistro">Nombre:</label>
+                <input type="text" id="nombreRegistro" required>
+
+                <label for="apellidoRegistro">Apellido:</label>
+                <input type="text" id="apellidoRegistro" required>
+
+                <label for="correoRegistro">Correo electrónico:</label>
+                <input type="email" id="correoRegistro" required>
+
+                <label for="passwordRegistro">Contraseña:</label>
+                <input type="password" id="passwordRegistro" required>
+
+                <button type="submit">Crear cuenta</button>
+            </form>
+
+            <p>¿Ya tienes una cuenta?
+                <a href="#" onclick="mostrarLogin(); return false;">Iniciar sesión</a>
+            </p>
+
+            <button type="button" onclick="cerrarRegistro()">Cerrar</button>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
