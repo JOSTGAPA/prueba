@@ -1611,15 +1611,3 @@ body { /*estructura general de todas las página*/
         padding: 20px;                     /* Reduce el espacio interno */
     }
 }
-/* ========================================= */
-/* 9. ICONO DE CARRITO                          */
-.carrito-icon {
-    width: 50px; /* Ajusta el tamaño del icono del carrito */
-    height: auto; /* Mantiene la proporción */
-    margin-right: 10px; /* Espacio a la derecha del icono */
-}
-.carrito-icon:hover {
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
-    transition: transform 0.3s ease; /* Suaviza la transición */
-}
-/* ========================================= */
