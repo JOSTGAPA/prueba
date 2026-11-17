@@ -1,6 +1,6 @@
-<!-- written by jorge campos -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
     <!-- Ruta al CSS global ajustada a la profundidad del archivo -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
+
 <body>
     <!-- ==========================================
          ENCABEZADO (HEADER) Y NAVEGACIÓN
@@ -20,7 +21,7 @@
             <ul class="nav-menu">
                 <li><a href="../inicio/index.html">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
-                
+
                 <li class="dropdown">
                     <a href="#">Lentes Oftálmicos ▾</a>
                     <ul class="dropdown-menu">
@@ -29,7 +30,7 @@
                         <li><a href="../niño/index.html">Niños</a></li>
                     </ul>
                 </li>
-                
+
                 <li class="dropdown">
                     <a href="#" class="active">Lentes de Sol ▾</a>
                     <ul class="dropdown-menu">
@@ -38,7 +39,7 @@
                         <li><a href="../niño/sol.html">Niños</a></li>
                     </ul>
                 </li>
-                
+
                 <li class="dropdown">
                     <a href="#">Lentes de Contacto ▾</a>
                     <ul class="dropdown-menu">
@@ -46,9 +47,19 @@
                         <li><a href="../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
                         <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
                     </ul>
-                </li>                
+                </li>
             </ul>
         </nav>
+        <!-- ACCESO A LA CUENTA -->
+        <div class="cuenta-header">
+            <button class="btn-cuenta" onclick="mostrarLogin()" title="Mi cuenta">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M5 21v-2a7 7 0 0 1 14 0v2" />
+                </svg>
+            </button>
+        </div>
     </header>
 
     <!-- Barra de promociones superior -->
@@ -60,14 +71,14 @@
          CONTENIDO PRINCIPAL: CATÁLOGO DE PRODUCTOS
          ========================================== -->
     <main class="store-content">
-        
+
         <!-- Navegación por migas de pan (Breadcrumbs) -->
         <div class="breadcrumbs">
             <a href="../inicio/index.html">Inicio</a> / <span>Lentes de sol para mujer</span>
         </div>
-        
+
         <h2 class="category-title">LENTES DE SOL PARA MUJER</h2>
-        
+
         <!-- Barra de herramientas: Conteo y ordenamiento -->
         <div class="store-toolbar">
             <span class="product-count">9 productos</span>
@@ -84,7 +95,7 @@
         <!-- Panel de Filtros -->
         <div class="filter-panel" id="filterPanel">
             <h3>FILTRAR PRODUCTOS</h3>
-            
+
             <div class="filter-group">
                 <label for="marca">Marca</label>
                 <select id="marca">
@@ -97,7 +108,7 @@
                     <option value="VERSACE">VERSACE</option>
                 </select>
             </div>
-            
+
             <div class="filter-group">
                 <label>Rango de precio</label>
                 <div class="price-inputs">
@@ -105,7 +116,7 @@
                     <input type="number" id="precioMax" placeholder="Precio máximo">
                 </div>
             </div>
-            
+
             <div class="filter-buttons">
                 <button class="btn-apply-filter" onclick="aplicarFiltros()">
                     Aplicar filtros
@@ -118,10 +129,11 @@
 
         <!-- Grilla de Tarjetas de Producto -->
         <section class="products-grid">
-            
+
             <!-- Producto 1: Michael Kors Urban Pink -->
             <article class="product-card" data-marca="MICHAEL KORS" data-precio="220">
-                <a href="detalles/detalle-mk-sun.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                <a href="detalles/detalle-mk-sun.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
                     <div class="product-image-container">
                         <span class="badge">NUEVO</span>
                         <img src="../../img/sol_mujer_1.png" alt="Michael Kors Urban pink">
@@ -137,7 +149,8 @@
 
             <!-- Producto 2: Vogue Eyewear Cafe/havana -->
             <article class="product-card" data-marca="VOGUE EYEWEAR" data-precio="350">
-                <a href="detalles/detalle-vogue-havana.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                <a href="detalles/detalle-vogue-havana.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
                     <div class="product-image-container">
                         <span class="badge">15% DCTO</span>
                         <img src="../../img/sol_mujer_2.png" alt="Vogue Eyewear Cafe/havana">
@@ -153,7 +166,8 @@
 
             <!-- Producto 3: Vogue Eyewear Little Black -->
             <article class="product-card" data-marca="VOGUE EYEWEAR" data-precio="150">
-                <a href="detalles/detalle-vogue-black.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                <a href="detalles/detalle-vogue-black.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
                     <div class="product-image-container">
                         <span class="badge">20% DCTO</span>
                         <img src="../../img/sol_mujer_3.png" alt="Vogue Eyewear Little Black">
@@ -169,88 +183,105 @@
 
             <!-- Producto 4: Ray-Ban Purple Girl -->
             <article class="product-card" data-marca="RAY-BAN" data-precio="550">
-                <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/sol_mujer_4.png" alt="Lentes de sol para mujer 4" class="product-image">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">RAY-BAN</p>
-                    <h3 class="product-name">Purple girl</h3>
-                    <p class="price">S/550</p>
-                </div>
+                <a href="detalles/detalle-rayban-purple-girl.html"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">NUEVO</span>
+                        <img src="../../img/sol_mujer_4.png" alt="Ray-Ban Purple Girl" class="product-image">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">RAY-BAN</p>
+                        <h3 class="product-name">Purple girl</h3>
+                        <p class="price">S/550</p>
+                    </div>
+                </a>
             </article>
 
             <!-- Producto 5: Ralph Cafee Girl -->
             <article class="product-card" data-marca="RALPH" data-precio="450">
-                <div class="product-image-container">
-                    <span class="badge">15% DCTO</span>
-                    <img src="../../img/sol_mujer_5.png" alt="Lentes de sol para mujer 5" class="product-image">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">RALPH</p>
-                    <h3 class="product-name">Cafee girl</h3>
-                    <p class="price">S/450</p>
-                </div>
+                <a href="detalles/detalle-ralph-cafee-girl.html"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">15% DCTO</span>
+                        <img src="../../img/sol_mujer_5.png" alt="Ralph Cafee Girl" class="product-image">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">RALPH</p>
+                        <h3 class="product-name">Cafee girl</h3>
+                        <p class="price">S/450</p>
+                    </div>
+                </a>
             </article>
 
             <!-- Producto 6: Ray-Ban Black Girl -->
             <article class="product-card" data-marca="RAY-BAN" data-precio="850">
-                <div class="product-image-container">
-                    <span class="badge">OBTÉN 50% 2DO PAR</span>
-                    <img src="../../img/sol_mujer_6.png" alt="Lentes de sol para mujer 6" class="product-image">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">RAY-BAN</p>
-                    <h3 class="product-name">Black girl</h3>
-                    <p class="price">S/850</p>
-                </div>
+                <a href="detalles/detalle-rayban-black-girl.html"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">OBTÉN 50% 2DO PAR</span>
+                        <img src="../../img/sol_mujer_6.png" alt="Ray-Ban Black Girl" class="product-image">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">RAY-BAN</p>
+                        <h3 class="product-name">Black girl</h3>
+                        <p class="price">S/850</p>
+                    </div>
+                </a>
             </article>
 
             <!-- Producto 7: Jean Monnier Grey -->
             <article class="product-card" data-marca="JEAN MONNIER" data-precio="550">
-                <div class="product-image-container">
-                    <span class="badge">20% DCTO</span>
-                    <img src="../../img/sol_mujer_7.png" alt="Lentes de sol para mujer 7" class="product-image">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">JEAN MONNIER</p>
-                    <h3 class="product-name">Grey</h3>
-                    <p class="price">S/550</p>
-                </div>
+                <a href="detalles/detalle-jean-monnier-grey.html"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">20% DCTO</span>
+                        <img src="../../img/sol_mujer_7.png" alt="Jean Monnier Grey" class="product-image">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">JEAN MONNIER</p>
+                        <h3 class="product-name">Grey</h3>
+                        <p class="price">S/550</p>
+                    </div>
+                </a>
             </article>
 
             <!-- Producto 8: Versace Café/havana -->
             <article class="product-card" data-marca="VERSACE" data-precio="350">
-                <div class="product-image-container">
-                    <span class="badge">15% DCTO</span>
-                    <img src="../../img/sol_mujer_8.png" alt="Lentes de sol para mujer 8" class="product-image">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">VERSACE</p>
-                    <h3 class="product-name">Café/havana</h3>
-                    <p class="price">S/350</p>
-                </div>
+                <a href="detalles/detalle-versace-cafe-havana.html"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">15% DCTO</span>
+                        <img src="../../img/sol_mujer_8.png" alt="Lentes de sol para mujer 8" class="product-image">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">VERSACE</p>
+                        <h3 class="product-name">Café/havana</h3>
+                        <p class="price">S/350</p>
+                    </div>
+                </a>
             </article>
 
             <!-- Producto 9: Ralph Beige Girl -->
             <article class="product-card" data-marca="RALPH" data-precio="350">
-                <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/sol_mujer_9.png" alt="Lentes de sol para mujer 9" class="product-image">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">RALPH</p>
-                    <h3 class="product-name">Beige girl</h3>
-                    <p class="price">S/350</p>
-                </div>
+                <a href="detalles/detalle-ralph-beige-girl.html"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">NUEVO</span>
+                        <img src="../../img/sol_mujer_9.png" alt="Lentes de sol para mujer 9" class="product-image">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">RALPH</p>
+                        <h3 class="product-name">Beige girl</h3>
+                        <p class="price">S/350</p>
+                    </div>
+                </a>
             </article>
-            
         </section>
     </main>
 
@@ -261,11 +292,11 @@
         <div class="footer-container">
             <!-- Columna de Marca y Newsletter -->
             <div class="footer-col brand-col">
-                <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A"> 
+                <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A">
                 <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
                 <button class="btn-subscribe">SUSCRIBIRSE</button>
             </div>
-            
+
             <!-- Columna de Servicios -->
             <div class="footer-col">
                 <h3>SERVICIOS</h3>
@@ -295,12 +326,12 @@
                 <p><strong>Consultas:</strong> 0800-14600</p>
                 <p>Calle Amador Merino Reyna 223, San Isidro, Lima</p>
                 <div class="social-links">
-                     <a href="https://www.facebook.com/">
+                    <a href="https://www.facebook.com/">
                         <img src="../../img/facebook.png" alt="facebook">
                     </a>
                     <a href="https://www.instagram.com/">
                         <img src="../../img/instagram.png" alt="instagram">
-                    </a> 
+                    </a>
                     <a href="https://www.tiktok.com/">
                         <img src="../../img/tiktok.png" alt="tiktok">
                     </a>
@@ -311,5 +342,65 @@
             <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
         </div>
     </footer>
+    <!-- ==========================================
+         VENTANA DE INICIO DE SESIÓN (LOGIN)
+         ========================================== -->
+    <div id="ventanaLogin" class="modal">
+        <div class="modal-contenido">
+            <h2>Iniciar sesión</h2>
+            <p>Ingresa a tu cuenta de Óptica G&A.</p>
+
+            <form id="formLogin">
+                <label for="correoLogin">Correo electrónico:</label>
+                <input type="email" id="correoLogin" required>
+
+                <label for="passwordLogin">Contraseña:</label>
+                <input type="password" id="passwordLogin" required>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+
+            <p>¿No tienes una cuenta?
+                <a href="#" onclick="mostrarRegistro(); return false;">Crear cuenta</a>
+            </p>
+
+            <button type="button" onclick="cerrarLogin()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         VENTANA DE CREACIÓN DE CUENTA (REGISTRO)
+         ========================================== -->
+    <div id="ventanaRegistro" class="modal">
+        <div class="modal-contenido">
+            <h2>Crear cuenta</h2>
+            <p>Regístrate en Óptica G&A.</p>
+
+            <form id="formRegistro">
+                <label for="nombreRegistro">Nombre:</label>
+                <input type="text" id="nombreRegistro" required>
+
+                <label for="apellidoRegistro">Apellido:</label>
+                <input type="text" id="apellidoRegistro" required>
+
+                <label for="correoRegistro">Correo electrónico:</label>
+                <input type="email" id="correoRegistro" required>
+
+                <label for="passwordRegistro">Contraseña:</label>
+                <input type="password" id="passwordRegistro" required>
+
+                <button type="submit">Crear cuenta</button>
+            </form>
+
+            <p>¿Ya tienes una cuenta?
+                <a href="#" onclick="mostrarLogin(); return false;">Iniciar sesión</a>
+            </p>
+
+            <button type="button" onclick="cerrarRegistro()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
 </body>
+
 </html>

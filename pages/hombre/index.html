@@ -60,6 +60,16 @@
                 </li>
             </ul>
         </nav>
+        <!-- ACCESO A LA CUENTA -->
+        <div class="cuenta-header">
+            <button class="btn-cuenta" onclick="mostrarLogin()" title="Mi cuenta">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M5 21v-2a7 7 0 0 1 14 0v2" />
+                </svg>
+            </button>
+        </div>
     </header>
 
     <!-- Barra de promociones superior -->
@@ -185,86 +195,101 @@
                 </a>
             </article>
 
-            <!-- Producto 4 (Falta etiqueta <a> de enlace a detalles) -->
+            <!-- Producto 4 -->
             <article class="product-card" data-marca="LACOSTE" data-precio="390">
-                <div class="product-image-container">
-                    <img src="../../img/image_44.webp" alt="Lente Hombre 4">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">LACOSTE</p>
-                    <h3 class="product-name">L2767 Green Detail</h3>
-                    <p class="price">S/390</p>
-                </div>
+                <a href="detalles/detalle-lacoste.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <img src="../../img/image_44.webp" alt="Lacoste L2767 Green Detail">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">LACOSTE</p>
+                        <h3 class="product-name">L2767 Green Detail</h3>
+                        <p class="price">S/390</p>
+                    </div>
+                </a>
             </article>
+
 
             <!-- Producto 5 -->
             <article class="product-card" data-marca="TOMMY HILFIGER" data-precio="420">
-                <div class="product-image-container">
-                    <span class="badge">15% DCTO</span>
-                    <img src="../../img/image_55.webp" alt="Lente Hombre 5">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">TOMMY HILFIGER</p>
-                    <h3 class="product-name">TH 1528 Classic</h3>
-                    <p class="price">S/420</p>
-                </div>
+                <a href="detalles/detalle-tommy.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">15% DCTO</span>
+                        <img src="../../img/image_55.webp" alt="Tommy Hilfiger TH 1528 Classic">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">TOMMY HILFIGER</p>
+                        <h3 class="product-name">TH 1528 Classic</h3>
+                        <p class="price">S/420</p>
+                    </div>
+                </a>
             </article>
 
-            <!-- Producto 6 -->
+            <!-- Producto 6: HUGO BOSS Titanium Frame -->
             <article class="product-card" data-marca="HUGO BOSS" data-precio="890">
-                <div class="product-image-container">
-                    <span class="badge">20% DCTO</span>
-                    <img src="../../img/image_66.webp" alt="Lente Hombre 6">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">HUGO BOSS</p>
-                    <h3 class="product-name">Titanium Frame</h3>
-                    <p class="price">S/890</p>
-                </div>
+                <a href="detalles/detalle-hugo_boss.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                    <div class="product-image-container">
+                        <img src="../../img/image_66.webp" alt="Hugo Boss Titanium Frame">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">HUGO BOSS</p>
+                        <h3 class="product-name">Titanium Frame</h3>
+                        <p class="price">S/890</p>
+                    </div>
+                </a>
             </article>
 
             <!-- Producto 7 -->
             <article class="product-card" data-marca="CARRERA" data-precio="350">
-                <div class="product-image-container">
-                    <img src="../../img/image_77.webp" alt="Lente Hombre 7">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">CARRERA</p>
-                    <h3 class="product-name">Carrera 8824 Negro</h3>
-                    <p class="price">S/350</p>
-                </div>
+                <a href="detalles/detalle-carrera.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <img src="../../img/image_77.webp" alt="Carrera 8824 Crystal">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">CARRERA</p>
+                        <h3 class="product-name">Carrera 8824 Crystal</h3>
+                        <p class="price">S/350</p>
+                    </div>
+                </a>
             </article>
 
             <!-- Producto 8 -->
             <article class="product-card" data-marca="PRADA LINEA ROSSA" data-precio="950">
-                <div class="product-image-container">
-                    <span class="badge">15% DCTO</span>
-                    <img src="../../img/image_88.webp" alt="Lente Hombre 8">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">PRADA LINEA ROSSA</p>
-                    <h3 class="product-name">Sport Active Frame</h3>
-                    <p class="price">S/950</p>
-                </div>
+                <a href="detalles/detalle-prada-linea-rossa.html"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">15% DCTO</span>
+                        <img src="../../img/image_88.webp" alt="PRADA LINEA ROSSA Sport Active Frame">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">PRADA LINEA ROSSA</p>
+                        <h3 class="product-name">Sport Active Frame</h3>
+                        <p class="price">S/950</p>
+                    </div>
+                </a>
             </article>
 
             <!-- Producto 9 -->
             <article class="product-card" data-marca="POLAROID" data-precio="180">
-                <div class="product-image-container">
-                    <img src="../../img/image_99.webp" alt="Lente Hombre 9">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">POLAROID</p>
-                    <h3 class="product-name">Essential Basic</h3>
-                    <p class="price">S/180</p>
-                </div>
+                <a href="detalles/detalle-polaroid.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <img src="../../img/image_99.webp" alt="Polaroid Essential Basic">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">POLAROID</p>
+                        <h3 class="product-name">Essential Basic</h3>
+                        <p class="price">S/180</p>
+                    </div>
+                </a>
             </article>
+
         </section>
     </main>
 
@@ -346,6 +371,64 @@
             </div>
         </div>
     </footer>
+
+    <!-- ==========================================
+         VENTANA DE INICIO DE SESIÓN (LOGIN)
+         ========================================== -->
+    <div id="ventanaLogin" class="modal">
+        <div class="modal-contenido">
+            <h2>Iniciar sesión</h2>
+            <p>Ingresa a tu cuenta de Óptica G&A.</p>
+
+            <form id="formLogin">
+                <label for="correoLogin">Correo electrónico:</label>
+                <input type="email" id="correoLogin" required>
+
+                <label for="passwordLogin">Contraseña:</label>
+                <input type="password" id="passwordLogin" required>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+
+            <p>¿No tienes una cuenta?
+                <a href="#" onclick="mostrarRegistro(); return false;">Crear cuenta</a>
+            </p>
+
+            <button type="button" onclick="cerrarLogin()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         VENTANA DE CREACIÓN DE CUENTA (REGISTRO)
+         ========================================== -->
+    <div id="ventanaRegistro" class="modal">
+        <div class="modal-contenido">
+            <h2>Crear cuenta</h2>
+            <p>Regístrate en Óptica G&A.</p>
+
+            <form id="formRegistro">
+                <label for="nombreRegistro">Nombre:</label>
+                <input type="text" id="nombreRegistro" required>
+
+                <label for="apellidoRegistro">Apellido:</label>
+                <input type="text" id="apellidoRegistro" required>
+
+                <label for="correoRegistro">Correo electrónico:</label>
+                <input type="email" id="correoRegistro" required>
+
+                <label for="passwordRegistro">Contraseña:</label>
+                <input type="password" id="passwordRegistro" required>
+
+                <button type="submit">Crear cuenta</button>
+            </form>
+
+            <p>¿Ya tienes una cuenta?
+                <a href="#" onclick="mostrarLogin(); return false;">Iniciar sesión</a>
+            </p>
+
+            <button type="button" onclick="cerrarRegistro()">Cerrar</button>
+        </div>
+    </div>
     <script src="../js/script.js"></script>
 </body>
 

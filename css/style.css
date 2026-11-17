@@ -51,9 +51,9 @@ body { /*estructura general de todas las página*/
 }
 
 .nav-bar { /* Contenedor del menú de navegación */
-
-    display: flex;          /*Permite organizar los elementos del menú*/
-    align-items: center;    /*Centra verticalmente el menuú*/
+    display: flex;              /*Permite organizar los elementos del menú*/
+    align-items: center;         /*Centra verticalmente el menú*/
+    margin-left: auto;           /*Mueve el menú hacia la derecha*/
      /* SE VE EN LA PARTE SUPERIOR DE TODAS LAS PÁGINAS */
 }
 
@@ -124,6 +124,114 @@ body { /*estructura general de todas las página*/
     background-color: #293b53;      /*Cambia el fondo cuando pasamos el mouse*/
     /*SE VE EN CADA OPCIÓN DEL MENÚ DESPLEGABLE*/
 }
+
+/* ========================================= */
+/* 2.1 ACCESO A LA CUENTA*/
+/* ========================================= */
+
+.cuenta-header {
+    display: flex;              /*Alinea el acceso a la cuenta*/
+    align-items: center;        /*Centra verticalmente el icono*/
+    margin-left: 15px;          /*Separa el icono del menú*/
+}
+
+.btn-cuenta {
+    background: none;           /*Elimina el fondo del botón*/
+    border: none;               /*Elimina el borde del botón*/
+    cursor: pointer;            /*Muestra la mano al pasar el mouse*/
+    font-size: 30px;            /*Tamaño del icono*/
+    color: white;               /*Color blanco para combinar con el encabezado*/
+    padding: 5px 10px;          /*Espacio interno del botón*/
+    transition: 0.3s;           /*Suaviza el efecto al pasar el mouse*/
+}
+
+.btn-cuenta:hover {
+    color: #c96c14;             /*Cambia al color naranja al pasar el mouse*/
+    transform: scale(1.1);      /*Aumenta ligeramente el tamaño*/
+}
+
+/* ========================================= */
+/* 2.2 VENTANAS DE INICIO DE SESIÓN Y REGISTRO */
+/* ========================================= */
+
+#ventanaLogin,
+#ventanaRegistro {
+    display: none;                  /*Oculta las ventanas al cargar la página*/
+    position: fixed;                /*Mantiene la ventana sobre toda la página*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /*Fondo oscuro transparente*/
+    justify-content: center;        /*Centra horizontalmente el contenido*/
+    align-items: center;            /*Centra verticalmente el contenido*/
+    z-index: 1000;                  /*Muestra la ventana por encima del resto*/
+}
+
+#ventanaLogin .modal-contenido,
+#ventanaRegistro .modal-contenido {
+    background-color: white;        /*Fondo blanco del formulario*/
+    padding: 30px;                  /*Espacio interno*/
+    border-radius: 10px;             /*Redondea las esquinas*/
+    width: 90%;
+    max-width: 420px;                /*Limita el ancho de la ventana*/
+    max-height: 90vh;                /*Evita que supere la altura de pantalla*/
+    overflow-y: auto;                /*Permite desplazarse si el contenido es largo*/
+}
+
+#ventanaLogin h2,
+#ventanaRegistro h2 {
+    color: #293b53;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#ventanaLogin p,
+#ventanaRegistro p {
+    text-align: center;
+    margin: 15px 0;
+}
+
+#ventanaLogin form,
+#ventanaRegistro form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#ventanaLogin input,
+#ventanaRegistro input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#ventanaLogin button,
+#ventanaRegistro button {
+    padding: 10px;
+    background-color: #293b53;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#ventanaLogin button:hover,
+#ventanaRegistro button:hover {
+    background-color: #c96c14;
+}
+
+#ventanaLogin a,
+#ventanaRegistro a {
+    color: #c96c14;
+    text-decoration: none;
+}
+
+#ventanaLogin a:hover,
+#ventanaRegistro a:hover {
+    text-decoration: underline;
+}
+
 
 /* ========================================= */
 /* 3. CONTENIDO PRINCIPAL Y HOME             */
@@ -253,6 +361,7 @@ body { /*estructura general de todas las página*/
     transform: scale(1.1);      /* Agranda ligeramente el icono al pasar el mouse */
     /* SE VE AL PASAR EL MOUSE SOBRE LOS ICONOS */
 }
+
 
 /* ========================================= */
 /* 4. TIENDA, CATÁLOGO Y FILTROS             */
