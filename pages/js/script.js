@@ -288,3 +288,251 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+
+
+/* ==========================================
+   6. ACCESO A LA CUENTA (LOGIN Y REGISTRO)
+   ========================================== */
+
+// Mostrar la ventana de inicio de sesión
+function mostrarLogin() {
+
+    // Buscamos las ventanas de login y registro
+    let login = document.getElementById("ventanaLogin");
+    let registro = document.getElementById("ventanaRegistro");
+
+    // Ocultamos el registro
+    if (registro) {
+        registro.style.display = "none";
+    }
+
+    // Mostramos el inicio de sesión
+    if (login) {
+        login.style.display = "flex";
+    }
+}
+
+
+// Mostrar la ventana de creación de cuenta
+function mostrarRegistro() {
+
+    // Buscamos las ventanas
+    let login = document.getElementById("ventanaLogin");
+    let registro = document.getElementById("ventanaRegistro");
+
+    // Ocultamos el inicio de sesión
+    if (login) {
+        login.style.display = "none";
+    }
+
+    // Mostramos el registro
+    if (registro) {
+        registro.style.display = "flex";
+    }
+}
+
+
+// Cerrar la ventana de inicio de sesión
+function cerrarLogin() {
+
+    // Buscamos la ventana de login
+    let login = document.getElementById("ventanaLogin");
+
+    // Ocultamos la ventana
+    if (login) {
+        login.style.display = "none";
+    }
+}
+
+
+// Cerrar la ventana de registro
+function cerrarRegistro() {
+
+    // Buscamos la ventana de registro
+    let registro = document.getElementById("ventanaRegistro");
+
+    // Ocultamos la ventana
+    if (registro) {
+        registro.style.display = "none";
+    }
+}
+
+
+/* ==========================================
+   7. REGISTRO E INICIO DE SESIÓN
+   ========================================== */
+
+// Esperamos a que cargue el contenido HTML
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Buscamos los formularios
+    let formularioRegistro = document.getElementById("formRegistro");
+    let formularioLogin = document.getElementById("formLogin");
+
+
+    // ==========================================
+    // 7.1 REGISTRO DE NUEVA CUENTA
+    // ==========================================
+
+    // Comprobamos que el formulario exista
+    if (formularioRegistro) {
+
+        // Detectamos cuando se envía el formulario
+        formularioRegistro.addEventListener("submit", function (event) {
+
+            // Evitamos que la página se recargue
+            event.preventDefault();
+
+            // Obtenemos los datos ingresados
+            let nombre = document.getElementById("nombreRegistro").value.trim();
+            let apellido = document.getElementById("apellidoRegistro").value.trim();
+            let correo = document.getElementById("correoRegistro").value.trim().toLowerCase();
+            let password = document.getElementById("passwordRegistro").value;
+
+
+            // Comprobamos las condiciones de la contraseña
+            let condiciones = 0;
+
+            // Verificamos si tiene una letra mayúscula
+            if (/[A-Z]/.test(password)) {
+                condiciones++;
+            }
+
+            // Verificamos si tiene una letra minúscula
+            if (/[a-z]/.test(password)) {
+                condiciones++;
+            }
+
+            // Verificamos si tiene un número
+            if (/[0-9]/.test(password)) {
+                condiciones++;
+            }
+
+            // Verificamos si tiene un carácter especial
+            if (/[^A-Za-z0-9]/.test(password)) {
+                condiciones++;
+            }
+
+            // Comprobamos que tenga mínimo 7 caracteres y 3 condiciones
+            if (password.length < 7 || condiciones < 3) {
+
+                alert("La contraseña debe tener mínimo 7 caracteres y cumplir al menos 3 de estas condiciones: mayúscula, minúscula, número y carácter especial.");
+
+                return;
+            }
+
+
+            // Obtenemos las cuentas guardadas
+            let cuentas = JSON.parse(localStorage.getItem("cuentasOptica")) || [];
+
+            // Variable para comprobar si el correo ya existe
+            let correoRepetido = false;
+
+            // Recorremos las cuentas registradas
+            for (let i = 0; i < cuentas.length; i++) {
+
+                // Comprobamos si el correo ya está registrado
+                if (cuentas[i].correo === correo) {
+                    correoRepetido = true;
+                }
+            }
+
+            // Si el correo ya existe, mostramos un mensaje
+            if (correoRepetido) {
+
+                alert("Este correo ya tiene una cuenta registrada.");
+
+                return;
+            }
+
+
+            // Creamos una nueva cuenta con los datos ingresados
+            let nuevaCuenta = {
+                nombre: nombre,
+                apellido: apellido,
+                correo: correo,
+                password: password
+            };
+
+            // Agregamos la nueva cuenta a la lista
+            cuentas.push(nuevaCuenta);
+
+            // Guardamos las cuentas en el navegador
+            localStorage.setItem("cuentasOptica", JSON.stringify(cuentas));
+
+            // Mostramos un mensaje de confirmación
+            alert("¡Cuenta creada correctamente!");
+
+            // Limpiamos los campos del formulario
+            formularioRegistro.reset();
+
+            // Volvemos a la ventana de inicio de sesión
+            mostrarLogin();
+
+            // Colocamos el correo registrado en el login
+            document.getElementById("correoLogin").value = correo;
+
+        });
+    }
+
+
+    // ==========================================
+    // 7.2 INICIO DE SESIÓN
+    // ==========================================
+
+    // Comprobamos que el formulario exista
+    if (formularioLogin) {
+
+        // Detectamos cuando se envía el formulario
+        formularioLogin.addEventListener("submit", function (event) {
+
+            // Evitamos que la página se recargue
+            event.preventDefault();
+
+            // Obtenemos el correo y la contraseña
+            let correo = document.getElementById("correoLogin").value.trim().toLowerCase();
+            let password = document.getElementById("passwordLogin").value;
+
+            // Obtenemos las cuentas guardadas
+            let cuentas = JSON.parse(localStorage.getItem("cuentasOptica")) || [];
+
+            // Variable para comprobar si los datos coinciden
+            let cuentaEncontrada = false;
+
+            // Recorremos las cuentas registradas
+            for (let i = 0; i < cuentas.length; i++) {
+
+                // Comprobamos el correo y la contraseña
+                if (
+                    cuentas[i].correo === correo &&
+                    cuentas[i].password === password
+                ) {
+                    cuentaEncontrada = true;
+                }
+            }
+
+            // Si los datos son correctos
+            if (cuentaEncontrada) {
+
+                alert("¡Bienvenido a Óptica G&A!");
+
+                // Limpiamos el formulario
+                formularioLogin.reset();
+
+                // Cerramos la ventana
+                cerrarLogin();
+
+            } else {
+
+                // Si los datos son incorrectos
+                alert("Correo o contraseña incorrectos.");
+
+            }
+
+        });
+    }
+
+});
+
+

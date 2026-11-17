@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lentes de sol para Hombre - Óptica G&A</title>
     <link rel="stylesheet" href="../../css/style.css">
 </head>
+
 <body>
     <!-- ==========================================
          ENCABEZADO (HEADER) Y NAVEGACIÓN
@@ -14,12 +16,12 @@
         <a href="../inicio/index.html">
             <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
         </a>
-        
+
         <nav class="nav-bar">
             <ul class="nav-menu">
                 <li><a href="../inicio/index.html">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
-                
+
                 <!-- Menú desplegable: Lentes Oftálmicos -->
                 <li class="dropdown">
                     <a href="#" class="active">Lentes Oftálmicos ▾</a>
@@ -29,7 +31,7 @@
                         <li><a href="../niño/index.html">Niños</a></li>
                     </ul>
                 </li>
-                
+
                 <!-- Menú desplegable: Lentes de Sol -->
                 <li class="dropdown">
                     <a href="#">Lentes de Sol ▾</a>
@@ -39,7 +41,7 @@
                         <li><a href="../niño/sol.html">Niños</a></li>
                     </ul>
                 </li>
-                
+
                 <!-- Menú desplegable: Lentes de Contacto -->
                 <li class="dropdown">
                     <a href="#">Lentes de Contacto ▾</a>
@@ -48,14 +50,19 @@
                         <li><a href="../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
                         <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
                     </ul>
-                </li>    
-                <a href="../carrito/carrito.html">
-                    <img class="carrito-icon" src="../../img/carrito.png" alt="Carrito de Compras">
-                <li class="dropdown">
-                    <a href="../iniciar-sesion/iniciar-sesion.html">Iniciar Sesión</a>
-                </li>            
+                </li>
             </ul>
         </nav>
+        <!-- ACCESO A LA CUENTA -->
+        <div class="cuenta-header">
+            <button class="btn-cuenta" onclick="mostrarLogin()" title="Mi cuenta">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M5 21v-2a7 7 0 0 1 14 0v2" />
+                </svg>
+            </button>
+        </div>
     </header>
 
     <!-- Barra de promociones superior -->
@@ -67,14 +74,14 @@
          CONTENIDO PRINCIPAL: CATÁLOGO DE PRODUCTOS
          ========================================== -->
     <main class="store-content">
-        
+
         <!-- Navegación por migas de pan (Breadcrumbs) -->
         <div class="breadcrumbs">
             <a href="../inicio/index.html">Inicio</a> / <span>Lentes de sol para hombre</span>
         </div>
-        
+
         <h2 class="category-title">LENTES DE SOL PARA HOMBRE</h2>
-        
+
         <!-- Barra de herramientas: Conteo y ordenamiento -->
         <div class="store-toolbar">
             <span class="product-count">9 productos</span>
@@ -91,7 +98,7 @@
         <!-- Panel de Filtros -->
         <div class="filter-panel" id="filterPanel">
             <h3>FILTRAR PRODUCTOS</h3>
-            
+
             <div class="filter-group">
                 <label for="marca">Marca</label>
                 <select id="marca">
@@ -107,7 +114,7 @@
                     <option value="VERSACE">VERSACE</option>
                 </select>
             </div>
-            
+
             <div class="filter-group">
                 <label>Rango de precio</label>
                 <div class="price-inputs">
@@ -115,7 +122,7 @@
                     <input type="number" id="precioMax" placeholder="Precio máximo">
                 </div>
             </div>
-            
+
             <div class="filter-buttons">
                 <button class="btn-apply-filter" onclick="aplicarFiltros()">Aplicar filtros</button>
                 <button class="btn-clear-filter" onclick="limpiarFiltros()">Limpiar filtros</button>
@@ -131,7 +138,8 @@
 
             <!-- Producto 1 -->
             <article class="product-card" data-marca="OAKLEY" data-precio="180">
-                <a href="detalles/detalle-oakley-urban.html" style="text-decoration: none; color: inherit; display: block;">
+                <a href="detalles/detalle-oakley-urban.html"
+                    style="text-decoration: none; color: inherit; display: block;">
                     <div class="product-image-container">
                         <span class="badge">OBTÉN 50% 2DO PAR</span>
                         <img src="../../img/sol_hombre_1.png" alt="Oakley Urban Black">
@@ -177,88 +185,102 @@
                 </a>
             </article>
 
-            <!-- Producto 4 (Nota: Falta etiqueta <a> de enlace a detalles) -->
+            <!-- Producto 4 -->
             <article class="product-card" data-marca="VOGUE EYEWEAR" data-precio="275">
-                <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/sol_hombre_4.png" alt="Lente Hombre 4">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">VOGUE EYEWEAR</p>
-                    <h3 class="product-name">Royal Aviator</h3>
-                    <p class="price">S/275</p>
-                </div>
+                <a href="detalles/detalle-vogue.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">NUEVO</span>
+                        <img src="../../img/sol_hombre_4.png" alt="Vogue Eyewear Royal Aviator">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">VOGUE EYEWEAR</p>
+                        <h3 class="product-name">Royal Aviator</h3>
+                        <p class="price">S/275</p>
+                    </div>
+                </a>
             </article>
 
             <!-- Producto 5 -->
             <article class="product-card" data-marca="GUCCI" data-precio="225">
-                <div class="product-image-container">
-                    <span class="badge">10% DCTO</span>
-                    <img src="../../img/sol_hombre_5.png" alt="Lente Hombre 5">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">GUCCI</p>
-                    <h3 class="product-name">Matte Titanium</h3>
-                    <p class="price">S/225</p>
-                </div>
+                <a href="detalles/detalle-gucci.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">10% DCTO</span>
+                        <img src="../../img/sol_hombre_5.png" alt="Gucci Matte Titanium">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">GUCCI</p>
+                        <h3 class="product-name">Matte Titanium</h3>
+                        <p class="price">S/225</p>
+                    </div>
+                </a>
             </article>
 
             <!-- Producto 6 -->
             <article class="product-card" data-marca="DOLCE & GABBANA" data-precio="915">
-                <div class="product-image-container">
-                    <span class="badge">20% DCTO</span>
-                    <img src="../../img/sol_hombre_6.png" alt="Lente Hombre 6">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">DOLCE & GABBANA</p>
-                    <h3 class="product-name">Carbon Dark</h3>
-                    <p class="price">S/915</p>
-                </div>
+                <a href="detalles/detalle-dolce.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">20% DCTO</span>
+                        <img src="../../img/sol_hombre_6.png" alt="Dolce & Gabbana Carbon Dark">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">DOLCE & GABBANA</p>
+                        <h3 class="product-name">Carbon Dark</h3>
+                        <p class="price">S/915</p>
+                    </div>
+                </a>
             </article>
 
             <!-- Producto 7 -->
             <article class="product-card" data-marca="RAY-BAN" data-precio="575">
-                <div class="product-image-container">
-                    <span class="badge">OBTÉN 50% 2DO PAR</span>
-                    <img src="../../img/sol_hombre_7.png" alt="Lente Hombre 7">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">RAY-BAN</p>
-                    <h3 class="product-name">Sunset Brown</h3>
-                    <p class="price">S/575</p>
-                </div>
+                <a href="detalles/detalle-rayban-sunset.html"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">OBTÉN 50% 2DO PAR</span>
+                        <img src="../../img/sol_hombre_7.png" alt="Ray-Ban Sunset Brown">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">RAY-BAN</p>
+                        <h3 class="product-name">Sunset Brown</h3>
+                        <p class="price">S/575</p>
+                    </div>
+                </a>
             </article>
 
             <!-- Producto 8 -->
             <article class="product-card" data-marca="ARMANI EXCHANGE" data-precio="479">
-                <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/sol_hombre_8.png" alt="Lente Hombre 8">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">ARMANI EXCHANGE</p>
-                    <h3 class="product-name">Midnight Black</h3>
-                    <p class="price">S/479</p>
-                </div>
+                <a href="detalles/detalle-armani-exchange.html"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">NUEVO</span>
+                        <img src="../../img/sol_hombre_8.png" alt="Armani Exchange Midnight Black">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">ARMANI EXCHANGE</p>
+                        <h3 class="product-name">Midnight Black</h3>
+                        <p class="price">S/479</p>
+                    </div>
+                </a>
             </article>
 
             <!-- Producto 9 -->
             <article class="product-card" data-marca="VERSACE" data-precio="445">
-                <div class="product-image-container">
-                    <span class="badge">15% DCTO</span>
-                    <img src="../../img/sol_hombre_9.png" alt="Lente Hombre 9">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">VERSACE</p>
-                    <h3 class="product-name">Steel Frame</h3>
-                    <p class="price">S/445</p>
-                </div>
+                <a href="detalles/detalle-versace.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="product-image-container">
+                        <span class="badge">15% DCTO</span>
+                        <img src="../../img/sol_hombre_9.png" alt="Versace Steel Frame">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">VERSACE</p>
+                        <h3 class="product-name">Steel Frame</h3>
+                        <p class="price">S/445</p>
+                    </div>
+                </a>
             </article>
         </section>
     </main>
@@ -270,11 +292,11 @@
         <div class="footer-container">
             <!-- Columna de Marca y Newsletter -->
             <div class="footer-col brand-col">
-                <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A"> 
+                <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A">
                 <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
                 <button class="btn-subscribe">SUSCRIBIRSE</button>
             </div>
-            
+
             <!-- Columna de Servicios -->
             <div class="footer-col">
                 <h3>SERVICIOS</h3>
@@ -304,12 +326,12 @@
                 <p><strong>Consultas:</strong> 0800-14600</p>
                 <p>Calle Amador Merino Reyna 223, San Isidro, Lima</p>
                 <div class="social-links">
-                     <a href="https://www.facebook.com/">
+                    <a href="https://www.facebook.com/">
                         <img src="../../img/facebook.png" alt="facebook">
                     </a>
                     <a href="https://www.instagram.com/">
                         <img src="../../img/instagram.png" alt="instagram">
-                    </a> 
+                    </a>
                     <a href="https://www.tiktok.com/">
                         <img src="../../img/tiktok.png" alt="tiktok">
                     </a>
@@ -320,5 +342,65 @@
             <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
         </div>
     </footer>
+
+    <!-- ==========================================
+         VENTANA DE INICIO DE SESIÓN (LOGIN)
+         ========================================== -->
+    <div id="ventanaLogin" class="modal">
+        <div class="modal-contenido">
+            <h2>Iniciar sesión</h2>
+            <p>Ingresa a tu cuenta de Óptica G&A.</p>
+
+            <form id="formLogin">
+                <label for="correoLogin">Correo electrónico:</label>
+                <input type="email" id="correoLogin" required>
+
+                <label for="passwordLogin">Contraseña:</label>
+                <input type="password" id="passwordLogin" required>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+
+            <p>¿No tienes una cuenta?
+                <a href="#" onclick="mostrarRegistro(); return false;">Crear cuenta</a>
+            </p>
+
+            <button type="button" onclick="cerrarLogin()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         VENTANA DE CREACIÓN DE CUENTA (REGISTRO)
+         ========================================== -->
+    <div id="ventanaRegistro" class="modal">
+        <div class="modal-contenido">
+            <h2>Crear cuenta</h2>
+            <p>Regístrate en Óptica G&A.</p>
+
+            <form id="formRegistro">
+                <label for="nombreRegistro">Nombre:</label>
+                <input type="text" id="nombreRegistro" required>
+
+                <label for="apellidoRegistro">Apellido:</label>
+                <input type="text" id="apellidoRegistro" required>
+
+                <label for="correoRegistro">Correo electrónico:</label>
+                <input type="email" id="correoRegistro" required>
+
+                <label for="passwordRegistro">Contraseña:</label>
+                <input type="password" id="passwordRegistro" required>
+
+                <button type="submit">Crear cuenta</button>
+            </form>
+
+            <p>¿Ya tienes una cuenta?
+                <a href="#" onclick="mostrarLogin(); return false;">Iniciar sesión</a>
+            </p>
+
+            <button type="button" onclick="cerrarRegistro()">Cerrar</button>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
 </body>
+
 </html>

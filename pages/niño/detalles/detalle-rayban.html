@@ -1,65 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+    <!-- Configuración básica y metaetiquetas de responsividad -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ray-Ban Happy Frame - Óptica G&A</title>
-    <!-- Ruta al CSS global ajustada a la profundidad del archivo -->
     <link rel="stylesheet" href="../../../css/style.css">
 </head>
-<body>
-    <!-- ==========================================
-         ENCABEZADO (HEADER) Y NAVEGACIÓN
-         ========================================== -->
-    <header class="header">
-        <a href="../../inicio/index.html">
-            <img class="logo-header" src="../../../img/logo.png.jpeg" alt="Óptica G&A">
-        </a>
-        <nav class="nav-bar">
-            <ul class="nav-menu">
-                <li><a href="../../inicio/index.html">Inicio</a></li>
-                <li><a href="../../sedes/sedes.html">Sedes</a></li>
-                
-                <li class="dropdown">
-                    <a href="#" class="active">Lentes Oftálmicos ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../../mujer/index.html">Mujer</a></li>
-                        <li><a href="../../hombre/index.html">Hombre</a></li>
-                        <li><a href="../../niño/index.html">Niños</a></li>
-                    </ul>
-                </li>
-                
-                <li class="dropdown">
-                    <a href="#">Lentes de Sol ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../../mujer/sol.html">Mujer</a></li>
-                        <li><a href="../../hombre/sol.html">Hombre</a></li>
-                        <li><a href="../../niño/sol.html">Niños</a></li>
-                    </ul>
-                </li>
-                
-                <li class="dropdown">
-                    <a href="#">Lentes de Contacto ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../../lentes de contacto/cont-miopia.html">Miopía e Hipermetropía</a></li>
-                        <li><a href="../../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
-                        <li><a href="../../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
-                    </ul>
-                </li>  
-                 <a href="../carrito/carrito.html">
-                    <img class="carrito-icon" src="../../../img/carrito.png" alt="Carrito de Compras">
-                <li class="dropdown">
-                    <a href="../iniciar-sesion/iniciar-sesion.html">Iniciar Sesión</a>
-                </li>                 
-            </ul>              
-            </ul>
-        </nav>
-    </header>
 
+<body>
     <!-- ==========================================
          CONTENEDOR PRINCIPAL DEL PRODUCTO
          ========================================== -->
     <main class="product-detail-page">
+
+        <!-- Navegación de retroceso -->
         <div class="back-link-container">
             <a href="../index.html" class="btn-back-cool">
                 <span class="icon-arrow">&larr;</span> Volver al catálogo
@@ -70,61 +26,91 @@
              SECCIÓN SUPERIOR: GALERÍA Y COMPRA
              ========================================== -->
         <section class="product-top-grid">
+
+            <!-- 1. Galería de Imágenes -->
             <div class="gallery-section">
                 <div class="gallery-header">
                     <h2 class="gallery-brand">RAY-BAN</h2>
+                    <button class="btn-try-model">PROBAR MODELO</button>
                 </div>
+
                 <div class="gallery-main">
+                    <!-- Controles de miniaturas -->
                     <div class="gallery-thumbnails">
+                        <button class="thumb-nav">&and;</button>
                         <span class="dot active"></span>
                         <span class="dot"></span>
                         <span class="dot"></span>
+                        <button class="thumb-nav">&or;</button>
                     </div>
-                    <img src="../../../img/oftalmicos_niños_3.png" alt="Ray-Ban Happy Frame" class="main-image">
+
+                    <!-- Imagen principal del producto -->
+                    <img src="../../../img/oftalmicos_ninos_3.png"
+                        alt="Ray-Ban Happy Frame" class="main-image">
                 </div>
             </div>
 
+            <!-- 2. Información de Compra -->
             <div class="purchase-section">
                 <h1 class="product-brand">RAY-BAN</h1>
                 <p class="product-sku">Happy Frame - RB998</p>
-                
+
+                <!-- Etiquetas de promociones -->
                 <div class="promos-container">
                     <p>Promociones aplicadas:</p>
                     <span class="promo-tag">OBTÉN 50% 2DO PAR</span>
                 </div>
 
+                <!-- Lista de beneficios (Garantías y cupones) -->
                 <ul class="benefits-list">
-                    <li><div><strong>Resistencia Infantil</strong><br>Metal ligero y resistente.</div></li>
-                    <li><div><strong>Satisfacción garantizada</strong><br>Ajuste gratis a medida.</div></li>
+                    <li>
+                        <div>
+                            <strong>Resistencia Infantil</strong><br>
+                            Metal ligero y resistente.
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <strong>Satisfacción garantizada</strong><br>
+                            Ajuste gratis a medida.
+                        </div>
+                    </li>
                 </ul>
 
+                <!-- Precios y Métodos de pago -->
                 <div class="price-container">
                     <span class="price-label">PRECIO:</span>
                     <span class="price-value">S/185</span>
                 </div>
                 <p class="installments">Hasta 12 cuotas sin interés - Valor cuota: S/ 15.41</p>
-                
+
                 <div class="payment-methods">
                     <span class="pay-icon">Tarjetas</span>
                     <span class="pay-icon">Yape/Plin</span>
                 </div>
 
+                <!-- CTA Principal -->
                 <button class="btn-select-lenses">SELECCIONAR LENTES</button>
             </div>
         </section>
 
         <!-- ==========================================
-             SECCIÓN INFERIOR: DETALLES TÉCNICOS
+             SECCIÓN INFERIOR: ESPECIFICACIONES TÉCNICAS
              ========================================== -->
         <section class="product-bottom-grid">
             <div class="bottom-left">
                 <h2 class="section-title">Acerca de la montura</h2>
             </div>
+
             <div class="bottom-right">
+
+                <!-- Acordeón 1: Detalles de la montura -->
                 <div class="detail-accordion">
                     <div class="accordion-header">
                         <h3>Detalles de la montura</h3><span>&and;</span>
                     </div>
+
+                    <!-- Contenido desplegable -->
                     <div class="accordion-content">
                         <table class="specs-table">
                             <colgroup>
@@ -164,10 +150,13 @@
                     </div>
                 </div>
 
+                <!-- Acordeón 2: Medidas de la montura -->
                 <div class="detail-accordion">
                     <div class="accordion-header">
                         <h3>Medidas de la montura</h3><span>&and;</span>
                     </div>
+
+                    <!-- Contenido desplegable -->
                     <div class="accordion-content">
                         <table class="specs-table">
                             <colgroup>
@@ -203,14 +192,19 @@
                     </div>
                 </div>
 
+                <!-- Acordeón 3: Descripción de la marca -->
                 <div class="detail-accordion border-none">
                     <div class="accordion-header">
                         <h3>Acerca de RAY-BAN</h3><span>&and;</span>
                     </div>
                     <div class="accordion-content text-block">
-                        Ray-Ban Junior ofrece versiones adaptadas de los modelos más icónicos de la marca. Diseñados específicamente para niños, estas monturas metálicas mantienen el estilo legendario de Ray-Ban mientras aseguran proporciones perfectas y materiales seguros para su visión.
+                        Ray-Ban Junior ofrece versiones adaptadas de los modelos más icónicos de la marca.
+                        Diseñados específicamente para niños, estas monturas metálicas mantienen el estilo
+                        legendario de Ray-Ban mientras aseguran proporciones perfectas y materiales seguros
+                        para su visión.
                     </div>
                 </div>
+
             </div>
         </section>
     </main>
@@ -222,4 +216,6 @@
         <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
     </footer>
 </body>
+
 </html>
+```

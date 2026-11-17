@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <!-- Ruta al CSS global -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
+
 <body>
     <!-- ==========================================
          ENCABEZADO (HEADER) Y NAVEGACIÓN
@@ -19,7 +21,7 @@
             <ul class="nav-menu">
                 <li><a href="../inicio/index.html">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
-                
+
                 <!-- Menú desplegable: Lentes Oftálmicos -->
                 <li class="dropdown">
                     <a href="#" class="active">Lentes Oftálmicos ▾</a>
@@ -29,7 +31,7 @@
                         <li><a href="../niño/index.html">Niños</a></li>
                     </ul>
                 </li>
-                
+
                 <!-- Menú desplegable: Lentes de Sol -->
                 <li class="dropdown">
                     <a href="#">Lentes de Sol ▾</a>
@@ -39,7 +41,7 @@
                         <li><a href="../niño/sol.html">Niños</a></li>
                     </ul>
                 </li>
-                
+
                 <!-- Menú desplegable: Lentes de Contacto -->
                 <li class="dropdown">
                     <a href="#">Lentes de Contacto ▾</a>
@@ -49,13 +51,18 @@
                         <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
                     </ul> <!-- Corrección: Etiqueta </ul> faltante agregada aquí -->
                 </li>
-                <a href="../carrito/carrito.html">
-                    <img class="carrito-icon" src="../../img/carrito.png" alt="Carrito de Compras">
-                <li class="dropdown">
-                    <a href="../iniciar-sesion/iniciar-sesion.html">Iniciar Sesión</a>
-                </li>                
             </ul>
         </nav>
+        <!-- ACCESO A LA CUENTA -->
+        <div class="cuenta-header">
+            <button class="btn-cuenta" onclick="mostrarLogin()" title="Mi cuenta">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M5 21v-2a7 7 0 0 1 14 0v2" />
+                </svg>
+            </button>
+        </div>
     </header>
 
     <!-- Barra de promociones superior -->
@@ -67,14 +74,14 @@
          CONTENIDO PRINCIPAL: CATÁLOGO DE PRODUCTOS
          ========================================== -->
     <main class="store-content">
-        
+
         <!-- Navegación por migas de pan (Breadcrumbs) -->
         <div class="breadcrumbs">
             <a href="../inicio/index.html">Inicio</a> / <span>Lentes de Contacto Astigmatismo</span>
         </div>
-        
+
         <h2 class="category-title">Lentes de Contacto Astigmatismo</h2>
-        
+
         <!-- Barra de herramientas: Conteo y ordenamiento -->
         <div class="store-toolbar">
             <span class="product-count">6 productos</span>
@@ -91,18 +98,18 @@
         <!-- Panel de Filtros -->
         <div class="filter-panel" id="filterPanel">
             <h3>FILTRAR PRODUCTOS</h3>
-            
+
             <div class="filter-group">
                 <label for="marca">Marca</label>
                 <select id="marca">
                     <option value="todas">Todas las marcas</option>
                     <option value="Alcon">Alcon</option>
                     <!-- Mantenimiento: Valor unificado para facilitar el filtrado con JavaScript -->
-                    <option value="Johnson&Johnson">Johnson&Johnson</option> 
+                    <option value="Johnson&Johnson">Johnson&Johnson</option>
                     <option value="iWear">iWear</option>
                 </select>
             </div>
-            
+
             <div class="filter-group">
                 <label>Rango de precio</label>
                 <div class="price-inputs">
@@ -110,7 +117,7 @@
                     <input type="number" id="precioMax" placeholder="Precio máximo">
                 </div>
             </div>
-            
+
             <div class="filter-buttons">
                 <button class="btn-apply-filter" onclick="aplicarFiltros()">
                     Aplicar filtros
@@ -123,10 +130,11 @@
 
         <!-- Grilla de Tarjetas de Producto -->
         <section class="products-grid">
-            
+
             <!-- Producto 1: Air Optix Hydraglyde Astigmatismo -->
             <article class="product-card" data-marca="ALCON" data-precio="370">
-                <a href="detalles/detalle-airoptix-astig.html" style="text-decoration: none; color: inherit; display: block;">
+                <a href="detalles/detalle-airoptix-astig.html"
+                    style="text-decoration: none; color: inherit; display: block;">
                     <div class="product-image-container">
                         <span class="badge">NUEVO</span>
                         <img src="../../img/cont_astig_1.png" alt="Air Optix Hydraglyde Astigmatismo">
@@ -143,7 +151,8 @@
             <!-- Producto 2: Acuvue Oasys Astigmatismo -->
             <!-- Mantenimiento: data-marca ajustado de "JOHNSON & JOHNSON" a "JOHNSON&JOHNSON" para coincidir con el select -->
             <article class="product-card" data-marca="JOHNSON&JOHNSON" data-precio="370">
-                <a href="detalles/detalle-acuvue-oasys-astig.html" style="text-decoration: none; color: inherit; display: block;">
+                <a href="detalles/detalle-acuvue-oasys-astig.html"
+                    style="text-decoration: none; color: inherit; display: block;">
                     <div class="product-image-container">
                         <img src="../../img/cont_astig_2.png" alt="Acuvue Oasys Astigmatismo">
                         <button class="btn-quick-add">Recoge al día siguiente*</button>
@@ -158,7 +167,8 @@
 
             <!-- Producto 3: Acuvue 1 Day Moist Astigmatismo -->
             <article class="product-card" data-marca="JOHNSON&JOHNSON" data-precio="330">
-                <a href="detalles/detalle-acuvue-moist-astig.html" style="text-decoration: none; color: inherit; display: block;">
+                <a href="detalles/detalle-acuvue-moist-astig.html"
+                    style="text-decoration: none; color: inherit; display: block;">
                     <div class="product-image-container">
                         <span class="badge">NUEVO</span>
                         <img src="../../img/cont_astig_3.png" alt="Acuvue 1 Day Moist Astigmatismo">
@@ -174,43 +184,63 @@
 
             <!-- Producto 4: IWEAR OXYGEN XR Astigmatismo -->
             <article class="product-card" data-marca="iWear" data-precio="520">
-                <div class="product-image-container">
-                    <img src="../../img/cont_astig_4.png" alt="cont astig 4">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">iWear</p>
-                    <h3 class="product-name">IWEAR OXYGEN XR Astigmatismo</h3>
-                    <p class="price">S/520</p>
-                </div>
+                <a href="detalles/detalle-iwear-oxygen-xr-astigmatismo.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+
+                    <div class="product-image-container">
+                        <img src="../../img/cont_astig_4.png" alt="iWear Oxygen XR Astigmatismo">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="brand">iWear</p>
+                        <h3 class="product-name">IWEAR OXYGEN XR Astigmatismo</h3>
+                        <p class="price">S/520</p>
+                    </div>
+
+                </a>
             </article>
 
             <!-- Producto 5: iWear Oxygen Astigmatismo -->
             <article class="product-card" data-marca="iWear" data-precio="330">
-                <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/cont_astig_5.png" alt="cont astig 5">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">iWear</p>
-                    <h3 class="product-name">iWear Oxygen Astigmatismo</h3>
-                    <p class="price">S/330</p>
-                </div>
+                <a href="detalles/detalle-iwear-oxygen-astigmatismo.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+
+                    <div class="product-image-container">
+                        <span class="badge">NUEVO</span>
+                        <img src="../../img/cont_astig_5.png" alt="iWear Oxygen Astigmatismo">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="brand">iWear</p>
+                        <h3 class="product-name">iWear Oxygen Astigmatismo</h3>
+                        <p class="price">S/330</p>
+                    </div>
+
+                </a>
             </article>
+
 
             <!-- Producto 6: iWear Balance Plus Astigmatismo -->
             <article class="product-card" data-marca="iWear" data-precio="280">
-                <div class="product-image-container">
-                    <img src="../../img/cont_astig_6.png" alt="cont astig 6">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">iWear</p>
-                    <h3 class="product-name">iWear Balance Plus Astigmatismo</h3>
-                    <p class="price">S/280</p>
-                </div>
+                <a href="detalles/detalle-iwear-balance-plus-astigmatismo.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+
+                    <div class="product-image-container">
+                        <img src="../../img/cont_astig_6.png" alt="iWear Balance Plus Astigmatismo">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="brand">iWear</p>
+                        <h3 class="product-name">iWear Balance Plus Astigmatismo</h3>
+                        <p class="price">S/280</p>
+                    </div>
+
+                </a>
             </article>
+
         </section>
     </main>
 
@@ -225,7 +255,7 @@
                 <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
                 <button class="btn-subscribe">SUSCRIBIRSE</button>
             </div>
-            
+
             <!-- Columna de Servicios -->
             <div class="footer-col">
                 <h3>SERVICIOS</h3>
@@ -260,7 +290,7 @@
                     </a>
                     <a href="https://www.instagram.com/">
                         <img src="../../img/instagram.png" alt="instagram">
-                    </a> 
+                    </a>
                     <a href="https://www.tiktok.com/">
                         <img src="../../img/tiktok.png" alt="tiktok">
                     </a>
@@ -271,5 +301,64 @@
             <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
         </div>
     </footer>
+    <!-- ==========================================
+         VENTANA DE INICIO DE SESIÓN (LOGIN)
+         ========================================== -->
+    <div id="ventanaLogin" class="modal">
+        <div class="modal-contenido">
+            <h2>Iniciar sesión</h2>
+            <p>Ingresa a tu cuenta de Óptica G&A.</p>
+
+            <form id="formLogin">
+                <label for="correoLogin">Correo electrónico:</label>
+                <input type="email" id="correoLogin" required>
+
+                <label for="passwordLogin">Contraseña:</label>
+                <input type="password" id="passwordLogin" required>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+
+            <p>¿No tienes una cuenta?
+                <a href="#" onclick="mostrarRegistro(); return false;">Crear cuenta</a>
+            </p>
+
+            <button type="button" onclick="cerrarLogin()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         VENTANA DE CREACIÓN DE CUENTA (REGISTRO)
+         ========================================== -->
+    <div id="ventanaRegistro" class="modal">
+        <div class="modal-contenido">
+            <h2>Crear cuenta</h2>
+            <p>Regístrate en Óptica G&A.</p>
+
+            <form id="formRegistro">
+                <label for="nombreRegistro">Nombre:</label>
+                <input type="text" id="nombreRegistro" required>
+
+                <label for="apellidoRegistro">Apellido:</label>
+                <input type="text" id="apellidoRegistro" required>
+
+                <label for="correoRegistro">Correo electrónico:</label>
+                <input type="email" id="correoRegistro" required>
+
+                <label for="passwordRegistro">Contraseña:</label>
+                <input type="password" id="passwordRegistro" required>
+
+                <button type="submit">Crear cuenta</button>
+            </form>
+
+            <p>¿Ya tienes una cuenta?
+                <a href="#" onclick="mostrarLogin(); return false;">Iniciar sesión</a>
+            </p>
+
+            <button type="button" onclick="cerrarRegistro()">Cerrar</button>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
 </body>
+
 </html>

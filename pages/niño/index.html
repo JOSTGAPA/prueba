@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <!-- Los ../../ hacen que retroceda dos carpetas para encontrar el CSS -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
+
 <body>
     <!-- ==========================================
          ENCABEZADO (HEADER) Y NAVEGACIÓN
@@ -14,7 +16,7 @@
     <header class="header">
         <a href="../inicio/index.html">
             <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
-        </a> 
+        </a>
         <nav class="nav-bar">
             <ul class="nav-menu">
                 <!-- La ruta corregida para volver al inicio -->
@@ -52,6 +54,16 @@
                 </li>  
             </ul>
         </nav>
+        <!-- ACCESO A LA CUENTA -->
+        <div class="cuenta-header">
+            <button class="btn-cuenta" onclick="mostrarLogin()" title="Mi cuenta">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M5 21v-2a7 7 0 0 1 14 0v2" />
+                </svg>
+            </button>
+        </div>
     </header>
 
     <div class="promo-bar">
@@ -65,9 +77,9 @@
         <div class="breadcrumbs">
             <a href="../inicio/index.html">Inicio</a> / <span>Lentes oftálmicos para niños</span>
         </div>
-        
+
         <h2 class="category-title">LENTES OFTÁLMICOS PARA NIÑOS</h2>
-        
+
         <div class="store-toolbar">
             <span class="product-count">9 productos</span>
             <div class="store-filters">
@@ -117,7 +129,8 @@
         <section class="products-grid">
             <!-- Producto 1: Gucci Little Star -->
             <article class="product-card" data-marca="GUCCI" data-precio="90">
-                <a href="detalles/detalle-gucci.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                <a href="detalles/detalle-gucci.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
                     <div class="product-image-container">
                         <span class="badge">10% DCTO</span>
                         <img src="../../img/oftalmicos_ninos_1.png" alt="Gucci Little Star">
@@ -133,7 +146,8 @@
 
             <!-- Producto 2: Prada Mini Explorer -->
             <article class="product-card" data-marca="PRADA" data-precio="200">
-                <a href="detalles/detalle-prada.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                <a href="detalles/detalle-prada.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
                     <div class="product-image-container">
                         <span class="badge">15% DCTO</span>
                         <img src="../../img/oftalmicos_ninos_2.png" alt="Prada Mini Explorer">
@@ -149,7 +163,8 @@
 
             <!-- Producto 3: Ray-Ban Happy Frame -->
             <article class="product-card" data-marca="RAY-BAN" data-precio="185">
-                <a href="detalles/detalle-rayban.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                <a href="detalles/detalle-rayban.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
                     <div class="product-image-container">
                         <span class="badge" style="background-color: #f4f4f4; color: #333;">OBTÉN 50% 2DO PAR</span>
                         <img src="../../img/oftalmicos_ninos_3.png" alt="Ray-Ban Happy Frame">
@@ -162,89 +177,107 @@
                     </div>
                 </a>
             </article>
-        
+
             <!-- Producto 4: Oakley Cool Junior -->
             <article class="product-card" data-marca="OAKLEY" data-precio="425">
-                <div class="product-image-container">
-                    <span class="badge">10% DCTO</span>
-                    <img src="../../img/oftalmicos_ninos_4.png" alt="Lente Niños Oakley Cool Junior">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">OAKLEY</p>
-                    <h3 class="product-name">Cool Junior</h3>
-                    <p class="price">S/425</p>
-                </div>
+                <a href="detalles/detalle-oakley-cool-junior.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                    <div class="product-image-container">
+                        <span class="badge">10% DCTO</span>
+                        <img src="../../img/oftalmicos_ninos_4.png" alt="Lente Niños Oakley Cool Junior">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">OAKLEY</p>
+                        <h3 class="product-name">Cool Junior</h3>
+                        <p class="price">S/425</p>
+                    </div>
+                </a>
             </article>
-        
+
             <!-- Producto 5: Versace Tiny Wayfarer -->
             <article class="product-card" data-marca="VERSACE" data-precio="690">
-                <div class="product-image-container">
-                    <span class="badge">15% DCTO</span>
-                    <img src="../../img/oftalmicos_ninos_5.png" alt="Lente Niños Versace Tiny Wayfarer">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">VERSACE</p>
-                    <h3 class="product-name">Tiny Wayfarer</h3>
-                    <p class="price">S/690</p>
-                </div>
+                <a href="detalles/detalle-versace-tiny-wayfarer.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                    <div class="product-image-container">
+                        <span class="badge">15% DCTO</span>
+                        <img src="../../img/oftalmicos_ninos_5.png" alt="Lente Niños Versace Tiny Wayfarer">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">VERSACE</p>
+                        <h3 class="product-name">Tiny Wayfarer</h3>
+                        <p class="price">S/690</p>
+                    </div>
+                </a>
             </article>
-        
+
             <!-- Producto 6: Armani Exchange Smart Kids -->
             <article class="product-card" data-marca="ARMANI EXCHANGE" data-precio="740">
-                <div class="product-image-container">
-                    <span class="badge">20% DCTO</span>
-                    <img src="../../img/oftalmicos_ninos_6.png" alt="Lente Niños Armani Exchange Smart Kids">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">ARMANI EXCHANGE</p>
-                    <h3 class="product-name">Smart Kids</h3>
-                    <p class="price">S/740</p>
-                </div>
+                <a href="detalles/detalle-armani-exchange-smart-kids.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                    <div class="product-image-container">
+                        <span class="badge">20% DCTO</span>
+                        <img src="../../img/oftalmicos_ninos_6.png" alt="Lente Niños Armani Exchange Smart Kids">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">ARMANI EXCHANGE</p>
+                        <h3 class="product-name">Smart Kids</h3>
+                        <p class="price">S/740</p>
+                    </div>
+                </a>
             </article>
-        
+
             <!-- Producto 7: Dolce & Gabbana Mini Classic -->
             <article class="product-card" data-marca="DOLCE & GABBANA" data-precio="210">
-                <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/oftalmicos_ninos_7.png" alt="Lente Niños Dolce & Gabbana Mini Classic">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">DOLCE & GABBANA</p>
-                    <h3 class="product-name">Mini Classic</h3>
-                    <p class="price">S/210</p>
-                </div>
+                <a href="detalles/detalle-dolce-gabbana-mini-classic.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                    <div class="product-image-container">
+                        <span class="badge">NUEVO</span>
+                        <img src="../../img/oftalmicos_ninos_7.png" alt="Lente Niños Dolce & Gabbana Mini Classic">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">DOLCE & GABBANA</p>
+                        <h3 class="product-name">Mini Classic</h3>
+                        <p class="price">S/210</p>
+                    </div>
+                </a>
             </article>
-        
+
             <!-- Producto 8: Burberry Little Dreaml -->
             <article class="product-card" data-marca="BURBERRY" data-precio="370">
-                <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/oftalmicos_ninos_8.png" alt="Lente Niños Burberry Little Dreaml">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">BURBERRY</p>
-                    <h3 class="product-name">Little Dreaml</h3>
-                    <p class="price">S/370</p>
-                </div>
+                <a href="detalles/detalle-burberry-little-dreaml.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                    <div class="product-image-container">
+                        <span class="badge">NUEVO</span>
+                        <img src="../../img/oftalmicos_ninos_8.png" alt="Lente Niños Burberry Little Dreaml">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">BURBERRY</p>
+                        <h3 class="product-name">Little Dreaml</h3>
+                        <p class="price">S/370</p>
+                    </div>
+                </a>
             </article>
-        
+
             <!-- Producto 9: Vogue Eyewear Playful Frame -->
             <article class="product-card" data-marca="VOGUE EYEWEAR" data-precio="350">
-                <div class="product-image-container">
-                    <span class="badge">OBTÉN 50% 2DO PAR</span>
-                    <img src="../../img/oftalmicos_ninos_9.png" alt="Lente Niños Vogue Eyewear Playful Frame">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">VOGUE EYEWEAR</p>
-                    <h3 class="product-name">Playful Frame</h3>
-                    <p class="price">S/350</p>
-                </div>
+                <a href="detalles/detalle-vogue-eyewear-playful-frame.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                    <div class="product-image-container">
+                        <span class="badge">OBTÉN 50% 2DO PAR</span>
+                        <img src="../../img/oftalmicos_ninos_9.png" alt="Lente Niños Vogue Eyewear Playful Frame">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="brand">VOGUE EYEWEAR</p>
+                        <h3 class="product-name">Playful Frame</h3>
+                        <p class="price">S/350</p>
+                    </div>
+                </a>
             </article>
         </section>
     </main>
@@ -255,11 +288,11 @@
     <footer class="mega-footer">
         <div class="footer-container">
             <div class="footer-col brand-col">
-                <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A"> 
+                <img class="logo" src="../../img/logo.png.jpeg" alt="Óptica G&A">
                 <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
                 <button class="btn-subscribe">SUSCRIBIRSE</button>
             </div>
-            
+
             <div class="footer-col">
                 <h3>SERVICIOS</h3>
                 <ul>
@@ -286,12 +319,12 @@
                 <p><strong>Consultas:</strong> 0800-14600</p>
                 <p>Calle Amador Merino Reyna 223, San Isidro, Lima</p>
                 <div class="social-links">
-                     <a href="https://www.facebook.com/">
+                    <a href="https://www.facebook.com/">
                         <img src="../../img/facebook.png" alt="facebook">
                     </a>
                     <a href="https://www.instagram.com/">
                         <img src="../../img/instagram.png" alt="instagram">
-                    </a> 
+                    </a>
                     <a href="https://www.tiktok.com/">
                         <img src="../../img/tiktok.png" alt="tiktok">
                     </a>
@@ -302,5 +335,65 @@
             <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
         </div>
     </footer>
+    <!-- ==========================================
+         VENTANA DE INICIO DE SESIÓN (LOGIN)
+         ========================================== -->
+    <div id="ventanaLogin" class="modal">
+        <div class="modal-contenido">
+            <h2>Iniciar sesión</h2>
+            <p>Ingresa a tu cuenta de Óptica G&A.</p>
+
+            <form id="formLogin">
+                <label for="correoLogin">Correo electrónico:</label>
+                <input type="email" id="correoLogin" required>
+
+                <label for="passwordLogin">Contraseña:</label>
+                <input type="password" id="passwordLogin" required>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+
+            <p>¿No tienes una cuenta?
+                <a href="#" onclick="mostrarRegistro(); return false;">Crear cuenta</a>
+            </p>
+
+            <button type="button" onclick="cerrarLogin()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         VENTANA DE CREACIÓN DE CUENTA (REGISTRO)
+         ========================================== -->
+    <div id="ventanaRegistro" class="modal">
+        <div class="modal-contenido">
+            <h2>Crear cuenta</h2>
+            <p>Regístrate en Óptica G&A.</p>
+
+            <form id="formRegistro">
+                <label for="nombreRegistro">Nombre:</label>
+                <input type="text" id="nombreRegistro" required>
+
+                <label for="apellidoRegistro">Apellido:</label>
+                <input type="text" id="apellidoRegistro" required>
+
+                <label for="correoRegistro">Correo electrónico:</label>
+                <input type="email" id="correoRegistro" required>
+
+                <label for="passwordRegistro">Contraseña:</label>
+                <input type="password" id="passwordRegistro" required>
+
+                <button type="submit">Crear cuenta</button>
+            </form>
+
+            <p>¿Ya tienes una cuenta?
+                <a href="#" onclick="mostrarLogin(); return false;">Iniciar sesión</a>
+            </p>
+
+            <button type="button" onclick="cerrarRegistro()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
 </body>
+
 </html>

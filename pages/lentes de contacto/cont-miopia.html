@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,20 @@
     <!-- Ruta al CSS global -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
+
 <body>
     <!-- ==========================================
          ENCABEZADO (HEADER) Y NAVEGACIÓN
          ========================================== -->
     <header class="header">
-       <a href="../inicio/index.html">
-        <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
+        <a href="../inicio/index.html">
+            <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
         </a>
         <nav class="nav-bar">
             <ul class="nav-menu">
                 <li><a href="../inicio/index.html">Inicio</a></li>
                 <li><a href="../sedes/sedes.html">Sedes</a></li>
-                
+
                 <li class="dropdown">
                     <a href="#" class="active">Lentes Oftálmicos ▾</a>
                     <ul class="dropdown-menu">
@@ -28,7 +30,7 @@
                         <li><a href="../niño/index.html">Niños</a></li>
                     </ul>
                 </li>
-                
+
                 <li class="dropdown">
                     <a href="#">Lentes de Sol ▾</a>
                     <ul class="dropdown-menu">
@@ -37,10 +39,10 @@
                         <li><a href="../niño/sol.html">Niños</a></li>
                     </ul>
                 </li>
-                
+
                 <li class="dropdown">
-                <a href="#">Lentes de Contacto ▾</a>
-                <ul class="dropdown-menu">
+                    <a href="#">Lentes de Contacto ▾</a>
+                    <ul class="dropdown-menu">
                         <li><a href="../lentes de contacto/cont-miopia.html">Miopía e Hipermetropía</a></li>
                         <li><a href="../lentes de contacto/cont-astigmatismo.html">Astigmatismo</a></li>
                         <li><a href="../lentes de contacto/cont-presbicia.html">Presbicia</a></li>
@@ -53,6 +55,16 @@
                 </li>
             </ul>
         </nav>
+        <!-- ACCESO A LA CUENTA -->
+        <div class="cuenta-header">
+            <button class="btn-cuenta" onclick="mostrarLogin()" title="Mi cuenta">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M5 21v-2a7 7 0 0 1 14 0v2" />
+                </svg>
+            </button>
+        </div>
     </header>
 
     <!-- Barra de promociones superior -->
@@ -67,9 +79,9 @@
         <div class="breadcrumbs">
             <a href="../inicio/index.html">Inicio</a> / <span>Lentes de Contacto Miopía e Hipermetropía</span>
         </div>
-        
+
         <h2 class="category-title">Lentes de Contacto Miopía e Hipermetropía</h2>
-        
+
         <div class="store-toolbar">
             <span class="product-count">6 productos</span>
             <div class="store-filters">
@@ -83,7 +95,7 @@
         </div>
 
         <!-- Panel de Filtros -->
-         <div class="filter-panel" id="filterPanel">
+        <div class="filter-panel" id="filterPanel">
             <h3>FILTRAR PRODUCTOS</h3>
             <div class="filter-group">
                 <label for="marca">Marca</label>
@@ -112,11 +124,12 @@
         </div>
 
         <section class="products-grid">
-            
+
             <!-- Producto 1: Acuvue Oasys -->
             <!-- Mantenimiento: data-marca unificado -->
             <article class="product-card" data-marca="Johnson&Johnson" data-precio="230">
-                <a href="detalles/detalle-acuvue-oasys.html" style="text-decoration: none; color: inherit; display: block;">
+                <a href="detalles/detalle-acuvue-oasys.html"
+                    style="text-decoration: none; color: inherit; display: block;">
                     <div class="product-image-container">
                         <span class="badge">NUEVO</span>
                         <img src="../../img/cont_mio_1.png" alt="Acuvue Oasys">
@@ -163,44 +176,62 @@
                 </a>
             </article>
 
-            <!-- Producto 4 -->
+            <!-- Producto 4: Acuvue 1 Day Moist -->
             <article class="product-card" data-marca="Johnson&Johnson" data-precio="210">
-                <div class="product-image-container">
-                    <img src="../../img/cont_mio_4.png" alt="Lente contacto 4">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">Johnson&Johnson</p>
-                    <h3 class="product-name">Acuvue 1 Day Moist</h3>
-                    <p class="price">S/210</p>
-                </div>
+                <a href="detalles/detalle-acuvue-1-day-moist.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+
+                    <div class="product-image-container">
+                        <img src="../../img/cont_mio_4.png" alt="Acuvue 1 Day Moist">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="brand">Johnson&Johnson</p>
+                        <h3 class="product-name">Acuvue 1 Day Moist</h3>
+                        <p class="price">S/210</p>
+                    </div>
+
+                </a>
             </article>
 
-            <!-- Producto 5 -->
+            <!-- Producto 5: iWear Oxygen -->
             <article class="product-card" data-marca="iWear" data-precio="230">
-                <div class="product-image-container">
-                    <span class="badge">NUEVO</span>
-                    <img src="../../img/cont_mio_5.png" alt="Lente contacto 5">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">iWear</p>
-                    <h3 class="product-name">iWear Oxygen</h3>
-                    <p class="price">S/230</p>
-                </div>
+                <a href="detalles/detalle-iwear-oxygen.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+
+                    <div class="product-image-container">
+                        <span class="badge">NUEVO</span>
+                        <img src="../../img/cont_mio_5.png" alt="iWear Oxygen">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="brand">iWear</p>
+                        <h3 class="product-name">iWear Oxygen</h3>
+                        <p class="price">S/230</p>
+                    </div>
+
+                </a>
             </article>
 
-            <!-- Producto 6 -->
+            <!-- Producto 6: Dailies AquaComfort Plus -->
             <article class="product-card" data-marca="Alcon" data-precio="165">
-                <div class="product-image-container">
-                    <img src="../../img/cont_mio_6.png" alt="Lente contacto 6">
-                    <button class="btn-quick-add">Recoge al día siguiente*</button>
-                </div>
-                <div class="product-info">
-                    <p class="brand">Alcon</p>
-                    <h3 class="product-name">Dailies AquaComfort Plus</h3>
-                    <p class="price">S/165</p>
-                </div>
+                <a href="detalles/detalle-dailies-aquacomfort-plus.html"
+                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+
+                    <div class="product-image-container">
+                        <img src="../../img/cont_mio_6.png" alt="Dailies AquaComfort Plus">
+                        <button class="btn-quick-add">Recoge al día siguiente*</button>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="brand">Alcon</p>
+                        <h3 class="product-name">Dailies AquaComfort Plus</h3>
+                        <p class="price">S/165</p>
+                    </div>
+
+                </a>
             </article>
         </section>
     </main>
@@ -215,7 +246,7 @@
                 <p>Suscríbete y obtén un <strong>15% de descuento</strong> en tu primera compra.</p>
                 <button class="btn-subscribe">SUSCRIBIRSE</button>
             </div>
-            
+
             <div class="footer-col">
                 <h3>SERVICIOS</h3>
                 <ul>
@@ -242,12 +273,12 @@
                 <p><strong>Consultas:</strong> 0800-14600</p>
                 <p>Calle Amador Merino Reyna 223, San Isidro, Lima</p>
                 <div class="social-links">
-                     <a href="https://www.facebook.com/">
+                    <a href="https://www.facebook.com/">
                         <img src="../../img/facebook.png" alt="facebook">
                     </a>
                     <a href="https://www.instagram.com/">
                         <img src="../../img/instagram.png" alt="instagram">
-                    </a> 
+                    </a>
                     <a href="https://www.tiktok.com/">
                         <img src="../../img/tiktok.png" alt="tiktok">
                     </a>
@@ -258,5 +289,65 @@
             <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
         </div>
     </footer>
+    <!-- ==========================================
+         VENTANA DE INICIO DE SESIÓN (LOGIN)
+         ========================================== -->
+    <div id="ventanaLogin" class="modal">
+        <div class="modal-contenido">
+            <h2>Iniciar sesión</h2>
+            <p>Ingresa a tu cuenta de Óptica G&A.</p>
+
+            <form id="formLogin">
+                <label for="correoLogin">Correo electrónico:</label>
+                <input type="email" id="correoLogin" required>
+
+                <label for="passwordLogin">Contraseña:</label>
+                <input type="password" id="passwordLogin" required>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+
+            <p>¿No tienes una cuenta?
+                <a href="#" onclick="mostrarRegistro(); return false;">Crear cuenta</a>
+            </p>
+
+            <button type="button" onclick="cerrarLogin()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         VENTANA DE CREACIÓN DE CUENTA (REGISTRO)
+         ========================================== -->
+    <div id="ventanaRegistro" class="modal">
+        <div class="modal-contenido">
+            <h2>Crear cuenta</h2>
+            <p>Regístrate en Óptica G&A.</p>
+
+            <form id="formRegistro">
+                <label for="nombreRegistro">Nombre:</label>
+                <input type="text" id="nombreRegistro" required>
+
+                <label for="apellidoRegistro">Apellido:</label>
+                <input type="text" id="apellidoRegistro" required>
+
+                <label for="correoRegistro">Correo electrónico:</label>
+                <input type="email" id="correoRegistro" required>
+
+                <label for="passwordRegistro">Contraseña:</label>
+                <input type="password" id="passwordRegistro" required>
+
+                <button type="submit">Crear cuenta</button>
+            </form>
+
+            <p>¿Ya tienes una cuenta?
+                <a href="#" onclick="mostrarLogin(); return false;">Iniciar sesión</a>
+            </p>
+
+            <button type="button" onclick="cerrarRegistro()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
 </body>
+
 </html>
