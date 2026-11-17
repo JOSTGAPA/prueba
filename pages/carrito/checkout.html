@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Óptica G&A</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <!-- ==========================================
+         CABECERA MINIMALISTA (ESTILO GMO)
+         ========================================== -->
+    <header class="chk-header">
+        <div class="chk-header-container">
+            <a href="../inicio/index.html" class="chk-brand-logo">ÓPTICA G&amp;A</a>
+
+            <a href="carrito.html" class="chk-bag-link" title="Volver al carrito">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 7h12l1 13H5L6 7z" />
+                    <path d="M9 7V5a3 3 0 0 1 6 0v2" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL EN DOS COLUMNAS
+         ========================================== -->
+    <main class="chk-layout" id="checkoutMain">
+        
+        <!-- COLUMNA IZQUIERDA: FORMULARIO -->
+        <section class="chk-left-column">
+            <div class="chk-left-wrapper">
+                <form id="formCheckout" onsubmit="procesarPago(event)">
+                    
+                    <!-- 1. DOCUMENTACIÓN -->
+                    <div class="chk-section">
+                        <h2 class="chk-title">Documentación</h2>
+
+                        <div class="chk-grid-2">
+                            <div class="floating-select-box">
+                                <label for="chkTipoDoc">Tipo de Documento</label>
+                                <select id="chkTipoDoc" required>
+                                    <option value="">Seleccione</option>
+                                    <option value="DNI" selected>DNI</option>
+                                    <option value="CE">Carné de Extranjería</option>
+                                    <option value="Pasaporte">Pasaporte</option>
+                                </select>
+                            </div>
+
+                            <div class="input-box">
+                                <input type="text" id="chkNumDoc" maxlength="12" placeholder="Número de Documento" required>
+                            </div>
+                        </div>
+
+                        <label class="chk-checkbox-row mt-14">
+                            <input type="checkbox" id="chkNecesitaFactura" onchange="toggleFactura()">
+                            <span>¿Necesitas Factura?</span>
+                        </label>
+
+                        <!-- Campos desplegables si marca Factura -->
+                        <div id="bloqueFactura" class="chk-grid-2 mt-12" style="display: none;">
+                            <div class="input-box">
+                                <input type="text" id="chkRuc" maxlength="11" placeholder="Número de RUC (11 dígitos)">
+                            </div>
+                            <div class="input-box">
+                                <input type="text" id="chkRazonSocial" placeholder="Razón Social">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. CONTACTO -->
+                    <div class="chk-section">
+                        <div class="chk-section-header">
+                            <h2 class="chk-title">Contacto</h2>
+                            <a href="../inicio/index.html" class="chk-login-link">Iniciar sesión</a>
+                        </div>
+
+                        <div class="input-box input-with-icon">
+                            <input type="email" id="chkCorreo" placeholder="Correo electrónico" required>
+                            <span class="field-icon" title="Enviaremos tu boleta y seguimiento a este correo">?</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. ENTREGA -->
+                    <div class="chk-section">
+                        <h2 class="chk-title">Entrega</h2>
+
+                        <div class="floating-select-box mb-12">
+                            <label for="chkPais">País / Región</label>
+                            <select id="chkPais">
+                                <option value="Perú" selected>Perú</option>
+                            </select>
+                        </div>
+
+                        <div class="chk-grid-2 mb-12">
+                            <div class="input-box">
+                                <input type="text" id="chkNombre" placeholder="Nombre" required>
+                            </div>
+                            <div class="input-box">
+                                <input type="text" id="chkApellidos" placeholder="Apellidos" required>
+                            </div>
+                        </div>
+
+                        <div class="input-box mb-12">
+                            <input type="text" id="chkDireccion" placeholder="Dirección (Calle y número)" required>
+                        </div>
+
+                        <div class="input-box mb-12">
+                            <input type="text" id="chkUrbanizacion" placeholder="Urbanización / Referencia breve">
+                        </div>
+
+                        <div class="chk-grid-3 mb-12">
+                            <div class="input-box">
+                                <input type="text" id="chkReferencia" placeholder="Referencia (Depto, c...">
+                            </div>
+
+                            <div class="floating-select-box">
+                                <label for="chkDepartamento">Departamento</label>
+                                <select id="chkDepartamento" onchange="actualizarDistritos()">
+                                    <option value="Lima Metropolitana" selected>Lima (Metropolit...</option>
+                                    <option value="Callao">Callao</option>
+                                </select>
+                            </div>
+
+                            <div class="input-box">
+                                <input type="text" id="chkCodigoPostal" maxlength="5" placeholder="Código postal (opci...">
+                            </div>
+                        </div>
+
+                        <label class="chk-checkbox-row mb-14">
+                            <input type="checkbox" id="chkGuardarInfo">
+                            <span>Guardar mi información y consultar más rápidamente la próxima vez</span>
+                        </label>
+
+                        <div class="chk-grid-2 mb-12">
+                            <div class="floating-select-box">
+                                <label for="chkProvincia">Provincia</label>
+                                <select id="chkProvincia" required>
+                                    <option value="">Seleccione</option>
+                                    <option value="Lima" selected>Lima</option>
+                                    <option value="Callao">Callao</option>
+                                </select>
+                            </div>
+
+                            <div class="floating-select-box">
+                                <label for="chkDistrito">Distrito</label>
+                                <select id="chkDistrito" required>
+                                    <option value="">Seleccione</option>
+                                    <option value="San Isidro">San Isidro</option>
+                                    <option value="Miraflores">Miraflores</option>
+                                    <option value="Santiago de Surco">Santiago de Surco</option>
+                                    <option value="San Borja">San Borja</option>
+                                    <option value="La Molina">La Molina</option>
+                                    <option value="San Miguel">San Miguel</option>
+                                    <option value="Jesús María">Jesús María</option>
+                                    <option value="Los Olivos">Los Olivos</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="tel" id="chkTelefono" maxlength="9" placeholder="Teléfono Móvil" required>
+                        </div>
+                    </div>
+
+                    <!-- 4. MÉTODOS DE ENVÍO -->
+                    <div class="chk-section">
+                        <h3 class="chk-subtitle">Métodos de envío</h3>
+                        <a href="#" class="chk-conditions-link">Ver condiciones y tiempos para envíos y retiros AQUÍ</a>
+
+                        <div class="shipping-tabs">
+                            <button type="button" class="shipping-tab active" id="tabDomicilio" onclick="seleccionarMetodoEnvio('domicilio')">
+                                Envío a domicilio
+                            </button>
+                            <button type="button" class="shipping-tab" id="tabTienda" onclick="seleccionarMetodoEnvio('tienda')">
+                                Retiro en Tienda
+                            </button>
+                        </div>
+
+                        <!-- Detalle Envío Regular -->
+                        <div class="shipping-result-box" id="boxEnvioRegular">
+                            <span>Envío Regular</span>
+                            <strong>GRATIS</strong>
+                        </div>
+
+                        <!-- Selector de Sede si elige Retiro en Tienda -->
+                        <div class="floating-select-box mt-12" id="boxRetiroTienda" style="display: none;">
+                            <label for="chkSedeRecojo">Selecciona tu sede Óptica G&amp;A (Retiro GRATIS)</label>
+                            <select id="chkSedeRecojo">
+                                <option value="Sede San Isidro - Calle Amador Merino Reyna 223">Sede San Isidro - Calle Amador Merino Reyna 223</option>
+                                <option value="Sede Miraflores - Av. José Larco 450">Sede Miraflores - Av. José Larco 450</option>
+                                <option value="Sede Surco - C.C. Jockey Plaza, Nivel 1">Sede Surco - C.C. Jockey Plaza, Nivel 1</option>
+                                <option value="Sede San Borja - Av. Aviación 2410">Sede San Borja - Av. Aviación 2410</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 5. PAGO -->
+                    <div class="chk-section">
+                        <h2 class="chk-title mb-4">Pago</h2>
+                        <p class="chk-secure-note">Todas las transacciones son seguras y están encriptadas.</p>
+
+                        <div class="payment-accordion">
+                            <!-- OPCIÓN 1: TARJETAS -->
+                            <label class="payment-option-header active" id="headerTarjeta">
+                                <div class="payment-radio-left">
+                                    <input type="radio" name="metodoPago" value="Tarjeta de Crédito / Débito" checked onchange="cambiarMetodoPago('tarjeta')">
+                                    <span>Paga con tarjetas de débito / Paga con Tarjetas de Crédito con hasta 18 Cuotas sin Intereses* con BBVA, INTERBANK, BCP, SCOTIABANK Y CENCOSUD.</span>
+                                </div>
+                                <div class="payment-logos">
+                                    <span class="badge-card badge-visa">VISA</span>
+                                    <span class="badge-card badge-mc">MC</span>
+                                    <span class="badge-card badge-amex">AMEX</span>
+                                    <span class="badge-card badge-diners">D</span>
+                                </div>
+                            </label>
+
+                            <div class="payment-option-body" id="bodyTarjeta">
+                                <div class="input-box input-with-icon mb-12">
+                                    <input type="text" id="chkNumTarjeta" maxlength="19" placeholder="Número de tarjeta" oninput="formatearNumeroTarjeta(this)" required>
+                                    <span class="field-icon-lock">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+
+                                <div class="chk-grid-2 mb-12">
+                                    <div class="input-box">
+                                        <input type="text" id="chkVencimiento" maxlength="5" placeholder="Fecha de vencimiento (MM / AA)" oninput="formatearFechaExp(this)" required>
+                                    </div>
+                                    <div class="input-box input-with-icon">
+                                        <input type="password" id="chkCvv" maxlength="4" placeholder="Código de seguridad" required>
+                                        <span class="field-icon" title="Código de 3 o 4 dígitos al reverso de tu tarjeta">?</span>
+                                    </div>
+                                </div>
+
+                                <div class="input-box mb-12">
+                                    <input type="text" id="chkTitular" placeholder="Nombre del titular" required>
+                                </div>
+
+                                <div class="chk-grid-2 mb-12">
+                                    <div class="floating-select-box">
+                                        <label for="chkDocTitular">Documento</label>
+                                        <select id="chkDocTitular">
+                                            <option value="DNI" selected>DNI</option>
+                                            <option value="CE">CE</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-box">
+                                        <input type="text" id="chkNumDocTitular" maxlength="12" placeholder="Número de documento" required>
+                                    </div>
+                                </div>
+
+                                <div class="floating-select-box mb-10">
+                                    <label for="chkCuotas">Cuotas</label>
+                                    <select id="chkCuotas">
+                                        <option value="1 cuota (Sin intereses)">1 cuota (Sin intereses)</option>
+                                        <option value="3 cuotas sin intereses">3 cuotas sin intereses</option>
+                                        <option value="6 cuotas sin intereses">6 cuotas sin intereses</option>
+                                        <option value="12 cuotas sin intereses">12 cuotas sin intereses</option>
+                                        <option value="18 cuotas sin intereses">18 cuotas sin intereses</option>
+                                    </select>
+                                </div>
+
+                                <p class="payment-interest-note">Si hay intereses, los aplicará y cobrará tu banco.</p>
+
+                                <label class="chk-checkbox-row mt-12">
+                                    <input type="checkbox" checked>
+                                    <span>Usar la dirección de envío como dirección de facturación</span>
+                                </label>
+                            </div>
+
+                            <!-- OPCIÓN 2: YAPE / PAGOEFECTIVO / MERCADO PAGO -->
+                            <label class="payment-option-header border-top" id="headerYape">
+                                <div class="payment-radio-left">
+                                    <input type="radio" name="metodoPago" value="Yape / PagoEfectivo / Mercado Pago" onchange="cambiarMetodoPago('yape')">
+                                    <span>Paga con Yape, PagoEfectivo o billetera Mercado Pago</span>
+                                </div>
+                                <div class="payment-logos">
+                                    <span class="badge-card badge-mp">MP</span>
+                                    <span class="badge-card badge-visa">VISA</span>
+                                    <span class="badge-card badge-mc">MC</span>
+                                    <span class="badge-card">+4</span>
+                                </div>
+                            </label>
+
+                            <div class="payment-option-body" id="bodyYape" style="display: none;">
+                                <p class="yape-desc">
+                                    Transfiere el monto total al Yape / Plin oficial de <strong>Óptica G&amp;A</strong> al número <strong>987 654 321</strong> e ingresa tu código de aprobación:
+                                </p>
+                                <div class="input-box mt-10">
+                                    <input type="text" id="chkCodigoYape" maxlength="8" placeholder="Código de operación (Ej. 482910)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TÉRMINOS Y CONDICIONES -->
+                    <div class="chk-legal-checks">
+                        <label class="chk-checkbox-row">
+                            <input type="checkbox" id="chkAceptoTerminos" required>
+                            <span>He leído y acepto la <a href="#">Política de Privacidad</a> y los <a href="#">Términos y Condiciones</a></span>
+                        </label>
+
+                        <label class="chk-checkbox-row mt-10">
+                            <input type="checkbox" id="chkFinesAdicionales">
+                            <span>Autorizo el uso de mis datos para <a href="#">Fines Adicionales</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-pagar-gmo">Pagar ahora</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- COLUMNA DERECHA: RESUMEN DE PRODUCTOS -->
+        <aside class="chk-right-column">
+            <div class="chk-right-wrapper">
+                <!-- Lista de productos cargada por JS -->
+                <div id="checkoutListaProductos" class="chk-summary-items"></div>
+
+                <!-- Código de descuento -->
+                <div class="chk-coupon-wrapper">
+                    <div class="chk-coupon-box">
+                        <input type="text" id="chkInputCupon" placeholder="Código de descuento" oninput="activarBotonCupon()">
+                        <button type="button" id="btnAplicarCupon" onclick="aplicarCuponCheckout()">Aplicar</button>
+                    </div>
+                </div>
+
+                <!-- Totales -->
+                <div class="chk-totals-box">
+                    <div class="chk-total-row">
+                        <span>Subtotal</span>
+                        <span id="chkSubtotal">S/ 0.00</span>
+                    </div>
+
+                    <div class="chk-total-row" id="filaDescuento" style="display: none;">
+                        <span>Descuento (15%)</span>
+                        <span id="chkDescuento" class="text-discount">- S/ 0.00</span>
+                    </div>
+
+                    <div class="chk-total-row">
+                        <span>Envío</span>
+                        <span id="chkCostoEnvio">GRATIS</span>
+                    </div>
+
+                    <div class="chk-final-total">
+                        <span class="total-word">Total</span>
+                        <div class="total-amount-group">
+                            <span class="currency-code">PEN</span>
+                            <strong id="chkTotal">S/ 0.00</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- PANTALLA DE CONFIRMACIÓN DE PEDIDO -->
+    <section id="confirmacionPedido" class="chk-receipt-container" style="display: none;"></section>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

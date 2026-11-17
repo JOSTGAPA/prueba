@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Óptica G&A</title>
-    <!-- Los ../../ le indican que salga de 'inicio' y de 'pages' para encontrar la carpeta css -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 
@@ -17,7 +16,7 @@
         <a href="../inicio/index.html">
             <img class="logo-header" src="../../img/logo.png.jpeg" alt="Óptica G&A">
         </a>
-
+        
         <nav class="nav-bar">
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Inicio</a></li>
@@ -51,15 +50,26 @@
                 </li>
             </ul>
         </nav>
-        <!-- ACCESO A LA CUENTA -->
+
+        <!-- ACCESO A LA CUENTA Y CARRITO -->
         <div class="cuenta-header">
             <button class="btn-cuenta" onclick="mostrarLogin()" title="Mi cuenta">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="8" r="4" />
                     <path d="M5 21v-2a7 7 0 0 1 14 0v2" />
                 </svg>
             </button>
+
+            <!-- ÍCONO BOLSA DE COMPRAS QUE ABRE LA PÁGINA DEL CARRITO -->
+            <a href="../carrito/carrito.html" class="btn-carrito" title="Carrito de compras">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 7h12l1 13H5L6 7z" />
+                    <path d="M9 7V5a3 3 0 0 1 6 0v2" />
+                </svg>
+                <span id="contadorCarrito" class="contador-carrito">0</span>
+            </a>
         </div>
     </header>
 
@@ -108,11 +118,6 @@
     <!-- ==========================================
          PIE DE PÁGINA (FOOTER)
          ========================================== -->
-    <!-- 
-        Nota de mantenimiento: Se ha eliminado el footer redundante (<footer class="footer">) 
-        que estaba justo antes de este 'mega-footer', consolidando los derechos reservados 
-        en la sección '.footer-bottom' para evitar contenido duplicado en la interfaz. 
-    -->
     <footer class="mega-footer">
         <div class="footer-container">
             <div class="footer-col brand-col">
@@ -166,6 +171,7 @@
             </p>
         </div>
     </footer>
+
     <!-- VENTANA DE SUSCRIPCIÓN -->
     <div id="ventanaSuscripcion" class="modal">
         <div class="modal-contenido">
@@ -184,12 +190,10 @@
             </form>
         </div>
     </div>
-    <!-- ==========================================
-         VENTANA DE INICIO DE SESIÓN (LOGIN)
-         ========================================== -->
+
+    <!-- VENTANA DE INICIO DE SESIÓN (LOGIN) -->
     <div id="ventanaLogin" class="modal">
         <div class="modal-contenido">
-
             <h2>Iniciar sesión</h2>
             <p>Ingresa a tu cuenta de Óptica G&A.</p>
 
@@ -211,12 +215,9 @@
         </div>
     </div>
 
-    <!-- ==========================================
-         VENTANA DE CREACIÓN DE CUENTA (REGISTRO)
-         ========================================== -->
+    <!-- VENTANA DE CREACIÓN DE CUENTA (REGISTRO) -->
     <div id="ventanaRegistro" class="modal">
         <div class="modal-contenido">
-
             <h2>Crear cuenta</h2>
             <p>Regístrate en Óptica G&A.</p>
 
@@ -243,6 +244,7 @@
             <button type="button" onclick="cerrarRegistro()">Cerrar</button>
         </div>
     </div>
+
     <script src="../js/script.js"></script>
 </body>
 

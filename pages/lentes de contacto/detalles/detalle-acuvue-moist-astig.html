@@ -87,8 +87,10 @@
                     <span class="pay-icon">Yape/Plin</span>
                 </div>
 
-                <!-- CTA Principal -->
-                <button class="btn-select-lenses">SELECCIONAR LENTES</button>
+               <!-- CTA Principal único conectado al carrito -->
+                <button type="button" class="btn-select-lenses" onclick="seleccionarProductoActual()">
+                    SELECCIONAR LENTES
+                </button>
             </div>
         </section>
 
@@ -169,5 +171,7 @@
     <footer class="footer-bottom">
         <p>&copy; 2026 Óptica G&A - Expertos en salud visual y Lentes en Perú.</p>
     </footer>
+    <!-- Conexión al script del carrito (sube 3 niveles desde detalles/ hasta pages/js/) -->
+    <script src="../../js/script.js"></script>
 </body>
 </html>
